@@ -1,12 +1,13 @@
-@import './../../../../styles.scss';
+@import './../../../styles.scss';
 
 .navBar {
     display: flex;
     justify-content: space-between;
-    color: $white;
-    background-color: $background;
     max-width: 1440px;
     width: 100%;
+    position: sticky;
+    top: 0;
+    height: fit-content;
 
     >div {
         display: flex;
@@ -43,6 +44,11 @@
             &:hover {
                 border-color: $purple;
                 background-color: $purple;
+            }
+
+            &:active {
+                font-weight: 700;
+                background-color: $green;
             }
     }
 }

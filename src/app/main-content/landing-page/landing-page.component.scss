@@ -1,0 +1,118 @@
+@import './../../../styles.scss';
+
+.landingPage {
+    position: relative;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    max-width: 1440px;
+    background-image: url('./../../../assets/img/shapes/Hero_Background.png');
+    background-attachment: fixed;
+    background-position-y: 60vh;
+    background-position-x: center;
+    background-repeat: no-repeat;
+}
+
+.landingImage {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 80%;
+    gap: 10%;
+    background-image: url('./../../../assets/img/shapes/photo_shadows.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: 10%;
+    background-position-y: 105%;
+}
+
+.landingPageLinks {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    >hr {
+        width: 25%;
+    }
+    img {
+        width: 30px;
+        height: 30px;
+
+        &:hover {
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+
+.landingTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.titleDiv {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+}
+
+.titleDiv-1 {
+    >:nth-child(1) {
+        rotate: -90deg;
+        line-height: 1.2;
+        font-size: 64px;
+        width: max-content;
+    }
+}
+
+.titleDiv-2 {
+    >:nth-child(1) {
+        font-size: 90px;
+    }
+
+    >:nth-child(2) {
+        font-size: 58px;
+    }
+}
+
+.titleBtnDiv {
+    >button {
+        border: none;
+        border-radius: 10px;
+        padding: 15px 32px;
+        font-size: 23px;
+        background-color: $green;
+        color: $white;
+        box-shadow: 4px 4px 4px 0px #00000040;
+    }
+}
+
+.scrollDown {
+    display: flex;
+    align-items: center;
+    writing-mode: vertical-rl;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    gap: 6px;
+
+    p {
+        font-size: 23px;
+    }
+    img {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.landingImage-Div {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}

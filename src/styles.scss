@@ -56,7 +56,8 @@ $maxWidth: 1440px;
     box-sizing: border-box;
     margin: 0;
     font-family: 'Poppins';
-
+    line-height: 1.2;
+    color: $white;
     a {
       text-decoration: none;
       color: inherit;
