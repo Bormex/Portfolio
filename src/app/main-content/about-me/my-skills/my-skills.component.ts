@@ -8,5 +8,19 @@ import { Component } from '@angular/core';
   styleUrl: './my-skills.component.scss'
 })
 export class MySkillsComponent {
-
+  
+    Logos = [
+      { "name": "HTML" }, 
+      { "name": "CSS" }, 
+      { "name": "JavaScript" },
+      { "name": "TypeScript" }, 
+      { "name": "Angular" },
+      { "name": "Firebase" }, 
+      { "name": "Git" }, 
+      { "name": "Rest Api" }, 
+      { "name": "Scrum" }, 
+      { "name": "Material Design" }, 
+      { "name": "Continually Learning" }, 
+    ]
+  
 }

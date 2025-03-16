@@ -3,5 +3,17 @@
 .landing-section {
     display: flex;
     justify-content: center;
-    background-color: $background;
+}
+
+.about-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.portfolio-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

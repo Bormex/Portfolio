@@ -1,8 +1,9 @@
-@import './../../../styles.scss';
+@import './../../../../styles.scss';
 
 .navBar {
     display: flex;
     justify-content: space-between;
+    padding: 37px $paddingLR;
     max-width: 1440px;
     width: 100%;
     position: sticky;
@@ -12,7 +13,7 @@
     >div {
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 92px;
     }
 
 }
@@ -20,6 +21,8 @@
 .navLinks {
     font-size: 23px;
     line-height: 1.2;
+    display: flex;
+    gap: 29px;
 
     a {
         &:hover {
@@ -29,6 +32,8 @@
 }
 
 .languageBtns {
+    display: flex;
+    gap: 14px;
     button {
         font-size: 18px;
         color: $white;

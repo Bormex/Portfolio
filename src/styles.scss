@@ -7,8 +7,12 @@ $green: #70E61C;
 $black: #000000;
 $hoverCheckbox: #183771;
 $background: #141D2F;
-$marSides: 32px 0;
+// $marSides: 32px 0;
 $maxWidth: 1440px;
+$paddingLR: 100px;
+$paddingTB: 124px;
+$gapTitle: 40px;
+
 
 /* poppins-200 - latin */
 @font-face {
@@ -18,48 +22,52 @@ $maxWidth: 1440px;
     font-weight: 200;
     src: url('/assets/fonts/poppins-v22-latin/poppins-v22-latin-200.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
-  /* poppins-regular - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    src: url('/assets/fonts/poppins-v22-latin/poppins-v22-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  /* poppins-600 - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 600;
-    src: url('/assets/fonts/poppins-v22-latin/poppins-v22-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  /* poppins-800 - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 800;
-    src: url('/assets/fonts/poppins-v22-latin/poppins-v22-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  /* poppins-900 - latin */
-  @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 900;
-    src: url('/assets/fonts/poppins-v22-latin/poppins-v22-latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
+/* poppins-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/poppins-v22-latin/poppins-v22-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/assets/fonts/poppins-v22-latin/poppins-v22-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  src: url('/assets/fonts/poppins-v22-latin/poppins-v22-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-900 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 900;
+  src: url('/assets/fonts/poppins-v22-latin/poppins-v22-latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
 
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    font-family: 'Poppins';
-    line-height: 1.2;
-    color: $white;
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Poppins';
+  line-height: 1.2;
+  color: $white;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+body {
+  background: $background;
 }

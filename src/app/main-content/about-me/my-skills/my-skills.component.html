@@ -1,1 +1,53 @@
-<p>my-skills works!</p>
+<div class="mySkills">
+    <div class="mySkills-left">
+        @for (Logo of Logos; track $index) {
+            @if (Logo.name == 'Continually Learning') {
+                <div class="skillIcons continuallyLearning">
+                    <img src="./../../../../assets/img/icons/popup_interests.png" alt="">
+                    <img src="./../../../../assets/img/icons/{{Logo.name}}.png" alt="">
+                    <img src="./../../../../assets/img/icons/{{Logo.name}} Hover.png" alt="">
+                    <span>
+                        {{Logo.name}}
+                    </span>
+                </div>
+            } @else {
+                <div class="skillIcons">
+                    <img src="./../../../../assets/img/icons/{{Logo.name}}.png" alt="">
+                    <span>
+                        {{Logo.name}}
+                    </span>
+                </div>
+            }
+        }
+    </div>
+    <div class="mySkills-right">
+        <div>
+        <div class="mySkills-right-title">
+            <h1>
+                My Skills
+            </h1>
+            
+        </div>
+        <div class="mySkills-right-under-title">
+            <div>
+                <p>
+                    Show that you have used a variety of front-end <br>
+                    technologies in your projects.
+                </p>
+
+                <span>
+                    Looking for <span style="color: #9747FF;">another skill</span>?
+                </span>
+                <p>
+                    Reveal enthusiasm for learning new technologies <br>
+                    and frameworks.
+                </p>
+            </div>
+            <button>
+                Get in touch
+            </button>
+        </div>
+        </div>
+        <hr>
+    </div>
+</div>

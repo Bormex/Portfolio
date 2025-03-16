@@ -3,13 +3,13 @@ import { RouterOutlet } from '@angular/router';
 import { MainContentComponent } from "./main-content/main-content.component";
 import { ImprintComponent } from "./imprint/imprint.component";
 import { FooterComponent } from "./shared/footer/footer.component";
-import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
+import { HeaderComponent } from './shared/header/header.component';
 import { PrivacyPolicyComponent } from "./privacy-policy/privacy-policy.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MainContentComponent, ImprintComponent, FooterComponent, NavBarComponent, PrivacyPolicyComponent],
+  imports: [RouterOutlet, MainContentComponent, ImprintComponent, FooterComponent, HeaderComponent, PrivacyPolicyComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

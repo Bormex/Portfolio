@@ -1,0 +1,94 @@
+@import './../../../styles.scss';
+
+
+.portfolio {
+    width: 100%;
+    max-width: $maxWidth;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $gapTitle;
+}
+
+.portfolio-head {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+    h1 {
+        font-size: 90px;
+        font-weight: 700;
+    }
+    > hr:nth-child(1) {
+        border: none;
+        height: 4px;
+        width: $paddingLR;
+        background-color: $purple;
+    }
+
+    > hr:nth-child(3) {
+        border: none;
+        height: 4px;
+        width: calc(45% - $paddingLR - 32px);
+        background-color: $purple;
+    }
+}
+
+.projectDescription {
+    display: flex;
+    gap: 16px;
+    >p {
+        font-size: 23px;
+    }
+}
+
+.project {
+    display: flex;
+    width: 100%;
+    padding: 0 $paddingLR;
+}
+
+.projectDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+    >span {
+        font-weight: 700;
+        font-size: 32px;
+        color: $purple;
+    }
+}
+
+.projectImage {
+    background-color: wheat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.portfolioBtns {
+    display: flex;
+    gap: 86px;
+    :nth-child(1) {
+        border: none;
+        background-color: $purple;
+        padding: 15px 30px;
+        border-radius: 10px;
+        font-size: 23px;
+    }
+    :nth-child(2) {
+        border: 1px solid $green;
+        background-color: $background;
+        padding: 15px 30px;
+        border-radius: 10px;
+        font-size: 23px;
+    }
+    button {
+        &:hover {
+            background-color: $green;
+        }
+    }
+}
