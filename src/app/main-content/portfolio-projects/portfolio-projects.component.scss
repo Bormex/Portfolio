@@ -40,29 +40,40 @@
     gap: 16px;
     >p {
         font-size: 23px;
+        color: $green;
+    }
+    >hr {
+        border: solid $green;
     }
 }
 
 .project {
     display: flex;
+    align-items: center;
     width: 100%;
-    padding: 0 $paddingLR;
+    gap: 35px;
 }
 
 .projectDetails {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 35px;
     width: 50%;
-    >span {
-        font-weight: 700;
-        font-size: 32px;
-        color: $purple;
+    
+    >div:nth-child(1) {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        >span {
+            font-weight: 700;
+            font-size: 32px;
+            color: $purple;
+        }
     }
 }
 
 .projectImage {
-    background-color: wheat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,6 +83,7 @@
 .portfolioBtns {
     display: flex;
     gap: 86px;
+    z-index: 1;
     :nth-child(1) {
         border: none;
         background-color: $purple;
@@ -87,8 +99,21 @@
         font-size: 23px;
     }
     button {
+        cursor: pointer;
         &:hover {
             background-color: $green;
         }
     }
+}
+
+.projectContainers {
+    display: flex;
+    flex-direction: column;
+    padding: 0 $paddingLR;
+    width: 100%;
+}
+
+.comment-section {
+    display: flex;
+    width: 100%;
 }

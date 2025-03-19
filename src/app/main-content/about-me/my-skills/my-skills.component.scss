@@ -97,10 +97,10 @@
     }
 
     :nth-child(1) {
+        display: none;
         position: absolute;
         bottom: 70%;
         left: 0;
-        opacity: 0;
     }
 
     span {
@@ -109,7 +109,7 @@
 
     &:hover {
         :nth-child(1) {
-            opacity: 1;
+            display: flex;
         }
         span {
             color: $white;

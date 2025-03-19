@@ -1,0 +1,124 @@
+@import './../../../styles.scss';
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    gap: $gapTitle;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.contact-fields {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: $paddingTB $paddingLR;
+    padding-top: unset;
+    gap: 64px;
+
+    >:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        width: 50%;
+    }
+
+    .contact-input {
+        width: 100%;
+        border: 1px solid $purple;
+        border-radius: 10px;
+        padding: 15px 25px;
+        background: $background;
+    }
+}
+
+.contactTitle {
+    display: flex;
+    width: 75%;
+    align-items: center;
+    gap: 32px;
+    h1 {
+        font-size: 90px;
+        font-weight: 700;
+    }
+    hr {
+        width: 50%;
+        border: none;
+        height: 4px;
+        background: $purple;
+    }
+}
+
+.contact-field-left {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+    
+    >div {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        >span {
+            display: flex;
+        }
+    }
+
+    h2 {
+        font-size: 32px;
+        font-weight: 700;
+    }
+}
+
+.inputResponsiv {
+    height: 202px;
+}
+
+
+.contact-message {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    >label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        >p {
+            font-size: 14px;
+        }
+    }
+}
+
+.sendBtn {
+    font-size: 23px;
+    padding: 15px 30px;
+    width: fit-content;
+    border-radius: 10px;
+    background-color: $blockedBtn;
+    box-shadow: 4px 4px 4px 0px #00000040;
+    border: none;
+}
+
+.scrollUpDiv {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    >div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 39px;
+        height: 39px;
+        border: 2px solid;
+        border-radius: 100%;
+        padding: 6px;
+
+        img {
+        rotate: 180deg;
+        fill: green;
+    }
+    }
+}

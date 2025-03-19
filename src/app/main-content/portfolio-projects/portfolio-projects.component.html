@@ -5,49 +5,54 @@
         <hr>
     </div>
 
-
     <p>
         Explore a selection of my work here - Interact with projects to see my skills in action.
     </p>
 
-    @for (Project of Projects; track Projects; let index = $index; let last = $last) {
-        <div class="project" [ngStyle]="{'flex-direction' : index % 2 ? 'row-reverse' : ''}">
-            <div class="projectImage">
-                <img src="" alt="">
-            </div>
-            <div class="projectDetails">
-                <span>
-                    {{Project.name}}
-                </span>
-                <div class="projectDescription">
-                    @for (language of Projects[index].languages; track $index; let last = $last) {
-                        @switch (true) {
-                            @case (last) {
-                                <p>
-                                    {{language}}
-                                </p>
-                            }
-                            @default {
-                                <p>
-                                    {{language}} 
-                                </p>
-                                <hr>
-                            }
-                        }
-                    }
+    <div class="projectContainers">
+        @for (Project of Projects; track Projects; let index = $index; let last = $last) {
+            <div class="project" [ngStyle]="{'flex-direction' : index % 2 ? 'row-reverse' : ''}">
+                <div class="projectImage">
+                    <img src="{{Project.image}}" alt="">
                 </div>
-                <p>
-                    {{Project.description}}
-                </p>
-                <div class="portfolioBtns">
-                    <button>
-                        Live test
-                    </button>
-                    <button>
-                        Github
-                    </button>
+                <div class="projectDetails" [ngStyle]="{ 'align-items': index % 2 ? 'end' : '', 'text-align': index % 2 ? 'end' : '' }">
+                    <div>    
+                        <span>
+                            {{Project.name}}
+                        </span>
+                        <div class="projectDescription" [ngStyle]="{'justify-content' : index % 2 ? 'flex-end' : ''}">
+                            @for (language of Projects[index].languages; track $index; let last = $last) {
+                                @switch (true) {
+                                    @case (last) {
+                                        <p>
+                                            {{language}}
+                                        </p>
+                                    }
+                                    @default {
+                                        <p>
+                                            {{language}} 
+                                        </p>
+                                        <hr>
+                                    }
+                                }
+                            }
+                        </div>
+                        <p>
+                            {{Project.description}}
+                        </p>
+                    </div>
+                    <div class="portfolioBtns">
+                        <button>
+                            Live test
+                        </button>
+                        <button>
+                            Github
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
-    }
+        }
+    </div>
+
+    <app-comment-section class="comment-section"></app-comment-section>
 </div>

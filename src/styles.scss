@@ -12,6 +12,7 @@ $maxWidth: 1440px;
 $paddingLR: 100px;
 $paddingTB: 124px;
 $gapTitle: 40px;
+$blockedBtn: #B6B6B6;
 
 
 /* poppins-200 - latin */
@@ -66,8 +67,11 @@ $gapTitle: 40px;
     text-decoration: none;
     color: inherit;
   }
+  
 }
 
 body {
   background: $background;
 }
+
+
