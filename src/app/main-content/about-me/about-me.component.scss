@@ -44,6 +44,20 @@
     display: flex;
     align-items: flex-start;
     gap: 16px;
+
+    img {
+        transition: transform 75ms ease-out;
+        &:hover {
+            transform: scale(1.25);
+            transition: transform 75ms ease-in; 
+        }
+    }
+}
+
+.about-hover {
+    &:hover {
+        transform: scale(1.5) !important;
+    }
 }
 
 .aboutMe-right {
@@ -59,10 +73,11 @@
             background-color: $background;
             max-width: 453px;
             max-height: 453px;
+            width: 100%;
         }
     }
     hr {
-        width: 100%;
+        width: 50%;
         height: 4px;
         border-color: $green;
         background-color: $green;

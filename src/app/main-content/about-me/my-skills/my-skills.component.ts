@@ -10,17 +10,17 @@ import { Component } from '@angular/core';
 export class MySkillsComponent {
   
     Logos = [
-      { "name": "HTML" }, 
-      { "name": "CSS" }, 
-      { "name": "JavaScript" },
-      { "name": "TypeScript" }, 
-      { "name": "Angular" },
-      { "name": "Firebase" }, 
-      { "name": "Git" }, 
-      { "name": "Rest Api" }, 
-      { "name": "Scrum" }, 
-      { "name": "Material Design" }, 
-      { "name": "Continually Learning" }, 
+      { "name": "HTML", "image": "html" }, 
+      { "name": "CSS", "image": "css" }, 
+      { "name": "JavaScript", "image": "javascript" },
+      { "name": "TypeScript", "image": "typescript" }, 
+      { "name": "Angular", "image": "angular" },
+      { "name": "Firebase", "image": "firebase" }, 
+      { "name": "Git", "image": "git" }, 
+      { "name": "Rest Api", "image": "api" }, 
+      { "name": "Scrum", "image": "scrum" }, 
+      { "name": "Material Design", "image": "material-desing" }, 
+      { "name": "Continually Learning", "image": "continually-learning" }, 
     ]
   
 }

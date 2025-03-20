@@ -15,6 +15,16 @@ $gapTitle: 40px;
 $blockedBtn: #B6B6B6;
 
 
+// NOCH IN EINE MIXIN SCSS!!!
+@mixin hover-padding($padding-hover, $bg-hover) {
+  transition: padding 0.125s ease-in-out, background-color 0.3s ease;
+  
+  &:hover {
+    padding: $padding-hover;
+    background-color: $bg-hover;
+  }
+}
+
 /* poppins-200 - latin */
 @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -56,6 +66,10 @@ $blockedBtn: #B6B6B6;
   src: url('/assets/fonts/poppins-v22-latin/poppins-v22-latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+.hover {
+  z-index: 1;
+  cursor: pointer;
+}
 
 * {
   box-sizing: border-box;
@@ -66,6 +80,10 @@ $blockedBtn: #B6B6B6;
   a {
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
+  }
+  button {
+    cursor: pointer;
   }
   
 }

@@ -3,16 +3,16 @@
         @for (Logo of Logos; track $index) {
             @if (Logo.name == 'Continually Learning') {
                 <div class="skillIcons continuallyLearning">
-                    <img src="./../../../../assets/img/icons/popup_interests.png" alt="">
-                    <img src="./../../../../assets/img/icons/{{Logo.name}}.png" alt="">
-                    <img src="./../../../../assets/img/icons/{{Logo.name}} Hover.png" alt="">
+                    <img src="./../../../../assets/img/icons/continually-learning-popup.svg" alt="">
+                    <img src="./../../../../assets/img/icons/{{Logo.image}}.svg" alt="">
+                    <img src="./../../../../assets/img/icons/{{Logo.image}}-hover.svg" alt="">
                     <span>
                         {{Logo.name}}
                     </span>
                 </div>
             } @else {
-                <div class="skillIcons">
-                    <img src="./../../../../assets/img/icons/{{Logo.name}}.png" alt="">
+                <div class="skillIcons skillHover">
+                    <img src="./../../../../assets/img/icons/{{Logo.image}}.svg" alt="">
                     <span>
                         {{Logo.name}}
                     </span>
@@ -43,9 +43,11 @@
                     and frameworks.
                 </p>
             </div>
-            <button>
-                Get in touch
-            </button>
+            <div class="mySkillsBtn">
+                <button>
+                    Get in touch
+                </button>
+            </div>
         </div>
         </div>
         <hr>

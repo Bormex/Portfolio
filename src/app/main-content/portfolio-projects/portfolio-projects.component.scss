@@ -37,6 +37,7 @@
 
 .projectDescription {
     display: flex;
+    flex-wrap: wrap;
     gap: 16px;
     >p {
         font-size: 23px;
@@ -78,6 +79,9 @@
     align-items: center;
     justify-content: center;
     width: 50%;
+    img {
+        width: 100%;
+    }
 }
 
 .portfolioBtns {
