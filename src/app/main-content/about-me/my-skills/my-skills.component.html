@@ -1,20 +1,20 @@
 <div class="mySkills">
     <div class="mySkills-left">
-        @for (Logo of Logos; track $index) {
-            @if (Logo.name == 'Continually Learning') {
+        @for (Skills of daten.Skills; track $index) {
+            @if (Skills.name == 'Continually Learning') {
                 <div class="skillIcons continuallyLearning">
                     <img src="./../../../../assets/img/icons/continually-learning-popup.svg" alt="">
-                    <img src="./../../../../assets/img/icons/{{Logo.image}}.svg" alt="">
-                    <img src="./../../../../assets/img/icons/{{Logo.image}}-hover.svg" alt="">
+                    <img src="./../../../../assets/img/icons/{{Skills.image}}.svg" alt="">
+                    <img src="./../../../../assets/img/icons/{{Skills.image}}-hover.svg" alt="">
                     <span>
-                        {{Logo.name}}
+                        {{Skills.name}}
                     </span>
                 </div>
             } @else {
                 <div class="skillIcons skillHover">
-                    <img src="./../../../../assets/img/icons/{{Logo.image}}.svg" alt="">
+                    <img src="./../../../../assets/img/icons/{{Skills.image}}.svg" alt="">
                     <span>
-                        {{Logo.name}}
+                        {{Skills.name}}
                     </span>
                 </div>
             }
@@ -44,12 +44,17 @@
                 </p>
             </div>
             <div class="mySkillsBtn">
-                <button>
-                    Get in touch
-                </button>
+                <a href="#contact">
+                    <button>
+                        Get in touch
+                    </button>
+                </a>
             </div>
         </div>
         </div>
         <hr>
     </div>
 </div>
+
+    <img src="./../../../../assets/img/shapes/Green_shadow_skills.svg" class="skills-shape" alt="">
+

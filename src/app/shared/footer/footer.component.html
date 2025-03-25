@@ -1,7 +1,7 @@
 <div class="footer">
     <div class="footer-logo-div">
         <div class="hover">
-            <a href="#landingPage hover">
+            <a href="#landingPage">
                 <img src="./../../../assets/img/Logo-header.png" alt="">
             </a>
         </div>
@@ -11,26 +11,20 @@
         </p>
 
         <div class="footer-links">
-            <div>
-                <a href="">
-                    <img src="./../../../assets/img/icons/github.svg" alt="">
-                </a>
-            </div>
-            <div>
-                <a href="">
-                    <img src="./../../../assets/img/icons/mail.svg" alt="">
-                </a>
-            </div>
-            <div>
-                <a href="">
-                    <img src="./../../../assets/img/icons/linkedIn.svg" alt="">
-                </a>
-            </div>
+            @for (Link of daten.Links; track $index) {
+                <div>
+                    <a href="{{Link.path}}" target="_blank">
+                        <img src="./../../../assets/img/icons/{{Link.image}}.svg" alt="">
+                    </a>
+                </div>
+            }
         </div>
 
     </div>
 
-    <div class="legalNotice" style="z-index: 1;">
-        <p class="hover">Legal Notice</p>
+    <div class="legalNotice">
+        <a href="imprint">
+            <p class="hover">Legal Notice</p>
+        </a>
     </div>
 </div>

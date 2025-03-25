@@ -127,8 +127,8 @@
     :nth-child(1) {
         display: none;
         position: absolute;
-        bottom: 70%;
-        left: 0;
+        bottom: 80%;
+        left: -8px;
     }
 
     span {
@@ -149,4 +149,10 @@
             display: flex;
         }
     }
+}
+
+.skills-shape {
+    position: absolute;
+    top: 45%;
+    left: 0;
 }

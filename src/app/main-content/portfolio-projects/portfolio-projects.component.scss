@@ -8,6 +8,8 @@
     flex-direction: column;
     align-items: center;
     gap: $gapTitle;
+    padding: $paddingTB 0;
+    padding-bottom: unset;
 }
 
 .portfolio-head {
@@ -53,6 +55,19 @@
     align-items: center;
     width: 100%;
     gap: 35px;
+    position: relative;
+}
+
+.coming-soon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 64px;
+    z-index: 1;
+    opacity: 0.75;
+    width: 100%;
+    text-align: center;
 }
 
 .projectDetails {
@@ -89,28 +104,35 @@
     gap: 86px;
     z-index: 1;
     :nth-child(1) {
-        border: none;
-        background-color: $purple;
-        padding: 15px 30px;
-        border-radius: 10px;
-        font-size: 23px;
+        >button {
+            border: none;
+            background-color: $purple;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 23px;
+        }
     }
     :nth-child(2) {
-        border: 1px solid $green;
-        background-color: $background;
-        padding: 15px 30px;
-        border-radius: 10px;
-        font-size: 23px;
+        >button {
+            border: 1px solid $green;
+            background-color: $background;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 23px;
+        }
     }
-    button {
-        cursor: pointer;
-        &:hover {
-            background-color: $green;
+    a {
+        button {
+            cursor: pointer;
+            &:hover {
+                background-color: $green;
+            }
         }
     }
 }
 
 .projectContainers {
+    position: relative;
     display: flex;
     flex-direction: column;
     padding: 0 $paddingLR;
@@ -120,4 +142,12 @@
 .comment-section {
     display: flex;
     width: 100%;
+    position: relative;
+}
+
+.project-shape {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: -1;
 }

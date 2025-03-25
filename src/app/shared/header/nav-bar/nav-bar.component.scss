@@ -24,6 +24,11 @@
     line-height: 1.2;
     display: flex;
     gap: 29px;
+    @include underline();
+
+    :nth-child(2) {
+        @include underline(100%);
+    }
 
     a {
         &:hover {
@@ -57,4 +62,10 @@
                 background-color: $green;
             }
     }
+}
+
+.half-underline {
+    display: inline;
+    position: relative;
+    padding-bottom: 3px;
 }

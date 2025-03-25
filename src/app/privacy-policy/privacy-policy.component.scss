@@ -1,0 +1,28 @@
+@import './../../styles.scss';
+
+.privacyPolice-section {
+    display: flex;
+    justify-content: center;
+}
+
+.privacyPolice {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: $paddingTB $paddingLR;
+    height: calc(100vh - 291px);
+    width: 100%;
+    max-width: $maxWidth;
+    align-items: center;
+    overflow-y: auto;
+    gap: 24px;
+
+    span {
+        text-align: center;
+    }
+}
+
+h1 {
+    font-size: 48px;
+}

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from '../../../data.service';
 
 @Component({
   selector: 'app-my-skills',
@@ -8,19 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './my-skills.component.scss'
 })
 export class MySkillsComponent {
-  
-    Logos = [
-      { "name": "HTML", "image": "html" }, 
-      { "name": "CSS", "image": "css" }, 
-      { "name": "JavaScript", "image": "javascript" },
-      { "name": "TypeScript", "image": "typescript" }, 
-      { "name": "Angular", "image": "angular" },
-      { "name": "Firebase", "image": "firebase" }, 
-      { "name": "Git", "image": "git" }, 
-      { "name": "Rest Api", "image": "api" }, 
-      { "name": "Scrum", "image": "scrum" }, 
-      { "name": "Material Design", "image": "material-desing" }, 
-      { "name": "Continually Learning", "image": "continually-learning" }, 
-    ]
+  constructor(private dataService: DataService) {}
+  daten: any;
+  ngOnInit() {
+      this.daten = this.dataService.getJsonData();
+  }
   
 }

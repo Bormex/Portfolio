@@ -5,30 +5,17 @@
         </h1>
         <div>
             <p>
-                Write some information about yourself that is IT related. Why are you passionate about coding? What is your source
-                of inspiration for improving your programming skills?
+                {{daten.AboutMe.description}}
             </p>
             <div>
-                <div class="aboutMe-sections">
-                    <img src="./../../../assets/img/icons/location.svg" class="about-hover" alt="">
-                    <p>
-                        Where are you located? Are you open to different ways of working, such as working remotely or even relocating?
-                    </p>
-                </div>
-                <div class="aboutMe-sections">
-                    <img src="./../../../assets/img/icons/bulb.svg" alt="">
-                    <p>
-                        Show that you are open-minded. Are you enthusiastic about learning new technologies and continually improving your skills?
-                    </p>
-                </div>
-                <div class="aboutMe-sections">
-                    <img src="./../../../assets/img/icons/puzzle.svg" class="about-hover" alt="">
-                    <p>
-                        A brief description of your problem-solving approach. Do you learn from each challenge as you search for the most
-                        efficient or elegant solution? You can include some keywords like: analytical thinking, creativity, persistence and
-                        collaboration.
-                    </p>
-                </div>
+                @for (item of daten.AboutMe.subpoints; track $index) {
+                    <div class="aboutMe-sections">
+                        <img src="{{item.image}}" [ngClass]="$index == 1 ? '' : 'about-hover'" alt="">
+                        <p>
+                            {{item.description}}
+                        </p>
+                    </div>
+                }
             </div>
         </div>
     </div>
@@ -37,9 +24,8 @@
             <img src="./../../../assets/img/Mesa de trabajo 1 2.png" alt="">
         </div>
         <hr>
-        <img src="./../../../assets/img/Purple-shadow-2.svg" alt="">
-        <!-- <img src="./../../../assets/img/shapes/Purple_shadow_about_me.png" alt=""> -->
+        <img src="./../../../assets/img/shapes/Purple-shadow-2.svg" class="about-shape" alt="">
     </div>
 </div>
 
-<app-my-skills class="mySkills-section"></app-my-skills>
+<app-my-skills class="mySkills-section" id="skills"></app-my-skills>

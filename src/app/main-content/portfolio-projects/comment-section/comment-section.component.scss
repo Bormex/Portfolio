@@ -9,6 +9,7 @@
     padding: $paddingTB $paddingLR;
     padding-top: unset;
     padding-right: unset;
+    padding-bottom: unset;
     >:nth-child(1) {
         width: 100%;
         display: flex;
@@ -115,4 +116,11 @@
     height: 8px;
     background: $purple;
     border-radius: 100%;
+}
+
+.comment-shape {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
 }

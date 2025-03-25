@@ -13,6 +13,7 @@ $paddingLR: 100px;
 $paddingTB: 124px;
 $gapTitle: 40px;
 $blockedBtn: #B6B6B6;
+$red: #E61C40;
 
 
 // NOCH IN EINE MIXIN SCSS!!!
@@ -23,6 +24,22 @@ $blockedBtn: #B6B6B6;
     padding: $padding-hover;
     background-color: $bg-hover;
   }
+}
+
+
+@mixin underline($width: 50%, $color: $purple) {
+  :active{ 
+  ::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: $width;
+      height: 3px;
+      background: $purple;
+      border-radius: 3px 10px 10px 3px;
+  }
+}
 }
 
 /* poppins-200 - latin */
@@ -72,6 +89,7 @@ $blockedBtn: #B6B6B6;
 }
 
 * {
+  scroll-behavior: smooth;
   box-sizing: border-box;
   margin: 0;
   font-family: 'Poppins';
@@ -90,6 +108,7 @@ $blockedBtn: #B6B6B6;
 
 body {
   background: $background;
+  position: relative;
 }
 
 

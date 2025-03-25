@@ -1,20 +1,15 @@
-<div class="landingPage" id="landingPage">
+<div class="landingPage">
     <div class="landingPage-hero">
-        <img src="./../../../assets/img/shapes/Hero_Background.png" alt="">
+        <img src="./../../../assets/img/shapes/Hero_Background.svg" alt="">
     </div>
+    
     <div class="landingImage">
         <div class="landingImage-Div">
-            <img src="./../../../assets/img/shapes/photo_shadows.png" alt="">
+            <img src="./../../../assets/img/shapes/photo_shadows.svg" alt="">
             <img src="./../../../assets/img/hero character photo.png" alt="">
         </div>
-        <!-- <div class="landingPageLinks">
-            <hr>
-            <img src="./../../../assets/img/icons/github.png" alt="">
-            <img src="./../../../assets/img/icons/mail.png" alt="">
-            <img src="./../../../assets/img/icons/linkedIn.png" alt="">
-            <a href="mailto:holzhey.niclas@gmail.com">holzhey.niclas&#64;gmail.com</a>
-        </div> -->
     </div>
+    
     <div class="landingTitle">
         <div class="titleDiv">
             <div class="titleDiv-1">
@@ -32,16 +27,12 @@
             </div>
         </div>
         <div class="titleBtnDiv">
-            <button>
-                Let's talk!
-            </button>
+            <a href="#contact">
+                <button>
+                    Let's talk!
+                </button>
+            </a>
         </div>
-        <!-- <div class="scrollDown">
-            <p>
-                Scroll Down 
-            </p>
-            <img src="./../../../assets/img/icons/scroll_down_arrow.png" alt="">
-        </div> -->
     </div>
     
 
@@ -49,9 +40,24 @@
     <div class="linksAndScroll">
         <div class="landingPageLinks">
             <hr>
-            <img src="./../../../assets/img/icons/github.svg" class="hover" alt="">
-            <img src="./../../../assets/img/icons/mail.svg" class="hover"  alt="">
-            <img src="./../../../assets/img/icons/linkedIn.svg" class="hover"  alt="">
+
+            @for (Link of daten.Links; track $index) {
+                <a href="{{Link.path}}" target="_blank">
+                    <img src="./../../../assets/img/icons/{{Link.image}}.svg" alt="">
+                </a>
+            }
+
+            <!-- <a href="">
+                <img src="./../../../assets/img/icons/github.svg" class="hover" alt="">
+            </a>
+            <a href="">
+                <img src="./../../../assets/img/icons/mail.svg" class="hover"  alt="">
+            </a>
+            <a href="">
+                <img src="./../../../assets/img/icons/linkedIn.svg" class="hover"  alt="">
+            </a> -->
+
+
             <a href="mailto:holzhey.niclas@gmail.com">holzhey.niclas&#64;gmail.com</a>
         </div>
         <div class="scrollDown">

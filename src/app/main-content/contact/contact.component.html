@@ -1,7 +1,7 @@
 <div class="contact">
     <div class="contactTitle">
         <hr />
-        <h1>Conctact</h1>
+        <h1>Contact</h1>
     </div>
 
     <div class="contact-fields">
@@ -18,23 +18,27 @@
         </div>
 
         <div>
-            <input class="contact-input hover" type="text" placeholder="Your name" />
-            <input class="contact-input hover" type="text" placeholder="Your email" />
+            <input class="contact-input hover inputName" type="text" placeholder="Your name" />
+            <input class="contact-input hover inputName" type="text" placeholder="Your email" />
             
             <div class="contact-message">
-                <input class="contact-input inputResponsiv hover" type="text" placeholder="Your massage" />
+                <!-- <input class="contact-input inputResponsiv hover inputName" type="text" placeholder="Your massage" />  -->
+                <textarea class="hover inputName contact-input" name="text" rows="14" cols="10" wrap="soft" placeholder="Your massage" >
+                        
+                </textarea>
+
                 <label class="container" for="Privacypolicy">
                     <mat-checkbox class="matBox"></mat-checkbox>
                     <p>
                         I've read the
-                        <a href="" style="color: #9747FF; cursor: pointer;">privacy policy</a>
+                        <a href="privacyPolicy" class="privacyPolicyBtn">privacy policy</a>
                         and agree to the processing of my data as outlined.
                     </p>
                 </label>
             </div>
 
             <div class="sendBtn-Div">
-                <button class="sendBtn">
+                <button class="sendBtn" disabled>
                     Send Message :)
                 </button>
             </div>
@@ -49,5 +53,7 @@
         </div>
 
     </div>
+
+    <img src="./../../../assets/img/shapes/Purple_shadow_contact.svg" class="contact-shape" alt="">
 
 </div>

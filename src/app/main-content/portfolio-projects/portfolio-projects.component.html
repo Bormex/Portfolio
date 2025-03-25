@@ -10,18 +10,24 @@
     </p>
 
     <div class="projectContainers">
-        @for (Project of Projects; track Projects; let index = $index; let last = $last) {
+        <img src="./../../../assets/img/shapes/Purple_shadow_portfolio.svg" class="project-shape" alt="">
+        @for (Project of daten.Projects; track daten.Projects; let index = $index; let last = $last) {
             <div class="project" [ngStyle]="{'flex-direction' : index % 2 ? 'row-reverse' : ''}">
-                <div class="projectImage">
+                @if (last) {
+                    <div class="coming-soon">
+                        ... COMING SOON ...
+                    </div>
+                }
+                <div class="projectImage" [ngStyle]="{'filter': last ? 'blur(1px) brightness(0.5) opacity(0.5)' : ''}">
                     <img src="{{Project.image}}" alt="">
                 </div>
-                <div class="projectDetails" [ngStyle]="{ 'align-items': index % 2 ? 'end' : '', 'text-align': index % 2 ? 'end' : '' }">
+                <div class="projectDetails" [ngStyle]="{ 'align-items': index % 2 ? 'end' : '', 'text-align': index % 2 ? 'end' : '' , 'filter': last ? 'blur(1px) brightness(0.5) opacity(0.5)' : ''}">
                     <div>    
                         <span>
                             {{Project.name}}
                         </span>
                         <div class="projectDescription" [ngStyle]="{'justify-content' : index % 2 ? 'flex-end' : ''}">
-                            @for (language of Projects[index].languages; track $index; let last = $last) {
+                            @for (language of daten.Projects[index].languages; track $index; let last = $last) {
                                 @switch (true) {
                                     @case (last) {
                                         <p>
@@ -42,12 +48,16 @@
                         </p>
                     </div>
                     <div class="portfolioBtns">
-                        <button>
-                            Live test
-                        </button>
-                        <button>
-                            Github
-                        </button>
+                        <a href="{{Project.livetest}}">
+                            <button>
+                                Live test
+                            </button>
+                        </a>
+                        <a href="{{Project.github}}">
+                            <button>
+                                Github
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>

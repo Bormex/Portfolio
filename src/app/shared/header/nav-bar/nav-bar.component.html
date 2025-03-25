@@ -3,17 +3,27 @@
         <img src="./../../../assets/img/logo.svg" alt="">
     </a>
     <div>
-        <div class="navLinks">
-            <a href="">
-                About me
-            </a>
-            <a href="">
-                Skills
-            </a>
-            <a href="">
-                Portfolio
-            </a>
-        </div>
+        @if (landingpage) {
+            <div class="navLinks">
+                <span class="half-underline">
+                    <a href="#about">
+                        About me
+                    </a>
+                </span>
+    
+                <span class="half-underline">
+                    <a href="#skills">
+                        Skills
+                    </a>
+                </span>
+    
+                <span class="half-underline">
+                    <a href="#portfolio">
+                        Portfolio
+                    </a>
+                </span>
+            </div>
+        }
         <div class="languageBtns">
             <button>
                 DE
