@@ -17,17 +17,17 @@
             </div>
         </div>
 
-        <div>
-            <input class="contact-input hover inputName" type="text" placeholder="Your name" />
-            <input class="contact-input hover inputName" type="text" placeholder="Your email" />
+        <form  (ngSubmit)="onSubmit()">
+
+            <input type="text" id="name" name="name" class="contact-input hover" (change)="checkInput(inputName = true)" [(ngModel)]="contactData.name" [ngClass]="{'inputWarning' : inputName, 'inputAcception' : inputOk}" type="text" placeholder="Your name" />
+
+            <input type="email" id="email" name="email" class="contact-input hover" (click)="checkInput(inputMail = true)" [(ngModel)]="contactData.email" [ngClass]="{'inputWarning' : inputMail, 'inputAcception' : inputOk}" type="text" placeholder="Your email" />
+            
+            <textarea type="message" id="message" name="text" class="hover contact-input" (click)="checkInput(inputMessage = true)" [(ngModel)]="contactData.message" [ngClass]="{'inputWarning' : inputMessage, 'inputAcception' : inputOk}" style="background-position: top right !important;"  rows="14" cols="10" wrap="soft" placeholder="Your massage" ></textarea>
             
             <div class="contact-message">
-                <!-- <input class="contact-input inputResponsiv hover inputName" type="text" placeholder="Your massage" />  -->
-                <textarea class="hover inputName contact-input" name="text" rows="14" cols="10" wrap="soft" placeholder="Your massage" >
-                        
-                </textarea>
 
-                <label class="container" for="Privacypolicy">
+                <label class="container">
                     <mat-checkbox class="matBox"></mat-checkbox>
                     <p>
                         I've read the
@@ -36,11 +36,13 @@
                     </p>
                 </label>
             </div>
-
-            <div class="sendBtn-Div">
-                <button class="sendBtn" disabled>
+            <!-- 
+                <button type="submit" class="sendBtn" (ngSubmit)="onSubmit()" disabled>
                     Send Message :)
-                </button>
+                </button> 
+            -->
+            <div class="sendBtn-Div">
+                <input type="submit" value="Send Message :)" class="sendBtn" [ngClass]="activateBtn ? ['active'] : ''">
             </div>
 
             <div class="scrollUpDiv">
@@ -50,7 +52,7 @@
                 </a>
             </div>
 
-        </div>
+        </form>
 
     </div>
 

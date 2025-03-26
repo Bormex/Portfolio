@@ -38,6 +38,9 @@
     left: 0;
     bottom: 0;
     transform: rotate(180deg);
+    height: 100%;
+    max-height: fit-content;
+
 }
 
 .background-shape-2 {
@@ -45,6 +48,9 @@
     position: absolute;
     right: 0;
     top: -250px;
+    height: 100%;
+    max-height: fit-content;
+
 }
 
 h1 {

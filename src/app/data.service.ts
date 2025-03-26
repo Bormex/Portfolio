@@ -30,7 +30,7 @@ export class DataService {
         "description": "Based on the PokéAPI a simple library that provides and catalogues pokemon information.",
         "languages": ["HTML", "CSS", "JavaScript", "Api"],
         "image": "./../../../assets/img/notebook_Pokedex.png",
-        "livetest": "www.YouTube.de",
+        "livetest": "https://YouTube.de",
         "github": "https://github.com/Bormex/Join"
       },
       {
@@ -38,7 +38,7 @@ export class DataService {
         "description": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
         "languages": ["HTML", "CSS", "JavaScript", "Firebase"],
         "image": "./../../../assets/img/notebook_Join.png",
-        "livetest": "www.YouTube.de",
+        "livetest": "https://YouTube.de",
         "github": "https://github.com/Bormex/El-Pollo-Loco"
       },
       {
@@ -46,34 +46,51 @@ export class DataService {
         "description": "El Pollo Loco is a run-and-jump game where players face chickens as enemies, with a rooster as the final boss. The game features fast-paced action, challenging obstacles, and a fun, quirky theme centered around poultry",
         "languages": ["HTML", "CSS", "JavaScript", "Firebase"],
         "image": "./../../../assets/img/notebook_Pollo_loco.png",
-        "livetest": "www.YouTube.de",
+        "livetest": "https://YouTube.de",
         "github": "www.github.com"
       },
       {
         "name": "DaBubble",
-        "description": "Ein Projekt, das ich erstellt habe, um Teamarbeit und Projektmanagement zu verbessern.",
+        "description": "A project I created to improve teamwork and project management.",
         "languages": ["HTML", "SASS", "JavaScript", "Angular", "Typescript", "Firestore"],
         "image": "./../../../assets/img/notebook_Dabubble.png",
-        "livetest": "www.YouTube.de",
+        "livetest": "https://YouTube.de",
         "github": "www.github.com"
       }
     ], 
     AboutMe: {
-      "description": "Mit dem Programmieren habe ich begonnen, weil ich es faszinierend finde, wie man mit Code eigene Lösungen erschaffen und Abläufe automatisieren kann. Meine ersten Schritte machte ich mit Bash-Skripten in Linux, um automatische Backups für Spiele-Server zu erstellen. Dabei wurde mir schnell klar, welche Möglichkeiten sich durch Programmierung eröffnen. Die Freiheit, kreative Ideen in funktionierende Anwendungen umzusetzen und stetig neue Technologien zu entdecken, motiviert mich bis heute, meine Fähigkeiten weiterzuentwickeln.",
+      "description": "I started programming because I find it fascinating how you can use code to create your own solutions and automate processes. My first steps were with Bash scripts in Linux to create automatic backups for game servers. I quickly realized the possibilities programming opens up. The freedom to turn creative ideas into functional applications and to constantly discover new technologies continues to motivate me to develop my skills.",
       "subpoints": [
       {
         "image": "./../../../assets/img/icons/location.svg",
-        "description": "Ich komme aus Lutherstadt Wittenberg und arbeite gerne vor Ort, um persönlich mit Kollegen zu interagieren. Home-Office sehe ich aber auch als gute Möglichkeit für mehr Abwechslung und Flexibilität.",
+        "description": "I'm from Lutherstadt Wittenberg and enjoy working on-site so I can interact with colleagues face-to-face. However, I also see working from home as a great opportunity for more variety and flexibility.",
       }, 
       {
         "image": "./../../../assets/img/icons/bulb.svg",
-        "description": "Ich bin sehr aufgeschlossen gegenüber neuen Technologien und stets motiviert, meine Fähigkeiten weiterzuentwickeln. Die IT-Branche verändert sich ständig, und ich finde es spannend, immer dazuzulernen und innovative Lösungen zu entdecken."
+        "description": "I'm very open to new technologies and always motivated to develop my skills. The IT industry is constantly changing, and I find it exciting to keep learning and discovering innovative solutions."
       },
       {
         "image": "./../../../assets/img/icons/puzzle.svg",
-        "description": "Kreativ und analytisch gehe ich Probleme an, indem ich verschiedene Lösungsansätze prüfe und dann systematisch die effizienteste wähle. Ich bleibe beharrlich und lerne aus jeder Herausforderung, um mich kontinuierlich zu verbessern. Zusammenarbeit mit anderen hilft mir, verschiedene Perspektiven zu integrieren und die beste Lösung zu finden."
+        "description": "I approach problems creatively and analytically, exploring different approaches to solving problems and then systematically choosing the most effective one. I persist and learn from every challenge to continuously improve. Collaborating with others helps me integrate different perspectives and find the best solution."
       }]
-    }
+    },
+    Comments: [
+      {
+        "author": "Stephen",
+        "comment": "Was ein guter!!!",
+        "image": "path"
+      },
+      {
+        "author": "Dieter",
+        "comment": "Er macht sehr gute Arbeit!!!",
+        "image": "path"
+      },
+      {
+        "author": "Michel",
+        "comment": "Einfach top Kerl!",
+        "image": "path"
+      }
+    ]
     
   };
 

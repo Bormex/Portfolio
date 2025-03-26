@@ -123,11 +123,12 @@
     border-radius: 10px;
     background-color: $blockedBtn;
     box-shadow: 4px 4px 4px 0px #00000040;
-    border: none;
-    
-    :active {
-        @include hover-padding(20px 40px, $purple);
-    }
+    border: none;    
+}
+
+.active {
+    cursor: pointer;
+    @include hover-padding(20px 40px, $purple);
 }
 
 
@@ -199,10 +200,19 @@
 
 
 
-.inputName {
+.inputWarning {
     background-image: url(./../../../assets/img/icons/warning.svg) !important;
     background-repeat: no-repeat !important;
     background-position: right !important;
     background-origin: content-box !important;
+    border: 1px solid $red !important;  
+}
+
+.inputAcception {
+    background-image: url(./../../../assets/img/icons/accepted.svg) !important;
+    background-repeat: no-repeat !important;
+    background-position: right !important;
+    background-origin: content-box !important;
+    border: 1px solid $green !important;  
 }
 

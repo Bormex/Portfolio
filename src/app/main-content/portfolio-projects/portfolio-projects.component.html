@@ -47,18 +47,20 @@
                             {{Project.description}}
                         </p>
                     </div>
-                    <div class="portfolioBtns">
-                        <a href="{{Project.livetest}}">
-                            <button>
-                                Live test
-                            </button>
-                        </a>
-                        <a href="{{Project.github}}">
-                            <button>
-                                Github
-                            </button>
-                        </a>
-                    </div>
+                    @if (!last) {
+                        <div class="portfolioBtns">
+                            <a href="{{Project.livetest}}">
+                                <button>
+                                    Live test
+                                </button>
+                            </a>
+                            <a href="{{Project.github}}">
+                                <button>
+                                    Github
+                                </button>
+                            </a>
+                        </div>
+                    }
                 </div>
             </div>
         }

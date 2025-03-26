@@ -1,38 +1,43 @@
-<div class="comment-box">
-    <div>
-        <div class="comment">
+@for (item of daten.Comments; let i = $index; track i) {
+    @if (i == selectedComment) {
+        <div class="comment-box">
             <div>
-                Comment comes here! Weiters aber erst ab morgen abrufbar, bitte verzeihen sie die Umstände. Liebe Grüße Euer Team!
+                <div class="comment">
+                    <div>
+                        {{item.comment}}
+                    </div>
+                    <div>
+                        <hr>
+                        <p>{{item.author}} - Team Partner</p>
+                    </div>
+                </div>
+                <div class="commentImage-Box">
+                    <div class="commentImage">
+                        <!-- Hier komment noch das Bild mit rein mit {{item.image}} -->
+                        <img src="./../../../../assets/img/hero character photo.png" alt="">
+                    </div>
+                    <hr>
+                </div>
             </div>
+    
             <div>
-                <hr>
-                <p>N.Hey - Team Partner</p>
+                <div class="comment-swiper">
+                    <div class="comment-swiper-div" (click)="changeComment(i - 1)">
+                        <img src="./../../../../assets/img/icons/swipe-arrow.svg" style="rotate: 180deg;"  alt="">
+                    </div>
+                    @for (item of daten.Comments; let i = $index; track i) {
+                        <div class="comment-dot" [ngStyle]="{'backgroundColor': i == selectedComment ? '#70E61C' : ''}"></div>
+                    }
+                    <div class="comment-swiper-div" (click)="changeComment(i + 1)">
+                        <img src="./../../../../assets/img/icons/swipe-arrow.svg" alt="">
+                    </div>
+                </div>
             </div>
+        
+            <img src="./../../../../assets/img/shapes/commentSign.svg" alt="">
+        
         </div>
-        <div class="commentImage-Box">
-            <div class="commentImage">
-                <img src="./../../../../assets/img/hero character photo.png" alt="">
-            </div>
-            <hr>
-        </div>
-    </div>
-
-    <div>
-        <div class="comment-swiper">
-            <div class="comment-swiper-div">
-                <img src="./../../../../assets/img/icons/swipe-arrow.svg" style="rotate: 180deg;"  alt="">
-            </div>
-            <div class="comment-dot"></div>
-            <div class="comment-dot"></div>
-            <div class="comment-dot"></div>
-            <div class="comment-swiper-div">
-                <img src="./../../../../assets/img/icons/swipe-arrow.svg" alt="">
-            </div>
-        </div>
-    </div>
-
-    <img src="./../../../../assets/img/shapes/commentSign.svg" alt="">
-
-</div>
+    }
+}
 
 <img src="./../../../../assets/img/shapes/Green_shadow_comment.svg" class="comment-shape" alt="">
