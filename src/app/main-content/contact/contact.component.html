@@ -19,30 +19,36 @@
 
         <form  (ngSubmit)="onSubmit()">
 
-            <input type="text" id="name" name="name" class="contact-input hover" (change)="checkInput(inputName = true)" [(ngModel)]="contactData.name" [ngClass]="{'inputWarning' : inputName, 'inputAcception' : inputOk}" type="text" placeholder="Your name" />
+            <div class="inputDiv">
+                <input type="text" id="name" name="name" class="contact-input hover" (click)="checkNameInput(inputName = true)" (input)="checkNameInput(inputName = true)" [(ngModel)]="contactData.name" [ngClass]="{'inputWarning' : inputName, 'inputAcception' : inputNameOk}" type="text" placeholder="Your name" />
+                <p style="display: none;" [ngClass]="{'validationWarning' : inputName}">Your name is required</p>
+            </div>
 
-            <input type="email" id="email" name="email" class="contact-input hover" (click)="checkInput(inputMail = true)" [(ngModel)]="contactData.email" [ngClass]="{'inputWarning' : inputMail, 'inputAcception' : inputOk}" type="text" placeholder="Your email" />
-            
-            <textarea type="message" id="message" name="text" class="hover contact-input" (click)="checkInput(inputMessage = true)" [(ngModel)]="contactData.message" [ngClass]="{'inputWarning' : inputMessage, 'inputAcception' : inputOk}" style="background-position: top right !important;"  rows="14" cols="10" wrap="soft" placeholder="Your massage" ></textarea>
-            
+            <div class="inputDiv">
+                <input type="email" id="email" name="email" class="contact-input hover" (click)="checkEmailInput(inputMail = true)" (input)="checkEmailInput(inputMail = true)" [(ngModel)]="contactData.email" [ngClass]="{'inputWarning' : inputMail, 'inputAcception' : inputEmailOk}" type="text" placeholder="Your email" />
+                <p style="display: none;" [ngClass]="{'validationWarning' : inputMail}">Your email is required</p>
+            </div>
+
+            <div class="inputDiv">
+                <textarea type="message" id="message" name="text" class="hover contact-input" (click)="checkMsgInput(inputMessage = true)" (input)="checkMsgInput(inputMessage = true)" [(ngModel)]="contactData.message" [ngClass]="{'inputWarning' : inputMessage, 'inputAcception' : inputMessageOk}" style="background-position: top right !important;"  rows="14" cols="10" wrap="soft" placeholder="Your massage" ></textarea>
+                <p style="display: none;" [ngClass]="{'validationWarning' : inputMessage}">Your message is empty</p>
+            </div>
+
             <div class="contact-message">
 
                 <label class="container">
-                    <mat-checkbox class="matBox"></mat-checkbox>
+                    <mat-checkbox class="matBox" #myCheckbox (input)="checkValue(myCheckbox)"></mat-checkbox>
                     <p>
                         I've read the
                         <a href="privacyPolicy" class="privacyPolicyBtn">privacy policy</a>
                         and agree to the processing of my data as outlined.
                     </p>
                 </label>
+                <p style="display: none;" [ngClass]="{'validationWarning' : checkboxOk}">Please accept the privacy policy.</p>
             </div>
-            <!-- 
-                <button type="submit" class="sendBtn" (ngSubmit)="onSubmit()" disabled>
-                    Send Message :)
-                </button> 
-            -->
+
             <div class="sendBtn-Div">
-                <input type="submit" value="Send Message :)" class="sendBtn" [ngClass]="activateBtn ? ['active'] : ''">
+                <input type="submit" value="Send Message :)" class="sendBtn" (click)="checkInputfields(checkboxOk)" [ngClass]="activateBtn ? ['active'] : ''">
             </div>
 
             <div class="scrollUpDiv">

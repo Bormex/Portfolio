@@ -208,6 +208,21 @@
     border: 1px solid $red !important;  
 }
 
+.validationWarning {
+    display: flex !important;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 400;
+    color: $red;
+}
+
+.inputDiv {
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px;
+}
+
 .inputAcception {
     background-image: url(./../../../assets/img/icons/accepted.svg) !important;
     background-repeat: no-repeat !important;
