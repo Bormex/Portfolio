@@ -6,6 +6,7 @@ import { FooterComponent } from "./shared/footer/footer.component";
 import { HeaderComponent } from './shared/header/header.component';
 import { PrivacyPolicyComponent } from "./privacy-policy/privacy-policy.component";
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -15,5 +16,5 @@ import { PrivacyPolicyComponent } from "./privacy-policy/privacy-policy.componen
 })
 export class AppComponent {
   title = 'Portfolio';
-
+  
 }

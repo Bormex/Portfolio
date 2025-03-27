@@ -91,7 +91,6 @@ export class DataService {
         "image": "path"
       }
     ]
-    
   };
 
   getJsonData() {
