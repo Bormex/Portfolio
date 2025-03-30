@@ -1,5 +1,48 @@
 {
-    "HELLO": "Hallo, Welt!",
-    "WELCOME": "Willkommen bei Angular 17!"
+  "Projects": [
+    {
+      "name": "PokeDex",
+      "description": "Based on the PokéAPI, a simple library that provides and catalogues Pokémon information."
+    },
+    {
+      "name": "Join",
+      "description": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories."
+    },
+    {
+      "name": "El Pollo Loco",
+      "description": "El Pollo Loco is a run-and-jump game where players face chickens as enemies, with a rooster as the final boss. The game features fast-paced action, challenging obstacles, and a fun, quirky theme centered around poultry."
+    },
+    {
+      "name": "DaBubble",
+      "description": "A project I created to improve teamwork and project management."
+    }
+  ],
+
+  "AboutMe": {
+    "description": "I started programming because I find it fascinating how you can use code to create your own solutions and automate processes. My first steps were with Bash scripts in Linux to create automatic backups for game servers. I quickly realized the possibilities programming opens up. The freedom to turn creative ideas into functional applications and to constantly discover new technologies continues to motivate me to develop my skills.",
+    "subpoints": [
+    {
+      "description": "I'm from Lutherstadt Wittenberg and enjoy working on-site so I can interact with colleagues face-to-face. However, I also see working from home as a great opportunity for more variety and flexibility."
+    }, 
+    {
+      "description": "I'm very open to new technologies and always motivated to develop my skills. The IT industry is constantly changing, and I find it exciting to keep learning and discovering innovative solutions."
+    },
+    {
+      "description": "I approach problems creatively and analytically, exploring different approaches to solving problems and then systematically choosing the most effective one. I persist and learn from every challenge to continuously improve. Collaborating with others helps me integrate different perspectives and find the best solution."
+    }]
+  },
+  "Comments": [
+    {
+      "author": "Stephen",
+      "comment": "What a great men!!!"
+    },
+    {
+      "author": "Dieter",
+      "comment": "He does greate work!!!"
+    },
+    {
+      "author": "Michel",
+      "comment": "Pure good guy!"
+    }
+  ]
 }
-  

@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
 
+
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
+  http: any;
   
+  constructor() {}
+
   jsonData = {
     Links: [
       { "image": "github", path: 'https://github.com/Bormex' },
@@ -92,8 +96,103 @@ export class DataService {
       }
     ]
   };
+  await: any;
+
+  getData(para: string) {
+
+    if (para == "de") {
+
+      this.getDeJson().then((data) =>
+        data.Projects.forEach((projectDeVersion: any) => {
+          this.jsonData.Projects.forEach(project => {
+            project.description = '';
+            project.description = projectDeVersion.description;
+          });
+        })
+      );
+
+      this.getDeJson().then((data) =>
+        data.AboutMe.subpoints.forEach((projectDeVersion: any) => {          
+          this.jsonData.AboutMe.subpoints.forEach(project => {
+            project.description = '';
+            project.description = projectDeVersion.description;
+          });
+          this.jsonData.AboutMe.description = '';
+          this.jsonData.AboutMe.description = data.AboutMe.description;
+        })
+      );
+
+      this.jsonData.Comments.forEach(project => {
+        console.log(project.comment);
+        project.comment = '';
+        this.getDeJson().then((data) =>
+          data.Comments.forEach((projectEnVersion: any) => {
+            
+            project.comment = projectEnVersion.comment;
+          })
+        );
+      });
+
+    }
+
+    if (para == "en") {
+
+      this.getEnJson().then((data) =>
+        data.Projects.forEach((projectEnVersion: any) => {
+          this.jsonData.Projects.forEach(project => {
+            project.description = '';
+            project.description = projectEnVersion.description;
+          });
+        })
+      );
+
+      this.getEnJson().then((data) =>
+        data.AboutMe.subpoints.forEach((projectEnVersion: any) => {          
+          this.jsonData.AboutMe.subpoints.forEach(project => {
+            project.description = '';
+            project.description = projectEnVersion.description;
+          });
+          this.jsonData.AboutMe.description = '';
+          this.jsonData.AboutMe.description = data.AboutMe.description;
+        })
+      );
+
+      this.jsonData.Comments.forEach(project => {
+        console.log(project.comment);
+        project.comment = '';
+        this.getEnJson().then((data) =>
+          data.Comments.forEach((projectEnVersion: any) => {
+            
+            project.comment = projectEnVersion.comment;
+          })
+        );
+      });
+      
+      
+    }
+  }
+
+
+  getEnJson() {
+    return fetch('./assets/i18n/en.json')
+      .then(response => response.json())
+      .then(data => data)
+  }
+
+  getDeJson() {
+    return fetch('./assets/i18n/de.json')
+      .then(response => response.json())
+      .then(data => data)
+  }
+
+
+//############### für die stani Json oben
 
   getJsonData() {
     return this.jsonData;
+  }
+
+  de = {
+    description: "Basierend auf der PokéAPI, eine einfache Bibliothek, die Pokémon-Informationen bereitstellt und katalogisiert."
   }
 }
