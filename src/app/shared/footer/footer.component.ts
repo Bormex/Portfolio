@@ -11,6 +11,7 @@ import { DataService } from '../../data.service';
 export class FooterComponent {
   constructor(private dataService: DataService) {}
   daten: any;
+  
   ngOnInit() {
     this.daten = this.dataService.getJsonData();
   }

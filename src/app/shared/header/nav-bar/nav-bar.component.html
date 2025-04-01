@@ -7,13 +7,13 @@
             <div class="navLinks">
                 <span class="half-underline">
                     <a href="#about">
-                        About me
+                        {{daten.NavBar.aboutMe}}
                     </a>
                 </span>
     
                 <span class="half-underline">
                     <a href="#skills">
-                        Skills
+                        {{daten.NavBar.skills}}
                     </a>
                 </span>
     
@@ -25,10 +25,10 @@
             </div>
         }
         <div class="languageBtns">
-            <button (click)="changeLanguage('de')">
+            <button (click)="changeLanguage('de')" [ngClass]="{'active': isActive}">
                 DE
             </button>
-            <button (click)="changeLanguage('en')">
+            <button (click)="changeLanguage('en')" [ngClass]="{'active': !isActive}">
                 EN
             </button>
         </div>

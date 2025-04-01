@@ -10,6 +10,47 @@ export class DataService {
   constructor() {}
 
   jsonData = {
+    Legalnotice: "Legal Notice",
+    Checkbox: {
+      "textBefore": "I've read the ",
+      "link": "privacy policy",
+      "textAfter": "and agree to the processing of my data as outlined."
+    },
+    UpcommingProject: {
+      "message": "... COMING SOON ..."
+    },
+    NavBar: {
+      "aboutMe": "About Me",
+      "skills": "Skills"
+    },
+    MySkills: {
+      "title": "My Skills"
+    },
+    Contact: {
+      "title": "Contact",
+      "subtitle": "Got a Problem!",
+      "subdescription": "Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work.",
+      "subAnecdote": "Need a Frontend developer?",
+      "subAnecdoteContact": "Contact me!",
+      "placeholder": {
+        "name": "Your name",
+        "mail": "Your email",
+        "message": "Your message"
+      },
+      "validation": {
+        "name": "Your name is required",
+        "mail": "Your email is required",
+        "message": "Your message is empty"
+      }
+    },
+    Portfolio: {
+    "information": "Explore a selection of my work here - Interact with projects to see my skills in action."
+    },
+    LandingPage: { 
+      "article": "I am",
+      "job": "FRONTEND DEVELOPER",
+      "scroll": "down"
+    },
     Links: [
       { "image": "github", path: 'https://github.com/Bormex' },
       { "image": "mail", path: 'https://github.com/Bormex' },
@@ -63,6 +104,7 @@ export class DataService {
       }
     ], 
     AboutMe: {
+      "title": "About Me",
       "description": "I started programming because I find it fascinating how you can use code to create your own solutions and automate processes. My first steps were with Bash scripts in Linux to create automatic backups for game servers. I quickly realized the possibilities programming opens up. The freedom to turn creative ideas into functional applications and to constantly discover new technologies continues to motivate me to develop my skills.",
       "subpoints": [
       {
@@ -81,97 +123,134 @@ export class DataService {
     Comments: [
       {
         "author": "Stephen",
-        "comment": "Was ein guter!!!",
+        "comment": "What a great men!!!",
         "image": "path"
       },
       {
         "author": "Dieter",
-        "comment": "Er macht sehr gute Arbeit!!!",
+        "comment": "He does greate work!!!",
         "image": "path"
       },
       {
         "author": "Michel",
-        "comment": "Einfach top Kerl!",
+        "comment": "Pure good guy!",
         "image": "path"
       }
     ]
   };
+
   await: any;
+
 
   getData(para: string) {
 
     if (para == "de") {
 
-      this.getDeJson().then((data) =>
-        data.Projects.forEach((projectDeVersion: any) => {
-          this.jsonData.Projects.forEach(project => {
-            project.description = '';
-            project.description = projectDeVersion.description;
-          });
-        })
-      );
+      this.translatePrjctDescDE();
 
-      this.getDeJson().then((data) =>
-        data.AboutMe.subpoints.forEach((projectDeVersion: any) => {          
-          this.jsonData.AboutMe.subpoints.forEach(project => {
-            project.description = '';
-            project.description = projectDeVersion.description;
-          });
-          this.jsonData.AboutMe.description = '';
-          this.jsonData.AboutMe.description = data.AboutMe.description;
-        })
-      );
+      this.translateAboutMeDE();
+      
+      this.translateUserCommentsDE();
 
-      this.jsonData.Comments.forEach(project => {
-        console.log(project.comment);
-        project.comment = '';
-        this.getDeJson().then((data) =>
-          data.Comments.forEach((projectEnVersion: any) => {
-            
-            project.comment = projectEnVersion.comment;
-          })
-        );
+
+      // übersetzung landingpage
+      this.getDeJson().then((data) => {
+        this.jsonData.LandingPage.article = data.LandingPage.article;
+        this.jsonData.LandingPage.job = data.LandingPage.job;
+        this.jsonData.LandingPage.scroll = data.LandingPage.scroll;
+
+        this.jsonData.NavBar.aboutMe = data.NavBar.aboutMe;
+        this.jsonData.NavBar.skills =  data.NavBar.skills;
+
+        this.jsonData.AboutMe.title = data.AboutMe.title;
+
+        this.jsonData.MySkills.title = data.MySkills.title;
+
+        this.jsonData.Portfolio.information = data.Portfolio.information;
+
+        this.jsonData.UpcommingProject.message = data.UpcommingProject.message;
+
+        // alle zu contact sektion
+        this.jsonData.Contact.title = data.Contact.title;
+        this.jsonData.Contact.subtitle = data.Contact.subtitle;
+        this.jsonData.Contact.subdescription = data.Contact.subdescription;
+        this.jsonData.Contact.subAnecdoteContact = data.Contact.subAnecdoteContact;
+        this.jsonData.Contact.subAnecdote = data.Contact.subAnecdote;
+        // alles zu placeholder in contact
+        this.jsonData.Contact.placeholder.name = data.Contact.placeholder.name;
+        this.jsonData.Contact.placeholder.mail = data.Contact.placeholder.mail;
+        this.jsonData.Contact.placeholder.message = data.Contact.placeholder.message;
+        // alles zu den validation in contact
+        this.jsonData.Contact.validation.name = data.Contact.validation.name;
+        this.jsonData.Contact.validation.mail = data.Contact.validation.mail;
+        this.jsonData.Contact.validation.message = data.Contact.validation.message;
+        // alles zum datenschutz checkbox link und text
+        this.jsonData.Checkbox.textBefore = data.Checkbox.textBefore;
+        this.jsonData.Checkbox.link = data.Checkbox.link;
+        this.jsonData.Checkbox.textAfter = data.Checkbox.textAfter;
+        
+        
+        
+        // Legal Notice
+        this.jsonData.Legalnotice = data.Legalnotice; 
+
       });
 
     }
 
     if (para == "en") {
 
-      this.getEnJson().then((data) =>
-        data.Projects.forEach((projectEnVersion: any) => {
-          this.jsonData.Projects.forEach(project => {
-            project.description = '';
-            project.description = projectEnVersion.description;
-          });
-        })
-      );
+      this.translatePrjctDescEN();
+      
+      this.translateAboutMeEN();
 
-      this.getEnJson().then((data) =>
-        data.AboutMe.subpoints.forEach((projectEnVersion: any) => {          
-          this.jsonData.AboutMe.subpoints.forEach(project => {
-            project.description = '';
-            project.description = projectEnVersion.description;
-          });
-          this.jsonData.AboutMe.description = '';
-          this.jsonData.AboutMe.description = data.AboutMe.description;
-        })
-      );
+      
+      this.translateUserCommentsEN();
+    
 
-      this.jsonData.Comments.forEach(project => {
-        console.log(project.comment);
-        project.comment = '';
-        this.getEnJson().then((data) =>
-          data.Comments.forEach((projectEnVersion: any) => {
-            
-            project.comment = projectEnVersion.comment;
-          })
-        );
+
+       // übersetzung landingpage
+      this.getEnJson().then((data) => {
+        this.jsonData.LandingPage.article = data.LandingPage.article;
+        this.jsonData.LandingPage.job = data.LandingPage.job;
+        this.jsonData.LandingPage.scroll = data.LandingPage.scroll;
+
+        this.jsonData.NavBar.aboutMe = data.NavBar.aboutMe;
+        this.jsonData.NavBar.skills =  data.NavBar.skills;
+
+        this.jsonData.AboutMe.title = data.AboutMe.title;
+
+        this.jsonData.MySkills.title = data.MySkills.title; 
+
+        this.jsonData.Portfolio.information = data.Portfolio.information;
+
+        this.jsonData.UpcommingProject.message = data.UpcommingProject.message;
+
+        //alle zu contact sektion
+        this.jsonData.Contact.title = data.Contact.title;
+        this.jsonData.Contact.subtitle = data.Contact.subtitle;
+        this.jsonData.Contact.subdescription = data.Contact.subdescription;
+        this.jsonData.Contact.subAnecdoteContact = data.Contact.subAnecdoteContact;
+        this.jsonData.Contact.subAnecdote = data.Contact.subAnecdote;
+        // alles zu placeholder in contact
+        this.jsonData.Contact.placeholder.name = data.Contact.placeholder.name;
+        this.jsonData.Contact.placeholder.mail = data.Contact.placeholder.mail;
+        this.jsonData.Contact.placeholder.message = data.Contact.placeholder.message;
+        // alles zu den validation in contact
+        this.jsonData.Contact.validation.name = data.Contact.validation.name;
+        this.jsonData.Contact.validation.mail = data.Contact.validation.mail;
+        this.jsonData.Contact.validation.message = data.Contact.validation.message;
+        // alles zum datenschutz checkbox link und text
+        this.jsonData.Checkbox.textBefore = data.Checkbox.textBefore;
+        this.jsonData.Checkbox.link = data.Checkbox.link;
+        this.jsonData.Checkbox.textAfter = data.Checkbox.textAfter;
+
+        // Legal Notice
+        this.jsonData.Legalnotice = data.Legalnotice; 
       });
-      
-      
+
     }
   }
-
 
   getEnJson() {
     return fetch('./assets/i18n/en.json')
@@ -192,7 +271,85 @@ export class DataService {
     return this.jsonData;
   }
 
-  de = {
-    description: "Basierend auf der PokéAPI, eine einfache Bibliothek, die Pokémon-Informationen bereitstellt und katalogisiert."
+  translateAboutMeDE() {
+    // Übersetzung About Me
+    this.jsonData.AboutMe.subpoints.forEach(subpoint => {
+      subpoint.description = '';
+    });
+    this.getDeJson().then((data) =>
+      data.AboutMe.subpoints.forEach((subpointDeVersion: any, index : number) => {  
+        this.jsonData.AboutMe.subpoints[index].description = subpointDeVersion.description;  
+        this.jsonData.AboutMe.description = '';
+        this.jsonData.AboutMe.description = data.AboutMe.description;    
+      })
+    );
   }
+  
+  translatePrjctDescDE() {
+    //Übersetzung der Beschreibung im Projekt
+    this.jsonData.Projects.forEach(project => {
+      project.description = '';
+    });
+    this.getDeJson().then((data) =>
+      data.Projects.forEach((projectDeVersion: any, index : number) => {
+        this.jsonData.Projects[index].description = projectDeVersion.description;
+      })
+    );
+  }
+
+  translateUserCommentsDE() {
+    // das ist eine funktion!
+    this.jsonData.Comments.forEach(comments => {
+      comments.comment = '';
+    });
+    this.getDeJson().then((data) =>
+      data.Comments.forEach((projectDeVersion: any, index: number) => {
+        this.jsonData.Comments[index].comment = projectDeVersion.comment;
+      })
+    );
+  }
+
+  translateUserCommentsEN() {
+    // das ist eine funktion!
+    this.jsonData.Comments.forEach(comments => {
+      comments.comment = '';
+    });
+    this.getEnJson().then((data) =>
+      data.Comments.forEach((projectDeVersion: any, index: number) => {
+        this.jsonData.Comments[index].comment = projectDeVersion.comment;
+      })
+    );
+  }
+
+  translatePrjctDescEN() {
+    //Übersetzung der Beschreibung im Projekt
+    this.jsonData.Projects.forEach(project => {
+      project.description = '';
+    });
+    this.getEnJson().then((data) =>
+      data.Projects.forEach((projectDeVersion: any, index : number) => {
+        this.jsonData.Projects[index].description = projectDeVersion.description;
+      })
+    );
+  }
+
+  translateAboutMeEN() {
+    // Übersetzung About Me
+    this.jsonData.AboutMe.subpoints.forEach(subpoint => {
+      subpoint.description = '';
+    });
+    this.getEnJson().then((data) =>
+      data.AboutMe.subpoints.forEach((subpointEnVersion: any, index : number) => {  
+        this.jsonData.AboutMe.subpoints[index].description = subpointEnVersion.description;  
+        this.jsonData.AboutMe.description = '';
+        this.jsonData.AboutMe.description = data.AboutMe.description;    
+      })
+    );
+  }
+
+
+
+
+
+
 }

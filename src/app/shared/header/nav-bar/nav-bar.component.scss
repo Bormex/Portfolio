@@ -56,11 +56,11 @@
                 border-color: $purple;
                 background-color: $purple;
             }
-
-            &:active {
-                font-weight: 700;
-                background-color: $green;
-            }
+    }
+    
+    .active {
+        font-weight: 700;
+        background-color: $green;
     }
 }
 

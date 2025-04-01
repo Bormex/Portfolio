@@ -16,13 +16,16 @@ import { PortfolioProjectsComponent } from '../../../main-content/portfolio-proj
   styleUrl: './nav-bar.component.scss'
 })
 export class NavBarComponent {
-  en!: string;
-
   constructor(private router: Router, private route: ActivatedRoute, private dataService: DataService) {}
 
+  isActive: boolean | undefined;
+  en!: string;
   landingpage:boolean = true;
+  daten: any;
 
   ngOnInit() {
+    this.daten = this.dataService.getJsonData();
+
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
@@ -35,6 +38,15 @@ export class NavBarComponent {
   
   changeLanguage(para:string) {
    this.dataService.getData(para);
+   this.changeLanguageBtn(para);
+  }
+
+  changeLanguageBtn(para: string) {
+    if (para == 'de') {
+      this.isActive = true;
+     } else {
+      this.isActive = false;
+     }
   }
 
 

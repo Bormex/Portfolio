@@ -1,4 +1,51 @@
 {
+    "Legalnotice": "Rechtlicher Hinweis",
+    "Checkbox": {
+        "textBefore": "Ich habe die",
+        "link": "Datenschutzrichtlinie",
+        "textAfter": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu."
+    },
+    "UpcommingProject": {
+        "message": "... ERSCHEINT BALD ..."
+    },
+      
+    "NavBar": {
+        "aboutMe": "Über Mich",
+        "skills": "Fertigkeiten"
+    },
+
+    "MySkills": {
+        "title": "Meine Fertigkeiten"
+    },
+
+    "Contact": {
+        "title": "Kontakt",
+        "subtitle": "Hast ein Problem?",
+        "subdescription": "Bla Bla blaa bla blaa blaa blaa",
+        "subAnecdote": "Sie suchen einen Frontend Entwickler?",
+        "subAnecdoteContact": "Kontaktieren Sie mich!",
+        "placeholder": {
+          "name": "Dein Name",
+          "mail": "Deine Email",
+          "message": "Deine Nachricht"
+        },
+        "validation": {
+            "name": "Dein Name fehlt",
+            "mail": "Deine Email fehlt",
+            "message": "Deine Nachricht ist leer"
+        }
+    },
+    
+    "Portfolio": {
+        "information": "Erkunde eine Auswahl meiner Arbeiten – Interagiere mit den Projekten, um meine Fähigkeiten in Aktion zu sehen."
+    },
+
+    "LandingPage": { 
+      "article": "Ich bin",
+      "job": "FRONTEND ENTWICKLER",
+      "scroll": "runter"
+    },
+
     "Projects": [
       {
         "name": "PokeDex",
@@ -19,6 +66,7 @@
     ],
   
     "AboutMe": {
+      "title": "Über Mich",
       "description": "Ich begann mit dem Programmieren, weil ich es faszinierend finde, wie man mit Code eigene Lösungen erstellen und Prozesse automatisieren kann. Meine ersten Schritte waren Bash-Skripte unter Linux, um automatische Backups für Spielserver zu erstellen. Schnell erkannte ich die Möglichkeiten, die das Programmieren eröffnet. Die Freiheit, kreative Ideen in funktionale Anwendungen zu verwandeln und ständig neue Technologien zu entdecken, motiviert mich, meine Fähigkeiten weiterzuentwickeln.",
       "subpoints": [
       {

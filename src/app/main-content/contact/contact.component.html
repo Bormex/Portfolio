@@ -1,37 +1,35 @@
 <div class="contact">
     <div class="contactTitle">
         <hr />
-        <h1>Contact</h1>
+        <h1>{{daten.Contact.title}}</h1>
     </div>
 
     <div class="contact-fields">
         <div class="contact-field-left">
-            <h2>Got a Problem!</h2>
+            <h2>{{daten.Contact.subtitle}}</h2>
             <div>
                 <p>
-                    Encourage people to contact you and describe what role you are
-                    interested in. Show that you will add value to their projects through
-                    your work.
+                    {{daten.Contact.subdescription}}
                 </p>
-                <p>Need a Frontend developer? <strong>Contact me!</strong></p>
+                <p>{{daten.Contact.subAnecdote}} <strong>{{daten.Contact.subAnecdoteContact}}</strong></p>
             </div>
         </div>
 
         <form  (ngSubmit)="onSubmit()">
 
             <div class="inputDiv">
-                <input type="text" id="name" name="name" class="contact-input hover" (click)="checkNameInput(inputName = true)" (input)="checkNameInput(inputName = true)" [(ngModel)]="contactData.name" [ngClass]="{'inputWarning' : inputName, 'inputAcception' : inputNameOk}" type="text" placeholder="Your name" />
-                <p style="display: none;" [ngClass]="{'validationWarning' : inputName}">Your name is required</p>
+                <input type="text" id="name" name="name" class="contact-input hover" (click)="checkNameInput(inputName = true)" (input)="checkNameInput(inputName = true)" [(ngModel)]="contactData.name" [ngClass]="{'inputWarning' : inputName, 'inputAcception' : inputNameOk}" type="text" placeholder="{{daten.Contact.placeholder.name}}" />
+                <p style="display: none;" [ngClass]="{'validationWarning' : inputName}">{{daten.Contact.validation.name}}</p>
             </div>
 
             <div class="inputDiv">
-                <input type="email" id="email" name="email" class="contact-input hover" (click)="checkEmailInput(inputMail = true)" (input)="checkEmailInput(inputMail = true)" [(ngModel)]="contactData.email" [ngClass]="{'inputWarning' : inputMail, 'inputAcception' : inputEmailOk}" type="text" placeholder="Your email" />
-                <p style="display: none;" [ngClass]="{'validationWarning' : inputMail}">Your email is required</p>
+                <input type="email" id="email" name="email" class="contact-input hover" (click)="checkEmailInput(inputMail = true)" (input)="checkEmailInput(inputMail = true)" [(ngModel)]="contactData.email" [ngClass]="{'inputWarning' : inputMail, 'inputAcception' : inputEmailOk}" type="text" placeholder="{{daten.Contact.placeholder.mail}}" />
+                <p style="display: none;" [ngClass]="{'validationWarning' : inputMail}">{{daten.Contact.validation.mail}}</p>
             </div>
 
             <div class="inputDiv">
-                <textarea type="message" id="message" name="text" class="hover contact-input" (click)="checkMsgInput(inputMessage = true)" (input)="checkMsgInput(inputMessage = true)" [(ngModel)]="contactData.message" [ngClass]="{'inputWarning' : inputMessage, 'inputAcception' : inputMessageOk}" style="background-position: top right !important;"  rows="14" cols="10" wrap="soft" placeholder="Your massage" ></textarea>
-                <p style="display: none;" [ngClass]="{'validationWarning' : inputMessage}">Your message is empty</p>
+                <textarea type="message" id="message" name="text" class="hover contact-input" (click)="checkMsgInput(inputMessage = true)" (input)="checkMsgInput(inputMessage = true)" [(ngModel)]="contactData.message" [ngClass]="{'inputWarning' : inputMessage, 'inputAcception' : inputMessageOk}" style="background-position: top right !important;"  rows="14" cols="10" wrap="soft" placeholder="{{daten.Contact.placeholder.message}}" ></textarea>
+                <p style="display: none;" [ngClass]="{'validationWarning' : inputMessage}">{{daten.Contact.validation.message}}</p>
             </div>
 
             <div class="contact-message">
@@ -39,9 +37,9 @@
                 <label class="container">
                     <mat-checkbox class="matBox" #myCheckbox (input)="checkValue(myCheckbox)"></mat-checkbox>
                     <p>
-                        I've read the
-                        <a href="privacyPolicy" class="privacyPolicyBtn">privacy policy</a>
-                        and agree to the processing of my data as outlined.
+                        {{daten.Checkbox.textBefore}}
+                        <a href="privacyPolicy" class="privacyPolicyBtn">{{daten.Checkbox.link}}</a>
+                        {{daten.Checkbox.textAfter}}
                     </p>
                 </label>
                 <p style="display: none;" [ngClass]="{'validationWarning' : checkboxOk}">Please accept the privacy policy.</p>

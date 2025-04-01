@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 export class AboutMeComponent {
   constructor(private dataService: DataService) {}
   daten: any;
+  
   ngOnInit() {
     this.daten = this.dataService.getJsonData();
   }

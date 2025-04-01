@@ -6,7 +6,7 @@
     </div>
 
     <p>
-        Explore a selection of my work here - Interact with projects to see my skills in action.
+        {{daten.Portfolio.information}}
     </p>
 
     <div class="projectContainers">
@@ -15,7 +15,7 @@
             <div class="project" [ngStyle]="{'flex-direction' : index % 2 ? 'row-reverse' : ''}">
                 @if (last) {
                     <div class="coming-soon">
-                        ... COMING SOON ...
+                        {{daten.UpcommingProject.message}}
                     </div>
                 }
                 <div class="projectImage" [ngStyle]="{'filter': last ? 'blur(1px) brightness(0.5) opacity(0.5)' : ''}">

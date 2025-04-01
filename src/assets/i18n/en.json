@@ -1,4 +1,51 @@
 {
+  "Legalnotice": "Legal Notice",
+  "Checkbox": {
+    "textBefore": "I've read the ",
+    "link": "privacy policy",
+    "textAfter": "and agree to the processing of my data as outlined."
+  },
+  "UpcommingProject": {
+    "message": "... COMING SOON ..."
+  },
+
+  "NavBar": {
+    "aboutMe": "About Me",
+    "skills": "Skills"
+  },
+
+  "MySkills": {
+    "title": "My Skills"
+  },
+  
+  "Contact": {
+    "title": "Contact",
+    "subtitle": "Got a Problem!",
+    "subdescription": "Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work.",
+    "subAnecdote": "Need a Frontend developer?",
+    "subAnecdoteContact": "Contact me!",
+    "placeholder": {
+      "name": "Your name",
+      "mail": "Your email",
+      "message": "Your message"
+    },
+    "validation": {
+      "name": "Your name is required",
+      "mail": "Your email is required",
+      "message": "Your message is empty"
+    }
+  },
+
+  "Portfolio": {
+    "information": "Explore a selection of my work here - Interact with projects to see my skills in action."
+  },
+
+  "LandingPage": { 
+    "article": "I am",
+    "job": "FRONTEND DEVELOPER",
+    "scroll": "down"
+  },
+
   "Projects": [
     {
       "name": "PokeDex",
@@ -19,6 +66,7 @@
   ],
 
   "AboutMe": {
+    "title": "About Me",
     "description": "I started programming because I find it fascinating how you can use code to create your own solutions and automate processes. My first steps were with Bash scripts in Linux to create automatic backups for game servers. I quickly realized the possibilities programming opens up. The freedom to turn creative ideas into functional applications and to constantly discover new technologies continues to motivate me to develop my skills.",
     "subpoints": [
     {
@@ -31,6 +79,7 @@
       "description": "I approach problems creatively and analytically, exploring different approaches to solving problems and then systematically choosing the most effective one. I persist and learn from every challenge to continuously improve. Collaborating with others helps me integrate different perspectives and find the best solution."
     }]
   },
+
   "Comments": [
     {
       "author": "Stephen",

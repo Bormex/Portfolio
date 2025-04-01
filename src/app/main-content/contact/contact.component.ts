@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { DataService } from '../../data.service';
 
 @Component({
   selector: 'app-contact',
@@ -11,6 +12,13 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
+  constructor(private dataService: DataService) {}
+  daten: any;
+    
+  ngOnInit() {
+    this.daten = this.dataService.getJsonData();
+  }
+  
   inputNameOk: boolean = false;
   inputEmailOk: boolean = false;
   inputMessageOk: boolean = false;
