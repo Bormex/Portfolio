@@ -11,11 +11,11 @@
 
     <div class="projectContainers">
         <img src="./../../../assets/img/shapes/Purple_shadow_portfolio.svg" class="project-shape" alt="">
-        @for (Project of daten.Projects; track daten.Projects; let index = $index; let last = $last) {
+        @for (Project of daten.Portfolio.Projects; track daten.Portfolio.Projects; let index = $index; let last = $last) {
             <div class="project" [ngStyle]="{'flex-direction' : index % 2 ? 'row-reverse' : ''}">
                 @if (last) {
                     <div class="coming-soon">
-                        {{daten.UpcommingProject.message}}
+                        {{daten.UpcommingProject}}
                     </div>
                 }
                 <div class="projectImage" [ngStyle]="{'filter': last ? 'blur(1px) brightness(0.5) opacity(0.5)' : ''}">
@@ -27,7 +27,7 @@
                             {{Project.name}}
                         </span>
                         <div class="projectDescription" [ngStyle]="{'justify-content' : index % 2 ? 'flex-end' : ''}">
-                            @for (language of daten.Projects[index].languages; track $index; let last = $last) {
+                            @for (language of daten.Portfolio.Projects[index].languages; track $index; let last = $last) {
                                 @switch (true) {
                                     @case (last) {
                                         <p>

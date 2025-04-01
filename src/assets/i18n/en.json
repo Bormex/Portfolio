@@ -1,21 +1,10 @@
 {
   "Legalnotice": "Legal Notice",
-  "Checkbox": {
-    "textBefore": "I've read the ",
-    "link": "privacy policy",
-    "textAfter": "and agree to the processing of my data as outlined."
-  },
-  "UpcommingProject": {
-    "message": "... COMING SOON ..."
-  },
+  "UpcommingProject": "... COMING SOON ...",
 
   "NavBar": {
     "aboutMe": "About Me",
     "skills": "Skills"
-  },
-
-  "MySkills": {
-    "title": "My Skills"
   },
   
   "Contact": {
@@ -33,11 +22,38 @@
       "name": "Your name is required",
       "mail": "Your email is required",
       "message": "Your message is empty"
+    },
+    "Checkbox": {
+      "textBefore": "I've read the ",
+      "link": "privacy policy",
+      "textAfter": "and agree to the processing of my data as outlined."
     }
   },
 
   "Portfolio": {
-    "information": "Explore a selection of my work here - Interact with projects to see my skills in action."
+    "information": "Explore a selection of my work here - Interact with projects to see my skills in action.",
+    "MySkills": {
+      "title": "My Skills"
+    },
+
+    "Projects": [
+      {
+        "name": "PokeDex",
+        "description": "Based on the PokéAPI, a simple library that provides and catalogues Pokémon information."
+      },
+      {
+        "name": "Join",
+        "description": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories."
+      },
+      {
+        "name": "El Pollo Loco",
+        "description": "El Pollo Loco is a run-and-jump game where players face chickens as enemies, with a rooster as the final boss. The game features fast-paced action, challenging obstacles, and a fun, quirky theme centered around poultry."
+      },
+      {
+        "name": "DaBubble",
+        "description": "A project I created to improve teamwork and project management."
+      }
+    ]
   },
 
   "LandingPage": { 
@@ -45,25 +61,6 @@
     "job": "FRONTEND DEVELOPER",
     "scroll": "down"
   },
-
-  "Projects": [
-    {
-      "name": "PokeDex",
-      "description": "Based on the PokéAPI, a simple library that provides and catalogues Pokémon information."
-    },
-    {
-      "name": "Join",
-      "description": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories."
-    },
-    {
-      "name": "El Pollo Loco",
-      "description": "El Pollo Loco is a run-and-jump game where players face chickens as enemies, with a rooster as the final boss. The game features fast-paced action, challenging obstacles, and a fun, quirky theme centered around poultry."
-    },
-    {
-      "name": "DaBubble",
-      "description": "A project I created to improve teamwork and project management."
-    }
-  ],
 
   "AboutMe": {
     "title": "About Me",

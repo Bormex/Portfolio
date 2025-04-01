@@ -1,21 +1,11 @@
 {
     "Legalnotice": "Rechtlicher Hinweis",
-    "Checkbox": {
-        "textBefore": "Ich habe die",
-        "link": "Datenschutzrichtlinie",
-        "textAfter": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu."
-    },
-    "UpcommingProject": {
-        "message": "... ERSCHEINT BALD ..."
-    },
+    "UpcommingProject": "... ERSCHEINT BALD ...",
+    
       
     "NavBar": {
         "aboutMe": "Über Mich",
         "skills": "Fertigkeiten"
-    },
-
-    "MySkills": {
-        "title": "Meine Fertigkeiten"
     },
 
     "Contact": {
@@ -33,11 +23,38 @@
             "name": "Dein Name fehlt",
             "mail": "Deine Email fehlt",
             "message": "Deine Nachricht ist leer"
+        },
+        "Checkbox": {
+            "textBefore": "Ich habe die",
+            "link": "Datenschutzrichtlinie",
+            "textAfter": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu."
         }
     },
     
     "Portfolio": {
-        "information": "Erkunde eine Auswahl meiner Arbeiten – Interagiere mit den Projekten, um meine Fähigkeiten in Aktion zu sehen."
+        "information": "Erkunde eine Auswahl meiner Arbeiten – Interagiere mit den Projekten, um meine Fähigkeiten in Aktion zu sehen.",
+        "MySkills": {
+            "title": "Meine Fertigkeiten"
+        },
+
+        "Projects": [
+          {
+            "name": "PokeDex",
+            "description": "Basierend auf der PokéAPI, eine einfache Bibliothek, die Pokémon-Informationen bereitstellt und katalogisiert."
+          },
+          {
+            "name": "Join",
+            "description": "Ein Task-Manager, inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben mit Drag-and-Drop-Funktionen, weise Benutzer und Kategorien zu."
+          },
+          {
+            "name": "El Pollo Loco",
+            "description": "El Pollo Loco ist ein Jump-and-Run-Spiel, in dem Spieler gegen Hühner als Gegner antreten und ein Hahn der Endgegner ist. Das Spiel bietet schnelle Action, herausfordernde Hindernisse und ein lustiges, skurriles Thema rund um Geflügel."
+          },
+          {
+            "name": "DaBubble",
+            "description": "Ein Projekt, das ich entwickelt habe, um Teamarbeit und Projektmanagement zu verbessern."
+          }
+        ]
     },
 
     "LandingPage": { 
@@ -45,25 +62,6 @@
       "job": "FRONTEND ENTWICKLER",
       "scroll": "runter"
     },
-
-    "Projects": [
-      {
-        "name": "PokeDex",
-        "description": "Basierend auf der PokéAPI, eine einfache Bibliothek, die Pokémon-Informationen bereitstellt und katalogisiert."
-      },
-      {
-        "name": "Join",
-        "description": "Ein Task-Manager, inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben mit Drag-and-Drop-Funktionen, weise Benutzer und Kategorien zu."
-      },
-      {
-        "name": "El Pollo Loco",
-        "description": "El Pollo Loco ist ein Jump-and-Run-Spiel, in dem Spieler gegen Hühner als Gegner antreten und ein Hahn der Endgegner ist. Das Spiel bietet schnelle Action, herausfordernde Hindernisse und ein lustiges, skurriles Thema rund um Geflügel."
-      },
-      {
-        "name": "DaBubble",
-        "description": "Ein Projekt, das ich entwickelt habe, um Teamarbeit und Projektmanagement zu verbessern."
-      }
-    ],
   
     "AboutMe": {
       "title": "Über Mich",
@@ -79,6 +77,7 @@
         "description": "Ich gehe Probleme kreativ und analytisch an, erkunde verschiedene Lösungsansätze und wähle dann systematisch die effektivste aus. Ich bleibe hartnäckig und lerne aus jeder Herausforderung, um mich kontinuierlich zu verbessern. Die Zusammenarbeit mit anderen hilft mir, verschiedene Perspektiven zu integrieren und die beste Lösung zu finden."
       }]
     },
+
     "Comments": [
       {
         "author": "Stephen",

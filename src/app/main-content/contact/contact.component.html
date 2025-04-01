@@ -37,9 +37,9 @@
                 <label class="container">
                     <mat-checkbox class="matBox" #myCheckbox (input)="checkValue(myCheckbox)"></mat-checkbox>
                     <p>
-                        {{daten.Checkbox.textBefore}}
-                        <a href="privacyPolicy" class="privacyPolicyBtn">{{daten.Checkbox.link}}</a>
-                        {{daten.Checkbox.textAfter}}
+                        {{daten.Contact.Checkbox.textBefore}}
+                        <a href="privacyPolicy" class="privacyPolicyBtn">{{daten.Contact.Checkbox.link}}</a>
+                        {{daten.Contact.Checkbox.textAfter}}
                     </p>
                 </label>
                 <p style="display: none;" [ngClass]="{'validationWarning' : checkboxOk}">Please accept the privacy policy.</p>
