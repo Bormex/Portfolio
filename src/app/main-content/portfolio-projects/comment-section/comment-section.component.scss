@@ -6,7 +6,7 @@
     gap: 32px;
     position: relative;
     width: 100%;
-    padding: $paddingTB $paddingLR;
+    padding: var(--paddingTB) var(--paddingLR);
     padding-top: unset;
     padding-right: unset;
     padding-bottom: unset;
@@ -15,12 +15,10 @@
         display: flex;
         gap: 44px;
     }
-
     >:nth-child(2) {
         display: flex;
         justify-content: center;
     }
-
     >img {
         position: absolute;
         width: fit-content;

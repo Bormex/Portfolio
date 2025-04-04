@@ -3,7 +3,7 @@
 .mySkills-section {
     width: 100%;
     max-width: 1440px;
-    padding: 124px 100px;
+    padding: var(--paddingTB) var(--paddingLR);
     padding-bottom: unset;
     padding-right: unset;
     position: relative;
@@ -16,7 +16,7 @@
     justify-content: space-between;
     max-width: 1440px;
     z-index: 3;
-    padding: $paddingTB $paddingLR;
+    padding: var(--paddingTB) var(--paddingLR);
     padding-bottom: unset;
     padding-right: unset;
 }
@@ -24,7 +24,7 @@
 .aboutMe-left {
     display: flex;
     flex-direction: column;
-    gap: $gapTitle;
+    gap: var(--gapTitle);
     width: 40%;
     h1 {
         font-size: 90px;
@@ -48,7 +48,6 @@
     display: flex;
     align-items: flex-start;
     gap: 16px;
-
     img {
         transition: transform 75ms ease-out;
         &:hover {

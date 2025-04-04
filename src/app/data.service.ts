@@ -6,6 +6,22 @@ import { Injectable } from '@angular/core';
 export class DataService {
   constructor() {}
 
+  getEnJson() {
+    return fetch('./assets/i18n/en.json')
+      .then((response) => response.json())
+      .then((data) => data);
+  }
+
+  getDeJson() {
+    return fetch('./assets/i18n/de.json')
+      .then((response) => response.json())
+      .then((data) => data);
+  }
+
+  getJsonData() {
+    return this.jsonData;
+  }
+
   jsonData = {
     Legalnotice: 'Legal Notice',
     UpcommingProject: '... COMING SOON ...',
@@ -64,7 +80,7 @@ export class DataService {
         {
           name: 'El Pollo Loco',
           description:
-            'El Pollo Loco is a run-and-jump game where players face chickens as enemies, with a rooster as the final boss. The game features fast-paced action, challenging obstacles, and a fun, quirky theme centered around poultry',
+            'El Pollo Loco is a run-and-jump game where players face chickens as enemies, with a rooster as the final boss.',
           languages: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
           image: './../../../assets/img/notebook_Pollo_loco.png',
           livetest: 'https://YouTube.de',
@@ -114,22 +130,22 @@ export class DataService {
     AboutMe: {
       title: 'About Me',
       description:
-        'I started programming because I find it fascinating how you can use code to create your own solutions and automate processes. My first steps were with Bash scripts in Linux to create automatic backups for game servers. I quickly realized the possibilities programming opens up. The freedom to turn creative ideas into functional applications and to constantly discover new technologies continues to motivate me to develop my skills.',
+        'I started programming because I find it fascinating how you can use code to create your own solutions and automate processes.',
       subpoints: [
         {
           image: './../../../assets/img/icons/location.svg',
           description:
-            "I'm from Lutherstadt Wittenberg and enjoy working on-site so I can interact with colleagues face-to-face. However, I also see working from home as a great opportunity for more variety and flexibility.",
+            "I'm from Lutherstadt Wittenberg and enjoy working on-site so I can interact with colleagues face-to-face.",
         },
         {
           image: './../../../assets/img/icons/bulb.svg',
           description:
-            "I'm very open to new technologies and always motivated to develop my skills. The IT industry is constantly changing, and I find it exciting to keep learning and discovering innovative solutions.",
+            "I'm very open to new technologies and always motivated to develop my skills.",
         },
         {
           image: './../../../assets/img/icons/puzzle.svg',
           description:
-            'I approach problems creatively and analytically, exploring different approaches to solving problems and then systematically choosing the most effective one. I persist and learn from every challenge to continuously improve. Collaborating with others helps me integrate different perspectives and find the best solution.',
+            'I approach problems creatively and analytically, exploring different approaches to solving problems and then systematically choosing the most effective one.',
         },
       ],
     },
@@ -158,136 +174,7 @@ export class DataService {
     this.translateAboutMe(para);
     this.translatePageElements(para);
   }
-
-  getEnJson() {
-    return fetch('./assets/i18n/en.json')
-      .then((response) => response.json())
-      .then((data) => data);
-  }
-
-  getDeJson() {
-    return fetch('./assets/i18n/de.json')
-      .then((response) => response.json())
-      .then((data) => data);
-  }
-
-  getJsonData() {
-    return this.jsonData;
-  }
-
-  // übersetzung für comming soon
-  translateLastProj(data: { UpcommingProject: string }) {
-    this.jsonData.UpcommingProject = data.UpcommingProject;
-  }
-
-  // Legal Notice
-  translateLegalN(data: {
-    Legalnotice: string;
-    Portfolio: { information: string };
-    }) {
-    this.jsonData.Legalnotice = data.Legalnotice;
-    this.jsonData.Portfolio.information = data.Portfolio.information;
-  }
-
-  // translate titles about & skills
-  translateTitles(data: {
-    AboutMe: { title: string };
-    Portfolio: { MySkills: { title: string } };
-    }) {
-    // title about me
-    this.jsonData.AboutMe.title = data.AboutMe.title;
-    // title myskills
-    this.jsonData.Portfolio.MySkills.title = data.Portfolio.MySkills.title;
-  }
-
-  // translate navbar links
-  translateNav(data: { NavBar: { aboutMe: string; skills: string } }) {
-    this.jsonData.NavBar.aboutMe = data.NavBar.aboutMe;
-    this.jsonData.NavBar.skills = data.NavBar.skills;
-  }
-
-  // transalate job, scroll down, artikel i am
-  translateLandingP(data: {
-    LandingPage: { article: string; job: string; scroll: string };
-   }) {
-    this.jsonData.LandingPage.article = data.LandingPage.article;
-    this.jsonData.LandingPage.job = data.LandingPage.job;
-    this.jsonData.LandingPage.scroll = data.LandingPage.scroll;
-  }
-
-  // alles zu contact sektion
-  translateContactSec(data: { Contact: any }) {
-    this.translateContact(data);
-    this.translatePlaceholder(data);
-    this.translateVali(data);
-    this.translateCheckbox(data);
-  }
-
-  // alle tag elemente in contact bspw h1
-  translateContact(data: { Contact: any }) {
-    this.jsonData.Contact.title = data.Contact.title;
-    this.jsonData.Contact.subtitle = data.Contact.subtitle;
-    this.jsonData.Contact.subdescription = data.Contact.subdescription;
-    this.jsonData.Contact.subAnecdoteContact = data.Contact.subAnecdoteContact;
-    this.jsonData.Contact.subAnecdote = data.Contact.subAnecdote;
-  }
-
-  //placeholder
-  translatePlaceholder(data: { Contact: any }) {
-    this.jsonData.Contact.placeholder.name = data.Contact.placeholder.name;
-    this.jsonData.Contact.placeholder.mail = data.Contact.placeholder.mail;
-    this.jsonData.Contact.placeholder.message =
-      data.Contact.placeholder.message;
-  }
-
-  // validation in contact
-  translateVali(data: { Contact: any }) {
-    this.jsonData.Contact.validation.name = data.Contact.validation.name;
-    this.jsonData.Contact.validation.mail = data.Contact.validation.mail;
-    this.jsonData.Contact.validation.message = data.Contact.validation.message;
-  }
-
-  // checkbox link und text
-  translateCheckbox(data: { Contact: any }) {
-    this.jsonData.Contact.Checkbox.textBefore =
-      data.Contact.Checkbox.textBefore;
-    this.jsonData.Contact.Checkbox.link = data.Contact.Checkbox.link;
-    this.jsonData.Contact.Checkbox.textAfter = data.Contact.Checkbox.textAfter;
-  }
-
-  translatePageElements(para: string) {
-    this.translateDe(para);
-    this.translateEn(para);
-  }
-
-  // übersetzung aller einzelheiten ins englische
-  translateEn(para : string) {
-    if (para == 'en') {
-     this.getEnJson().then((data) => {
-       this.translateLandingP(data);
-       this.translateNav(data);
-       this.translateTitles(data);
-       this.translateLegalN(data);
-       this.translateLastProj(data);
-       this.translateContactSec(data);
-     });
-   }
-  }
-
-  // übersetzung aller einzelheiten ins deutsch
-  translateDe(para : string) {
-    if (para == 'de') {
-      this.getDeJson().then((data) => {
-        this.translateLandingP(data);
-        this.translateNav(data);
-        this.translateTitles(data);
-        this.translateLegalN(data);
-        this.translateLastProj(data);
-        this.translateContactSec(data);
-      });
-    }
-  }
-
+  
   // das ist eine funktion!
   translateUserComments(para: string) {
     this.jsonData.Comments.forEach((comments) => {
@@ -390,5 +277,118 @@ export class DataService {
       );
     }
   }
- 
+
+  // übersetzung für comming soon
+  translateLastProj(data: { UpcommingProject: string }) {
+    this.jsonData.UpcommingProject = data.UpcommingProject;
+  }
+
+  // Legal Notice
+  translateLegalN(data: {
+    Legalnotice: string;
+    Portfolio: { information: string };
+    }) {
+    this.jsonData.Legalnotice = data.Legalnotice;
+    this.jsonData.Portfolio.information = data.Portfolio.information;
+  }
+
+  // translate titles about & skills
+  translateTitles(data: {
+    AboutMe: { title: string };
+    Portfolio: { MySkills: { title: string } };
+    }) {
+    // title about me
+    this.jsonData.AboutMe.title = data.AboutMe.title;
+    // title myskills
+    this.jsonData.Portfolio.MySkills.title = data.Portfolio.MySkills.title;
+  }
+
+  // translate navbar links
+  translateNav(data: { NavBar: { aboutMe: string; skills: string } }) {
+    this.jsonData.NavBar.aboutMe = data.NavBar.aboutMe;
+    this.jsonData.NavBar.skills = data.NavBar.skills;
+  }
+
+  // transalate job, scroll down, artikel i am
+  translateLandingP(data: {
+    LandingPage: { article: string; job: string; scroll: string };
+   }) {
+    this.jsonData.LandingPage.article = data.LandingPage.article;
+    this.jsonData.LandingPage.job = data.LandingPage.job;
+    this.jsonData.LandingPage.scroll = data.LandingPage.scroll;
+  }
+
+  // alles zu contact sektion
+  translateContactSec(data: { Contact: any }) {
+    this.translateContact(data);
+    this.translatePlaceholder(data);
+    this.translateVali(data);
+    this.translateCheckbox(data);
+  }
+  
+
+  // alle tag elemente in contact bspw h1
+  translateContact(data: { Contact: any }) {
+    this.jsonData.Contact.title = data.Contact.title;
+    this.jsonData.Contact.subtitle = data.Contact.subtitle;
+    this.jsonData.Contact.subdescription = data.Contact.subdescription;
+    this.jsonData.Contact.subAnecdoteContact = data.Contact.subAnecdoteContact;
+    this.jsonData.Contact.subAnecdote = data.Contact.subAnecdote;
+  }
+
+  //placeholder
+  translatePlaceholder(data: { Contact: any }) {
+    this.jsonData.Contact.placeholder.name = data.Contact.placeholder.name;
+    this.jsonData.Contact.placeholder.mail = data.Contact.placeholder.mail;
+    this.jsonData.Contact.placeholder.message =
+      data.Contact.placeholder.message;
+  }
+
+  // validation in contact
+  translateVali(data: { Contact: any }) {
+    this.jsonData.Contact.validation.name = data.Contact.validation.name;
+    this.jsonData.Contact.validation.mail = data.Contact.validation.mail;
+    this.jsonData.Contact.validation.message = data.Contact.validation.message;
+  }
+
+  // checkbox link und text
+  translateCheckbox(data: { Contact: any }) {
+    this.jsonData.Contact.Checkbox.textBefore =
+      data.Contact.Checkbox.textBefore;
+    this.jsonData.Contact.Checkbox.link = data.Contact.Checkbox.link;
+    this.jsonData.Contact.Checkbox.textAfter = data.Contact.Checkbox.textAfter;
+  }
+
+  translatePageElements(para: string) {
+    this.translateDe(para);
+    this.translateEn(para);
+  }
+
+  // übersetzung aller einzelheiten ins englische
+  translateEn(para : string) {
+    if (para == 'en') {
+     this.getEnJson().then((data) => {
+       this.translateLandingP(data);
+       this.translateNav(data);
+       this.translateTitles(data);
+       this.translateLegalN(data);
+       this.translateLastProj(data);
+       this.translateContactSec(data);
+     });
+   }
+  }
+
+  // übersetzung aller einzelheiten ins deutsch
+  translateDe(para : string) {
+    if (para == 'de') {
+      this.getDeJson().then((data) => {
+        this.translateLandingP(data);
+        this.translateNav(data);
+        this.translateTitles(data);
+        this.translateLegalN(data);
+        this.translateLastProj(data);
+        this.translateContactSec(data);
+      });
+    }
+  } 
 }

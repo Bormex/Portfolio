@@ -3,12 +3,12 @@
 
 .portfolio {
     width: 100%;
-    max-width: $maxWidth;
+    max-width: var(--maxWidth);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: $gapTitle;
-    padding: $paddingTB 0;
+    gap: var(--gapTitle);
+    padding: var(--paddingTB) 0;
     padding-bottom: unset;
 }
 
@@ -22,18 +22,31 @@
         font-size: 90px;
         font-weight: 700;
     }
-    > hr:nth-child(1) {
-        border: none;
-        height: 4px;
-        width: $paddingLR;
-        background-color: $purple;
+    div:first-of-type {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        hr {
+            max-width: var(--paddingLR);
+            width: 100%;
+            border: none;
+            height: 4px;
+            background-color: $purple;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+        
     }
 
-    > hr:nth-child(3) {
-        border: none;
-        height: 4px;
-        width: calc(45% - $paddingLR - 32px);
-        background-color: $purple;
+    div:last-of-type {
+        width: 100%;
+        hr {
+            width: 100%;
+            border: none;
+            height: 4px;
+            background-color: $purple;
+        }
+        
     }
 }
 
@@ -76,7 +89,6 @@
     align-items: flex-start;
     gap: 35px;
     width: 50%;
-    
     >div:nth-child(1) {
         display: flex;
         flex-direction: column;
@@ -135,7 +147,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 0 $paddingLR;
+    padding: 0 var(--paddingLR);
     width: 100%;
 }
 

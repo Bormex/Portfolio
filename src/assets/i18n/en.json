@@ -47,7 +47,7 @@
       },
       {
         "name": "El Pollo Loco",
-        "description": "El Pollo Loco is a run-and-jump game where players face chickens as enemies, with a rooster as the final boss. The game features fast-paced action, challenging obstacles, and a fun, quirky theme centered around poultry."
+        "description": "El Pollo Loco is a run-and-jump game where players face chickens as enemies, with a rooster as the final boss."
       },
       {
         "name": "DaBubble",
@@ -64,16 +64,16 @@
 
   "AboutMe": {
     "title": "About Me",
-    "description": "I started programming because I find it fascinating how you can use code to create your own solutions and automate processes. My first steps were with Bash scripts in Linux to create automatic backups for game servers. I quickly realized the possibilities programming opens up. The freedom to turn creative ideas into functional applications and to constantly discover new technologies continues to motivate me to develop my skills.",
+    "description": "I started programming because I find it fascinating how you can use code to create your own solutions and automate processes.",
     "subpoints": [
     {
-      "description": "I'm from Lutherstadt Wittenberg and enjoy working on-site so I can interact with colleagues face-to-face. However, I also see working from home as a great opportunity for more variety and flexibility."
+      "description": "I'm from Lutherstadt Wittenberg and enjoy working on-site so I can interact with colleagues face-to-face."
     }, 
     {
-      "description": "I'm very open to new technologies and always motivated to develop my skills. The IT industry is constantly changing, and I find it exciting to keep learning and discovering innovative solutions."
+      "description": "I'm very open to new technologies and always motivated to develop my skills."
     },
     {
-      "description": "I approach problems creatively and analytically, exploring different approaches to solving problems and then systematically choosing the most effective one. I persist and learn from every challenge to continuously improve. Collaborating with others helps me integrate different perspectives and find the best solution."
+      "description": "I approach problems creatively and analytically, exploring different approaches to solving problems and then systematically choosing the most effective one."
     }]
   },
 

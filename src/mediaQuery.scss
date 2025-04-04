@@ -1,0 +1,33 @@
+
+
+@media (max-width: 1421px) {
+   .titleDiv-2 {
+    p:first-of-type {
+        font-size: 72px;
+    }
+
+    p:last-of-type {
+        font-size: 48px;
+    }
+   }
+}
+
+@media (max-width: 1210px) {
+    .titleDiv-2 {
+     p:first-of-type {
+         font-size: 72px;
+     }
+ 
+     p:last-of-type {
+         font-size: 48px;
+     }
+    }
+}
+
+@media (max-width: 1000px) {
+    :root {
+        --paddingLR: 50px;
+        --paddingTB: 64px;
+        --gapTitle: 40px;
+      }
+}

@@ -5,7 +5,7 @@
       
     "NavBar": {
         "aboutMe": "Über Mich",
-        "skills": "Fertigkeiten"
+        "skills": "Skills"
     },
 
     "Contact": {
@@ -34,7 +34,7 @@
     "Portfolio": {
         "information": "Erkunde eine Auswahl meiner Arbeiten – Interagiere mit den Projekten, um meine Fähigkeiten in Aktion zu sehen.",
         "MySkills": {
-            "title": "Meine Fertigkeiten"
+          "title": "Meine Skills"
         },
 
         "Projects": [
@@ -48,7 +48,7 @@
           },
           {
             "name": "El Pollo Loco",
-            "description": "El Pollo Loco ist ein Jump-and-Run-Spiel, in dem Spieler gegen Hühner als Gegner antreten und ein Hahn der Endgegner ist. Das Spiel bietet schnelle Action, herausfordernde Hindernisse und ein lustiges, skurriles Thema rund um Geflügel."
+            "description": "El Pollo Loco ist ein Jump-and-Run-Spiel, in dem Spieler gegen Hühner als Gegner antreten und ein Hahn der Endgegner ist."
           },
           {
             "name": "DaBubble",
@@ -65,16 +65,16 @@
   
     "AboutMe": {
       "title": "Über Mich",
-      "description": "Ich begann mit dem Programmieren, weil ich es faszinierend finde, wie man mit Code eigene Lösungen erstellen und Prozesse automatisieren kann. Meine ersten Schritte waren Bash-Skripte unter Linux, um automatische Backups für Spielserver zu erstellen. Schnell erkannte ich die Möglichkeiten, die das Programmieren eröffnet. Die Freiheit, kreative Ideen in funktionale Anwendungen zu verwandeln und ständig neue Technologien zu entdecken, motiviert mich, meine Fähigkeiten weiterzuentwickeln.",
+      "description": "Ich begann mit dem Programmieren, weil ich es faszinierend finde, wie man mit Code eigene Lösungen erstellen und Prozesse automatisieren kann.",
       "subpoints": [
       {
-        "description": "Ich komme aus der Lutherstadt Wittenberg und arbeite gerne vor Ort, um den direkten Austausch mit Kollegen zu haben. Dennoch sehe ich das Arbeiten von zu Hause aus als eine großartige Möglichkeit für mehr Abwechslung und Flexibilität."
+        "description": "Ich komme aus der Lutherstadt Wittenberg und arbeite gerne vor Ort, um den direkten Austausch mit Kollegen zu haben."
       }, 
       {
-        "description": "Ich bin sehr offen für neue Technologien und immer motiviert, meine Fähigkeiten weiterzuentwickeln. Die IT-Branche verändert sich ständig, und ich finde es spannend, kontinuierlich dazuzulernen und innovative Lösungen zu entdecken."
+        "description": "Ich bin sehr offen für neue Technologien und immer motiviert, meine Fähigkeiten weiterzuentwickeln."
       },
       {
-        "description": "Ich gehe Probleme kreativ und analytisch an, erkunde verschiedene Lösungsansätze und wähle dann systematisch die effektivste aus. Ich bleibe hartnäckig und lerne aus jeder Herausforderung, um mich kontinuierlich zu verbessern. Die Zusammenarbeit mit anderen hilft mir, verschiedene Perspektiven zu integrieren und die beste Lösung zu finden."
+        "description": "Ich gehe Probleme kreativ und analytisch an, erkunde verschiedene Lösungsansätze und wähle dann systematisch die effektivste aus."
       }]
     },
 

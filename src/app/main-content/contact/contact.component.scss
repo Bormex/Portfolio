@@ -3,21 +3,20 @@
 .contact {
     display: flex;
     flex-direction: column;
-    gap: $gapTitle;
+    gap: var(--gapTitle);
     width: 100%;
     max-width: 1440px;
-    padding: $paddingTB 0;
+    padding: var(--paddingTB) 0;
 }
 
 .contact-fields {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: $paddingTB $paddingLR;
+    padding: var(--paddingTB) var(--paddingLR);
     padding-top: unset;
     padding-bottom: unset;
     gap: 64px;
-
     >:nth-child(2) {
         display: flex;
         flex-direction: column;
@@ -25,7 +24,6 @@
         gap: 32px;
         width: 50%;
     }
-
     .contact-input {
         width: 100%;
         border: 1px solid $purple;
@@ -33,25 +31,19 @@
         padding: 15px 25px;
         outline: none;
         background: $background;
-       
         &::placeholder {
             color: white;
             position: relative;
             top: 0;
         }
-
         &:hover {
             border: 1px solid $green;
         }
-
         &:focus {
             border: 1px solid $red;
         }
-
     }
 }
-
-
 
 .contactTitle {
     display: flex;
@@ -76,7 +68,6 @@
     flex-direction: column;
     gap: 20px;
     width: 50%;
-    
     >div {
         display: flex;
         flex-direction: column;
@@ -85,7 +76,6 @@
             display: flex;
         }
     }
-
     h2 {
         font-size: 32px;
         font-weight: 700;
@@ -95,7 +85,6 @@
 .inputResponsiv {
     height: 202px;
 }
-
 
 .contact-message {
     display: flex;
@@ -131,7 +120,6 @@
     @include hover-padding(20px 40px, $purple);
 }
 
-
 .scrollUpDiv {
     width: 100%;
     display: flex;
@@ -157,7 +145,6 @@
             :nth-child(1) {
                 display: none;
             }
-
             :nth-child(2) {
                 display: flex;
             }
@@ -172,10 +159,6 @@
         background: #183771;
         border-radius: 100%;
     }
-}
-
-.checkBox {
-
 }
 
 .contact-shape {
@@ -193,12 +176,6 @@
         text-decoration: underline;
     }
 }
-
-
-
-
-
-
 
 .inputWarning {
     background-image: url(./../../../assets/img/icons/warning.svg) !important;

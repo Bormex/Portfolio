@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: center;
     width: 1440px;
-    padding: 0 $paddingLR;
+    padding: 0 var(--paddingLR);
     height: 291px;
     background: $background;
     border-top: 4px solid $green;
@@ -37,7 +37,6 @@
         width: 40px;
         height: 40px;
     }
-
     img {
         width: 30px;
         height: 30px;
