@@ -18,9 +18,11 @@ $background: #141D2F;
   --paddingTB: 124px;
   --gapTitle: 40px;
   --titleSize: 90px;
+  --gap: 32px;
+  --paddingNav: 37px;
 }
 
-// media Query at 1000px
+// media Query
 @import './mediaQuery.scss';
 
 

@@ -27,7 +27,7 @@
     gap: var(--gapTitle);
     width: 40%;
     h1 {
-        font-size: 90px;
+        font-size: var(--titleSize);
     }
     p {
         font-size: 16px;

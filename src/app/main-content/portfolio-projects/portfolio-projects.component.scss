@@ -16,10 +16,10 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 32px;
+    gap: var(--gap);
     width: 100%;
     h1 {
-        font-size: 90px;
+        font-size: var(--titleSize);
         font-weight: 700;
     }
     div:first-of-type {

@@ -3,7 +3,7 @@
 .navBar {
     display: flex;
     justify-content: space-between;
-    padding: 37px var(--paddingLR);
+    padding: var(--paddingNav) var(--paddingLR);
     max-width: 1440px;
     width: 100%;
     position: sticky;
@@ -15,7 +15,10 @@
         align-items: center;
         gap: 92px;
     }
+}
 
+.burgerMenu {
+    display: none;
 }
 
 .navLinks {

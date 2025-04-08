@@ -1,15 +1,24 @@
 
 
 @media (max-width: 1421px) {
+    :root {
+        --titleSize: 70px;
+      }
    .titleDiv-2 {
-    p:first-of-type {
-        font-size: 72px;
-    }
+        p:first-of-type {
+            font-size: 72px;
+        }
 
-    p:last-of-type {
-        font-size: 48px;
-    }
+        p:last-of-type {
+            font-size: 48px;
+        }
    }
+
+   .titleDiv-1 {
+        p {
+            font-size: 56px !important;
+        }
+    }
 }
 
 @media (max-width: 1210px) {
@@ -24,10 +33,85 @@
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
     :root {
         --paddingLR: 50px;
-        --paddingTB: 64px;
-        --gapTitle: 40px;
-      }
+    }
+    .landingPageTitleHero {
+        flex-direction: column;
+        align-items: center;
+    }
+    .scrollDown {
+        display: none !important;
+    }
+}
+@media (max-width: 1030px) {
+    .mySkills-left {
+        column-gap: 44px !important;
+        row-gap: 22px !important;
+    }
+}
+
+@media (max-width: 1000px) {
+    .navBar {
+        background: $background;
+        >div {
+            display: none !important;
+        }
+    }
+
+    .burgerMenu {
+        display: flex !important;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .landingImage-Div {
+        img:first-of-type {
+            padding-top: 240px;
+        } 
+    }
+
+    // .landing-section {
+    //     padding-top: 113px;
+    // }
+
+    // .landingPage {
+    //     height: calc(100vh - 113px) !important;
+    // }
+
+}
+
+@media (max-width: 900px) {
+    .portfolioBtns {
+        justify-content: space-between;
+        width: 100%;
+        gap: unset !important;
+    }
+
+    .landingImage, .landingImage-Div {
+        width: 100% !important;
+        padding-top: unset !important;
+    }
+
+    .landingImage-Div {
+        img:first-of-type {
+            width: 100%;
+        }
+
+        img:last-of-type {
+            max-width: fit-content;
+        }
+    }
+
+}
+
+
+
+// Height Query bei w>1000px height=1320px
+
+@media (max-height: 1320px) {
+    
 }

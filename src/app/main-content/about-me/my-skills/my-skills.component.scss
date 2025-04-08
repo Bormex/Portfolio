@@ -39,9 +39,7 @@
     }
     hr {
         width: 100%;
-        max-width: 100px;
-        position: relative;
-        top: 55px;
+        max-width: var(--paddingLR);
         height: 4px;
         border: none;
         background: $purple;
@@ -53,9 +51,12 @@
 .mySkills-right-title {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    gap: var(--gap);
     h1 {
         font-size: var(--titleSize);
         font-weight: 700;
+        text-wrap-mode: nowrap;
     }
 }
 
@@ -64,6 +65,7 @@
     flex-direction: column;
     align-items: flex-end;
     gap: 40px;
+    padding-right: calc(var(--paddingLR) + var(--gap));
     >div {
         display: flex;
         flex-direction: column;

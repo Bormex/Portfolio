@@ -1,0 +1,38 @@
+<img (click)="burgerMenu()" [ngStyle]="{'display': !burgerOpen ? 'flex' : 'none'}" src="./../../../assets/img/icons/burger-menu.svg" alt="">
+<img (click)="burgerMenu()" [ngStyle]="{'display': burgerOpen ? 'flex' : 'none'}" src="./../../../assets/img/icons/burger-menu-open.svg" alt="">
+
+<div class="burger-menu" [ngStyle]="{'display': burgerOpen ? 'flex' : 'none'}">
+    <div class="burgerNav">
+        @if (landingpage) {
+            <div class="navLinks">
+                <span class="half-underline">
+                    <a href="#about">
+                        {{daten.NavBar.aboutMe}}
+                    </a>
+                </span>
+    
+                <span class="half-underline">
+                    <a href="#skills">
+                        {{daten.NavBar.skills}}
+                    </a>
+                </span>
+    
+                <span class="half-underline">
+                    <a href="#portfolio">
+                        Portfolio
+                    </a>
+                </span>
+
+                <div class="languageBtns">
+                    <button (click)="changeLanguage('de')" [ngClass]="{'active': isActive}">
+                        DE
+                    </button>
+                    <p>/</p>
+                    <button (click)="changeLanguage('en')" [ngClass]="{'active': !isActive}">
+                        EN
+                    </button>
+                </div>
+            </div>
+        }
+    </div>  
+</div>
