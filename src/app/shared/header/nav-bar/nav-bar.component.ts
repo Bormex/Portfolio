@@ -7,12 +7,11 @@ import { filter } from 'rxjs/operators';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { DataService } from '../../../data.service';
 import { PortfolioProjectsComponent } from '../../../main-content/portfolio-projects/portfolio-projects.component';
-import { BurgerMenuComponent } from "../../burger-menu/burger-menu.component";
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-  imports: [CommonModule, NgStyle, MainContentComponent, TranslateModule, PortfolioProjectsComponent, BurgerMenuComponent],
+  imports: [CommonModule, NgStyle, MainContentComponent, TranslateModule, PortfolioProjectsComponent],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss'
 })
@@ -23,6 +22,7 @@ export class NavBarComponent {
   en!: string;
   landingpage:boolean = true;
   daten: any;
+  burgerOpen:boolean = false;
 
   ngOnInit() {
     this.daten = this.dataService.getJsonData();
@@ -36,11 +36,6 @@ export class NavBarComponent {
       }
     });
   }
-  
-  changeLanguage(para:string) {
-   this.dataService.getData(para);
-   this.changeLanguageBtn(para);
-  }
 
   changeLanguageBtn(para: string) {
     if (para == 'de') {
@@ -50,5 +45,12 @@ export class NavBarComponent {
      }
   }
 
-
+  burgerMenu() {
+    if (!this.burgerOpen) {
+      this.burgerOpen = true;
+    } else (
+      this.burgerOpen = false
+    )
+  }
+ 
 }

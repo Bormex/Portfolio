@@ -53,14 +53,36 @@
 }
 
 @media (max-width: 1000px) {
+    
     .navBar {
         background: $background;
-        >div {
-            display: none !important;
+        > div:last-of-type {
+            position: absolute;
+            top: 113px;
+            z-index: 4;
+            width: 100%;
+            left: 0;
+            height: 100vh;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(2px);
+        }
+        .navLinks {
+            flex-direction: column;
+            align-items: start !important;
+        }
+        .BtnsSqare {
+            display: flex !important;
         }
     }
 
-    .burgerMenu {
+    .contact {
+        display: flex !important;
+    }
+
+    .burger-menu {
         display: flex !important;
 
         img {
@@ -74,14 +96,13 @@
         } 
     }
 
-    // .landing-section {
-    //     padding-top: 113px;
-    // }
+    .languageBtns {
+        display: none !important;
+    }
 
-    // .landingPage {
-    //     height: calc(100vh - 113px) !important;
-    // }
-
+    .languageBtnsBurger {
+        display: flex !important;
+    }
 }
 
 @media (max-width: 900px) {

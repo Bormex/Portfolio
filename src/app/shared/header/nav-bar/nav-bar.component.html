@@ -2,7 +2,11 @@
     <a href="#landingPage">
         <img src="./../../../assets/img/logo.svg" alt="">
     </a>
-    <div>
+    <div class="burger-menu">
+        <img (click)="burgerMenu()" [ngStyle]="{'display': !burgerOpen ? 'flex' : 'none'}" src="./../../../assets/img/icons/burger-menu.svg" alt="">
+        <img (click)="burgerMenu()" [ngStyle]="{'display': burgerOpen ? 'flex' : 'none'}" src="./../../../assets/img/icons/burger-menu-open.svg" alt="">
+    </div>
+    <div [ngClass]="burgerOpen ? 'burger-visible' : ''">
         @if (landingpage) {
             <div class="navLinks">
                 <span class="half-underline">
@@ -22,16 +26,31 @@
                         Portfolio
                     </a>
                 </span>
+
+                <span class="half-underline contact">
+                    <a href="#contact">
+                        Contact
+                    </a>
+                </span>
+
+                <div class="languageBtnsBurger">
+                    <button (click)="changeLanguageBtn('de')" [ngClass]="{'active': isActive}">
+                        DE
+                    </button>
+                    <p class="BtnsSqare">/</p>
+                    <button (click)="changeLanguageBtn('en')" [ngClass]="{'active': !isActive}">
+                        EN
+                    </button>
+                </div>
             </div>
         }
         <div class="languageBtns">
-            <button (click)="changeLanguage('de')" [ngClass]="{'active': isActive}">
+            <button (click)="changeLanguageBtn('de')" [ngClass]="{'active': isActive}">
                 DE
             </button>
-            <button (click)="changeLanguage('en')" [ngClass]="{'active': !isActive}">
+            <button (click)="changeLanguageBtn('en')" [ngClass]="{'active': !isActive}">
                 EN
             </button>
         </div>
     </div>
-    <app-burger-menu class="burgerMenu"></app-burger-menu>
 </div>
