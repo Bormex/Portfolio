@@ -3,7 +3,14 @@
 @media (max-width: 1421px) {
     :root {
         --titleSize: 70px;
-      }
+    }
+
+    .titleDiv-1 {
+        p {
+            font-size: 56px !important;
+        }
+    }
+
    .titleDiv-2 {
         p:first-of-type {
             font-size: 72px;
@@ -14,23 +21,7 @@
         }
    }
 
-   .titleDiv-1 {
-        p {
-            font-size: 56px !important;
-        }
-    }
-}
-
-@media (max-width: 1210px) {
-    .titleDiv-2 {
-     p:first-of-type {
-         font-size: 72px;
-     }
  
-     p:last-of-type {
-         font-size: 48px;
-     }
-    }
 }
 
 @media (max-width: 1200px) {
@@ -135,4 +126,153 @@
 
 @media (max-height: 1320px) {
     
+}
+
+
+@media (max-width: 720px) {
+    .landingPageLinks {
+        a:last-of-type {
+            display: none !important;
+        }
+    }
+
+    .aboutMe {
+        padding-right: var(--paddingLR) !important;
+
+        .aboutMe-left {
+            width: 100% !important;
+        }
+
+        .aboutMe-right {
+            width: 0;
+            div {
+                display: none !important;
+            }
+
+            hr {
+                display: none !important;
+            }
+
+        }
+    }
+
+    .titleDiv-1 {
+        p {
+            font-size: 44px !important;
+        }
+    }
+
+    .titleDiv-2 {
+        p:first-of-type {
+            font-size: 58px;
+        }
+
+        p:last-of-type {
+            font-size: 32px;
+        }
+    }
+
+    .project {
+        flex-direction: column !important;
+
+        .projectDetails {
+            text-align: center !important;
+            width: 100%;
+            .projectDescription {
+                justify-content: center !important;
+            }
+        }
+    }
+
+    .portfolio {
+        >p:first-of-type {
+            text-align: center;
+            padding: 0 var(--paddingLR) !important;
+        }
+    }
+
+    .comment-box {
+        align-items: center;
+        padding-right: var(--paddingLR) !important;
+        >div {
+            flex-direction: column-reverse !important;
+        }
+
+        >img {
+            top: 270px !important;
+        }
+
+        .comment {
+            padding: 24px 48px;
+            gap: 148px;
+
+            >:nth-child(2) {
+                flex-direction: column;
+                align-items: flex-start;
+                hr {
+                    width: 10%;
+                }
+            }
+        }
+    }
+
+    .commentImage-Box {
+        width: 100% !important;
+        margin-left: var(--paddingLR) !important;
+        >hr {
+            width: calc(50% + var(--paddingLR) - 136px) !important;
+        }
+    }
+
+    .contact {
+        position: relative;
+        .contact-shape {
+            bottom: -80px !important;
+        }
+    }
+
+    .contactTitle {
+        gap: 4px !important;
+        hr {
+            width: var(--paddingLR) !important;
+        }
+    }
+
+    .contact-fields {
+        flex-direction: column;
+        align-items: center;
+        >div, >form {
+            width: 100% !important;
+        }
+        
+    }
+    
+    :root {
+        --backgroundShapes: 30%; // das noch auf die anderen bilder übertragen!!!! also im css mit fit-content
+    }
+
+    .footer {
+        gap: var(--gap);
+
+        .footer-logo-div {
+            flex-direction: column !important;
+            gap: var(--gap);
+        }
+
+        .legalNotice {
+            justify-content: center !important;
+        }
+    }
+
+    .landingImage-Div {
+        height: 55vh !important;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    .portfolioBtns {
+        justify-content: space-evenly;
+    }
 }

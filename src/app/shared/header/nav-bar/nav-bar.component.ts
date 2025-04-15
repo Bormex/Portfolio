@@ -40,8 +40,10 @@ export class NavBarComponent {
   changeLanguageBtn(para: string) {
     if (para == 'de') {
       this.isActive = true;
+      this.dataService.getData(para);
      } else {
       this.isActive = false;
+      this.dataService.getData(para);
      }
   }
 
@@ -51,6 +53,10 @@ export class NavBarComponent {
     } else (
       this.burgerOpen = false
     )
+  }
+
+  stopPropagation(event: { stopPropagation: () => void; }) {
+    event.stopPropagation();
   }
  
 }
