@@ -1,6 +1,5 @@
 @import './../../../../styles.scss';
 
-
 .mySkills {
     display: flex;
 }
@@ -149,4 +148,12 @@
     top: 45%;
     left: 0;
     width: var(--backgroundShapes);
+}
+
+.mySkills-left-mobile {
+    display: none;
+    width: 50%;
+    flex-wrap: wrap;
+    column-gap: 88px;
+    row-gap: 44px;
 }

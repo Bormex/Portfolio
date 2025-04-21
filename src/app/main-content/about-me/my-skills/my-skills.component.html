@@ -31,16 +31,36 @@
         <div class="mySkills-right-under-title">
             <div>
                 <p>
-                    Show that you have used a variety of front-end <br>
-                    technologies in your projects.
+                    {{daten.Portfolio.MySkills.firstSent}}
                 </p>
 
+                <div class="mySkills-left-mobile">
+                    @for (Skills of daten.Skills; track $index) {
+                        @if (Skills.name == 'Continually Learning') {
+                            <div class="skillIcons continuallyLearning">
+                                <img src="./../../../../assets/img/icons/continually-learning-popup.svg" alt="">
+                                <img src="./../../../../assets/img/icons/{{Skills.image}}.svg" alt="">
+                                <img src="./../../../../assets/img/icons/{{Skills.image}}-hover.svg" alt="">
+                                <span>
+                                    {{Skills.name}}
+                                </span>
+                            </div>
+                        } @else {
+                            <div class="skillIcons skillHover">
+                                <img src="./../../../../assets/img/icons/{{Skills.image}}.svg" alt="">
+                                <span>
+                                    {{Skills.name}}
+                                </span>
+                            </div>
+                        }
+                    }
+                </div>
+
                 <span>
-                    Looking for <span style="color: #9747FF;">another skill</span>?
+                    {{daten.Portfolio.MySkills.title2[0]}} <span style="color: #9747FF;">{{daten.Portfolio.MySkills.title2[1]}}</span>?
                 </span>
                 <p>
-                    Reveal enthusiasm for learning new technologies <br>
-                    and frameworks.
+                    {{daten.Portfolio.MySkills.lastSent}}
                 </p>
             </div>
             <div class="mySkillsBtn">

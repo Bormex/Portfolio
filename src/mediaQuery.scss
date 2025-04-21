@@ -1,16 +1,12 @@
-
-
 @media (max-width: 1421px) {
     :root {
         --titleSize: 70px;
     }
-
     .titleDiv-1 {
         p {
             font-size: 56px !important;
         }
     }
-
    .titleDiv-2 {
         p:first-of-type {
             font-size: 72px;
@@ -20,13 +16,11 @@
             font-size: 48px;
         }
    }
-
- 
 }
 
 @media (max-width: 1200px) {
     :root {
-        --paddingLR: 50px;
+        --paddingLR: 48px;
     }
     .landingPageTitleHero {
         flex-direction: column;
@@ -35,7 +29,11 @@
     .scrollDown {
         display: none !important;
     }
+    .landingTitle {
+        gap: unset !important;
+    }
 }
+
 @media (max-width: 1030px) {
     .mySkills-left {
         column-gap: 44px !important;
@@ -44,7 +42,6 @@
 }
 
 @media (max-width: 1000px) {
-    
     .navBar {
         background: $background;
         > div:last-of-type {
@@ -68,11 +65,9 @@
             display: flex !important;
         }
     }
-
     .contact {
         display: flex !important;
     }
-
     .burger-menu {
         display: flex !important;
 
@@ -80,17 +75,14 @@
             width: 100%;
         }
     }
-
     .landingImage-Div {
         img:first-of-type {
             padding-top: 240px;
         } 
     }
-
     .languageBtns {
         display: none !important;
     }
-
     .languageBtnsBurger {
         display: flex !important;
     }
@@ -102,79 +94,59 @@
         width: 100%;
         gap: unset !important;
     }
-
     .landingImage, .landingImage-Div {
         width: 100% !important;
         padding-top: unset !important;
     }
-
     .landingImage-Div {
         img:first-of-type {
             width: 100%;
         }
-
         img:last-of-type {
             max-width: fit-content;
         }
     }
-
 }
-
-
-
-// Height Query bei w>1000px height=1320px
-
-@media (max-height: 1320px) {
-    
-}
-
 
 @media (max-width: 720px) {
+    :root {
+        --backgroundShapes: 30%; // das noch auf die anderen bilder übertragen!!!! also im css mit fit-content
+    }
     .landingPageLinks {
         a:last-of-type {
             display: none !important;
         }
     }
-
     .aboutMe {
         padding-right: var(--paddingLR) !important;
-
         .aboutMe-left {
             width: 100% !important;
         }
-
         .aboutMe-right {
             width: 0;
             div {
                 display: none !important;
             }
-
             hr {
                 display: none !important;
             }
-
         }
     }
-
     .titleDiv-1 {
         p {
             font-size: 44px !important;
         }
     }
-
     .titleDiv-2 {
         p:first-of-type {
             font-size: 58px;
         }
-
         p:last-of-type {
             font-size: 32px;
         }
     }
-
     .project {
         flex-direction: column !important;
-
         .projectDetails {
             text-align: center !important;
             width: 100%;
@@ -183,29 +155,24 @@
             }
         }
     }
-
     .portfolio {
         >p:first-of-type {
             text-align: center;
             padding: 0 var(--paddingLR) !important;
         }
     }
-
     .comment-box {
         align-items: center;
         padding-right: var(--paddingLR) !important;
         >div {
             flex-direction: column-reverse !important;
         }
-
         >img {
             top: 270px !important;
         }
-
         .comment {
             padding: 24px 48px;
             gap: 148px;
-
             >:nth-child(2) {
                 flex-direction: column;
                 align-items: flex-start;
@@ -215,7 +182,6 @@
             }
         }
     }
-
     .commentImage-Box {
         width: 100% !important;
         margin-left: var(--paddingLR) !important;
@@ -223,47 +189,35 @@
             width: calc(50% + var(--paddingLR) - 136px) !important;
         }
     }
-
     .contact {
         position: relative;
         .contact-shape {
             bottom: -80px !important;
         }
     }
-
     .contactTitle {
         gap: 4px !important;
         hr {
             width: var(--paddingLR) !important;
         }
     }
-
     .contact-fields {
         flex-direction: column;
         align-items: center;
         >div, >form {
             width: 100% !important;
-        }
-        
+        }   
     }
-    
-    :root {
-        --backgroundShapes: 30%; // das noch auf die anderen bilder übertragen!!!! also im css mit fit-content
-    }
-
     .footer {
         gap: var(--gap);
-
         .footer-logo-div {
             flex-direction: column !important;
             gap: var(--gap);
         }
-
         .legalNotice {
             justify-content: center !important;
         }
     }
-
     .landingImage-Div {
         height: 55vh !important;
 
@@ -271,8 +225,152 @@
             height: 100%;
         }
     }
-
     .portfolioBtns {
         justify-content: space-evenly;
+    }
+    .mySkills-left-mobile {
+        display: flex !important;
+    }
+    .mySkills-left {
+        display: none !important;
+    }
+    .mySkills-right {
+        width: 100% !important;
+        .mySkills-right-under-title {
+            align-items: center;
+            padding-right: var(--paddingLR);
+            >div {
+                align-items: center;
+            }
+        }
+        .mySkills-left-mobile {
+            width: 100%;
+            justify-content: center;       
+            column-gap: 64px;
+            row-gap: 44px;
+            span {
+                font-size: 18px !important;
+            }
+        }
+    }
+    .coming-soon {
+        font-size: 44px !important;
+    }
+    .comment-box >img {
+        display: none;
+    }
+    .landingImage-Div img:first-of-type {
+        padding-top: unset;
+    }
+}
+
+@media (max-width: 600px) {
+    .landingPage-hero {
+        img {
+            top: unset !important;
+        }
+    }
+    :root {
+        --titleSize: 48px;
+        --paddingLR: 24px;
+    }
+    .titleDiv-1 {
+        p {
+            font-size: 28px !important;
+        }
+    }
+    .titleDiv-2 {
+        p:first-of-type {
+            font-size: 40px;
+        }
+        p:last-of-type {
+            font-size: 24px;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    :root {
+        --paddingLR: 16px
+    }
+    .mySkills-left-mobile {
+        span {
+            font-size: 16px !important;
+        }
+    }
+    .titleDiv {
+        gap: unset !important;
+    }
+    .skillIcons {
+        width: 60px;
+        img {
+            width: 48px;
+        }
+        span {
+            font-size: 16px !important;
+            font-weight: 500 !important;
+        }
+    }
+    .portfolioBtns {
+        a button {
+            padding: 15px 20px !important;
+        }
+    }
+    .coming-soon {
+        font-size: 24px !important;
+    }
+    .landingImage-Div img:last-of-type {
+        width: 85% !important;
+    }
+    .landingTitle {
+        gap: 16px !important;
+    }
+    .continuallyLearning :nth-child(1) {
+        width: 150px !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .titleDiv-1 {
+        p {
+            font-size: 22px !important;
+        }
+    }
+    .titleDiv-2 {
+        p:first-of-type {
+            font-size: 32px;
+        }
+        p:last-of-type {
+            font-size: 20px;
+        }
+    }
+    .mySkills-left-mobile {
+        column-gap: 24px !important;
+        row-gap: 40px !important;
+    }
+    .titleBtnDiv {
+        height: unset !important;
+        a button {
+            padding: 8px 16px !important;
+            font-size: 18px !important;
+        }
+    }
+}
+
+@media (max-width: 345px) {
+    .mySkills-left-mobile {
+        column-gap: 12px !important;
+    }
+}
+
+@media (max-height: 720px) {
+    .landingImage-Div img:last-of-type {
+        width: 75% !important;
+    }
+}
+
+@media (height: 1024px) {
+    .landingImage-Div img:last-of-type {
+        width: 58% !important;
     }
 }

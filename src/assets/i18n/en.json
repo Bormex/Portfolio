@@ -10,7 +10,7 @@
   "Contact": {
     "title": "Contact",
     "subtitle": "Got a Problem!",
-    "subdescription": "Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work.",
+    "subdescription": "I'm looking for exciting web development projects, especially with Angular and TypeScript. I bring clean code, initiative, and a strong team spirit – feel free to reach out if you need support!",
     "subAnecdote": "Need a Frontend developer?",
     "subAnecdoteContact": "Contact me!",
     "placeholder": {
@@ -33,7 +33,13 @@
   "Portfolio": {
     "information": "Explore a selection of my work here - Interact with projects to see my skills in action.",
     "MySkills": {
-      "title": "My Skills"
+      "title": "My Skills",
+      "firstSent": "These are the technologies and skills I’ve worked with so far.",
+      "lastSent": "Im always excited to explore new technologies and frameworks – learning and adapting quickly is one of my strengths.",
+      "title2": [
+        "Looking for",
+        "another skill"
+      ] 
     },
 
     "Projects": [
@@ -80,15 +86,7 @@
   "Comments": [
     {
       "author": "Stephen",
-      "comment": "What a great men!!!"
-    },
-    {
-      "author": "Dieter",
-      "comment": "He does greate work!!!"
-    },
-    {
-      "author": "Michel",
-      "comment": "Pure good guy!"
+      "comment": "His questions were often very focused and practical, indicating that he doesnt just apply theoretical knowledge but actively solves real problems within the project context."
     }
   ]
 }

@@ -68,6 +68,9 @@
         img {
             width: 100%;
             height: auto;
+            object-fit: cover;
+            border-radius: 100%;
+            object-position: top;
         }
 }
 
@@ -123,3 +126,4 @@
     z-index: -1;
     width: var(--backgroundShapes);
 }
+

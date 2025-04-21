@@ -117,6 +117,8 @@
     img:last-of-type {
         z-index: 1;
         width: 100%;
+        height: auto;
+        max-height: 75vh;
     }
 }
 
@@ -134,6 +136,7 @@
         left: 50%;
         transform: translateX(-50%);
         width: 100%;
+        filter: drop-shadow(0px -20px 8px rgba(0, 0, 0, .2));
     }
 }
 

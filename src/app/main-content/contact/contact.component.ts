@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { DataService } from '../../data.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
@@ -14,6 +15,8 @@ import { DataService } from '../../data.service';
 export class ContactComponent {
   constructor(private dataService: DataService) {}
   daten: any;
+  mailTest = true;
+  http = inject(HttpClient);
     
   ngOnInit() {
     this.daten = this.dataService.getJsonData();
@@ -82,9 +85,33 @@ export class ContactComponent {
     }
   }
 
-  onSubmit() {
-    if (this.activateBtn) {
-      console.log(this.contactData);
+  post = {
+    endPoint: 'https://deineDomain.de/sendMail.php',
+    body: (payload: any) => JSON.stringify(payload),
+    options: {
+      headers: {
+        'Content-Type': 'text/plain',
+        responseType: 'text',
+      },
+    },
+  };
+
+  onSubmit(ngForm: NgForm) {
+    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+      this.http.post(this.post.endPoint, this.post.body(this.contactData))
+        .subscribe({
+          next: (response) => {
+
+            ngForm.resetForm();
+          },
+          error: (error) => {
+            console.error(error);
+          },
+          complete: () => console.info('send post complete'),
+        });
+    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+
+      ngForm.resetForm();
     }
   }
 

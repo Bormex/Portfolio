@@ -15,7 +15,7 @@
             </div>
         </div>
 
-        <form  (ngSubmit)="onSubmit()">
+        <form  (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
 
             <div class="inputDiv">
                 <input type="text" id="name" name="name" class="contact-input hover" (click)="checkNameInput(inputName = true)" (input)="checkNameInput(inputName = true)" [(ngModel)]="contactData.name" [ngClass]="{'inputWarning' : inputName, 'inputAcception' : inputNameOk}" type="text" placeholder="{{daten.Contact.placeholder.name}}" />

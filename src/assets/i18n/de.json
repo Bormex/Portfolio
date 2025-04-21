@@ -11,7 +11,7 @@
     "Contact": {
         "title": "Kontakt",
         "subtitle": "Hast ein Problem?",
-        "subdescription": "Bla Bla blaa bla blaa blaa blaa",
+        "subdescription": "Ich suche spannende Projekte im Bereich Webentwicklung, vor allem mit Angular und TypeScript. Ich bringe sauberen Code, Eigeninitiative und Teamgeist mit – melde dich gern, wenn du Unterstützung brauchst!",
         "subAnecdote": "Sie suchen einen Frontend Entwickler?",
         "subAnecdoteContact": "Kontaktieren Sie mich!",
         "placeholder": {
@@ -34,7 +34,13 @@
     "Portfolio": {
         "information": "Erkunde eine Auswahl meiner Arbeiten – Interagiere mit den Projekten, um meine Fähigkeiten in Aktion zu sehen.",
         "MySkills": {
-          "title": "Meine Skills"
+          "title": "My Skills",
+          "firstSent": "Mit diesen Technologien und Fähigkeiten habe ich bisher gearbeitet.",
+          "lastSent": "Ich bin immer neugierig auf neue Technologien und Frameworks – Lernen und schnelles Einarbeiten gehören zu meinen Stärken.",
+          "title2": [
+            "Suchen Sie nach einer",
+            "anderen Fähigkeit"
+          ] 
         },
 
         "Projects": [
@@ -81,15 +87,7 @@
     "Comments": [
       {
         "author": "Stephen",
-        "comment": "Was ein Guter!!!"
-      },
-      {
-        "author": "Dieter",
-        "comment": "Er macht sehr gute Arbeit!!!"
-      },
-      {
-        "author": "Michel",
-        "comment": "Einfach ein top Kerl!"
+        "comment": "Die Fragen waren oft sehr gezielt und praxisnah, was darauf hinweist, dass er nicht nur Theoriewissen anwendet, sondern konkrete Probleme im Projektkontext aktiv löst."
       }
     ]
   }

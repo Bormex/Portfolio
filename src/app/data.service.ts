@@ -32,8 +32,7 @@ export class DataService {
     Contact: {
       title: 'Contact',
       subtitle: 'Got a Problem!',
-      subdescription:
-        'Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work.',
+      subdescription: 'Im looking for exciting web development projects, especially with Angular and TypeScript. I bring clean code, initiative, and a strong team spirit – feel free to reach out if you need support!',
       subAnecdote: 'Need a Frontend developer?',
       subAnecdoteContact: 'Contact me!',
       placeholder: {
@@ -57,6 +56,12 @@ export class DataService {
         'Explore a selection of my work here - Interact with projects to see my skills in action.',
       MySkills: {
         title: 'My Skills',
+        firstSent: 'These are the technologies and skills I’ve worked with so far.',
+        lastSent: 'Im always excited to explore new technologies and frameworks – learning and adapting quickly is one of my strengths.',
+        title2: [
+          'Looking for',
+          'another skill'
+        ] 
       },
       Projects: [
         {
@@ -152,19 +157,19 @@ export class DataService {
     Comments: [
       {
         author: 'Stephen',
-        comment: 'What a great men!!!',
-        image: 'path',
+        comment: 'His questions were often very focused and practical, indicating that he doesnt just apply theoretical knowledge but actively solves real problems within the project context.',
+        image: './../../../../assets/img/teampartner/ScStephen.png',
       },
-      {
-        author: 'Dieter',
-        comment: 'He does greate work!!!',
-        image: 'path',
-      },
-      {
-        author: 'Michel',
-        comment: 'Pure good guy!',
-        image: 'path',
-      },
+      // {
+      //   author: 'Dieter',
+      //   comment: 'He does greate work!!!',
+      //   image: 'path',
+      // },
+      // {
+      //   author: 'Michel',
+      //   comment: 'Pure good guy!',
+      //   image: 'path',
+      // },
     ],
   };
 
@@ -295,12 +300,18 @@ export class DataService {
   // translate titles about & skills
   translateTitles(data: {
     AboutMe: { title: string };
-    Portfolio: { MySkills: { title: string } };
+    Portfolio: { MySkills: {
+      title2: any;
+      lastSent: string;
+      firstSent: string; title: string 
+    } };
     }) {
-    // title about me
-    this.jsonData.AboutMe.title = data.AboutMe.title;
-    // title myskills
-    this.jsonData.Portfolio.MySkills.title = data.Portfolio.MySkills.title;
+    this.jsonData.AboutMe.title = data.AboutMe.title; // title about me
+    this.jsonData.Portfolio.MySkills.title = data.Portfolio.MySkills.title; // title myskills
+    this.jsonData.Portfolio.MySkills.firstSent = data.Portfolio.MySkills.firstSent;
+    this.jsonData.Portfolio.MySkills.lastSent = data.Portfolio.MySkills.lastSent;
+    this.jsonData.Portfolio.MySkills.title2[0] = data.Portfolio.MySkills.title2[0];
+    this.jsonData.Portfolio.MySkills.title2[1] = data.Portfolio.MySkills.title2[1];
   }
 
   // translate navbar links
