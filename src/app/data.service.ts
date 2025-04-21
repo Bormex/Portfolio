@@ -116,8 +116,8 @@ export class DataService {
     },
     Links: [
       { image: 'github', path: 'https://github.com/Bormex' },
-      { image: 'mail', path: 'https://github.com/Bormex' },
-      { image: 'linkedIn', path: 'https://github.com/Bormex' },
+      { image: 'mail', path: '#contact' },
+      { image: 'linkedIn', path: 'https://de.linkedin.com/in/niclas-holzhey-648365334' },
     ],
     Skills: [
       { name: 'HTML', image: 'html' },
