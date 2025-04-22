@@ -24,9 +24,12 @@ export class NavBarComponent {
   daten: any;
   burgerOpen:boolean = false;
 
+  /**
+  * Lifecycle hook that initializes component data from the data service.
+  * Remove the Navbar Scroll-links on imprint and privacy police.
+  */
   ngOnInit() {
     this.daten = this.dataService.getJsonData();
-
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
@@ -37,6 +40,10 @@ export class NavBarComponent {
     });
   }
 
+  /**
+  * Switches language and updates the active language state.
+  * @param para - Language code (e.g., 'de', 'en').
+  */
   changeLanguageBtn(para: string) {
     if (para == 'de') {
       this.isActive = true;
@@ -46,7 +53,10 @@ export class NavBarComponent {
       this.dataService.getData(para);
      }
   }
-
+  
+  /**
+  * Toggles the burger menu open/close state.
+  */
   burgerMenu() {
     if (!this.burgerOpen) {
       this.burgerOpen = true;
@@ -55,8 +65,11 @@ export class NavBarComponent {
     )
   }
 
+  /**
+  * Prevents event propagation (e.g., for click events).
+  * @param event - The event object.
+  */
   stopPropagation(event: { stopPropagation: () => void; }) {
     event.stopPropagation();
   }
- 
 }

@@ -15,17 +15,23 @@ export class CommentSectionComponent {
   daten: any;
   selectedComment:any = 0;
 
+  /**
+  * Lifecycle hook that initializes component data from the data service.
+  */
   ngOnInit() {
     this.daten = this.dataService.getJsonData();
   }
 
+  /**
+  * Changes the currently selected comment index with wrap-around logic.
+  * @param index - The target comment index.
+  */
   changeComment(index: number) {
     if (index == this.daten.Comments.length) {
       this.selectedComment = 0;
     } else {
       this.selectedComment = index;
     }
-    
     if (index < 0) this.selectedComment = (this.daten.Comments.length - 1);
   }
 }

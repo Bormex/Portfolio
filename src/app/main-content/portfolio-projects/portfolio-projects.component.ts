@@ -15,8 +15,9 @@ export class PortfolioProjectsComponent {
   constructor(private dataService: DataService) {}
   daten: any;
 
-
-
+  /**
+  * Lifecycle hook that initializes component data from the data service.
+  */
   ngOnInit() {
     this.daten = this.dataService.getJsonData();
   };

@@ -18,6 +18,9 @@ export class ContactComponent {
   mailTest = true;
   http = inject(HttpClient);
     
+  /**
+  * Lifecycle hook that initializes component data from the data service.
+  */
   ngOnInit() {
     this.daten = this.dataService.getJsonData();
   }
@@ -72,6 +75,10 @@ export class ContactComponent {
     message: '',
   };
 
+  /**
+  * Enables or disables the submit button based on input and checkbox validation.
+  * @param para - Current checkbox state.
+  */
   checkInputfields(para: boolean) {
     if (
       this.inputNameOk &&
@@ -95,7 +102,10 @@ export class ContactComponent {
       },
     },
   };
-
+  /**
+  * Handles form submission and sends data if valid.
+  * @param ngForm - The Angular form object.
+  */
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
@@ -115,6 +125,10 @@ export class ContactComponent {
     }
   }
 
+  /**
+  * Updates checkbox state and revalidates inputs.
+  * @param checkbox - The checkbox input element.
+  */
   checkValue(checkbox: any) {
     this.checked = checkbox.checked;
     if (checkbox == true) {
@@ -125,6 +139,10 @@ export class ContactComponent {
     this.checkInputfields(this.checkboxOk);
   }
 
+  /**
+  * Validates the name input field.
+  * @param para - Checkbox validation state.
+  */
   checkNameInput(para: boolean): void {
     if (this.contactData.name.length > 3) {
       this.inputName = false;
@@ -135,6 +153,10 @@ export class ContactComponent {
     this.checkInputfields(this.checkboxOk);
   }
 
+  /**
+  * Validates the email input field.
+  * @param para - Checkbox validation state.
+  */
   checkEmailInput(para: boolean): void {
     if (
       this.contactData.email.length > 3 &&
@@ -152,6 +174,10 @@ export class ContactComponent {
     this.checkInputfields(this.checkboxOk);
   }
 
+  /**
+  * Validates the message input field.
+  * @param para - Checkbox validation state.
+  */
   checkMsgInput(para: boolean): void {
     if (this.contactData.message.length > 3) {
       this.inputMessage = false;

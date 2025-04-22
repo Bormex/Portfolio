@@ -6,22 +6,26 @@ import { Injectable } from '@angular/core';
 export class DataService {
   constructor() {}
 
+  // getting english words database
   getEnJson() {
     return fetch('./assets/i18n/en.json')
       .then((response) => response.json())
       .then((data) => data);
   }
 
+  // getting german words database
   getDeJson() {
     return fetch('./assets/i18n/de.json')
       .then((response) => response.json())
       .then((data) => data);
   }
 
+  // getting buffer database
   getJsonData() {
     return this.jsonData;
   }
 
+  // buffer database
   jsonData = {
     Legalnotice: 'Legal Notice',
     UpcommingProject: '... COMING SOON ...',
@@ -70,8 +74,8 @@ export class DataService {
             'Based on the PokéAPI a simple library that provides and catalogues pokemon information.',
           languages: ['HTML', 'CSS', 'JavaScript', 'Api'],
           image: './../../../assets/img/notebook_Pokedex.png',
-          livetest: 'https://YouTube.de',
-          github: 'https://github.com/Bormex/Join',
+          livetest: 'https://niclas-holzhey.de/PokeDex',
+          github: 'https://github.com/Bormex/PokeDex',
         },
         {
           name: 'Join',
@@ -79,8 +83,8 @@ export class DataService {
             'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
           languages: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
           image: './../../../assets/img/notebook_Join.png',
-          livetest: 'https://YouTube.de',
-          github: 'https://github.com/Bormex/El-Pollo-Loco',
+          livetest: 'https://niclas-holzhey.de/Join/login',
+          github: 'https://github.com/Bormex/Join',
         },
         {
           name: 'El Pollo Loco',
@@ -88,8 +92,8 @@ export class DataService {
             'El Pollo Loco is a run-and-jump game where players face chickens as enemies, with a rooster as the final boss.',
           languages: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
           image: './../../../assets/img/notebook_Pollo_loco.png',
-          livetest: 'https://YouTube.de',
-          github: 'www.github.com',
+          livetest: 'https://niclas-holzhey.de/El-Pollo-Loco',
+          github: 'https://github.com/Bormex/El-Pollo-Loco',
         },
         {
           name: 'DaBubble',
@@ -157,7 +161,7 @@ export class DataService {
     Comments: [
       {
         author: 'Stephen',
-        comment: 'His questions were often very focused and practical, indicating that he doesnt just apply theoretical knowledge but actively solves real problems within the project context.',
+        comment: 'Niclas questions were often very focused and practical, indicating that he doesnt just apply theoretical knowledge but actively solves real problems within the project context.',
         image: './../../../../assets/img/teampartner/ScStephen.png',
       },
       // {
@@ -173,6 +177,7 @@ export class DataService {
     ],
   };
 
+  // whole language change function
   getData(para: string) {
     this.translateUserComments(para);
     this.translatePrjctDesc(para);
@@ -180,16 +185,15 @@ export class DataService {
     this.translatePageElements(para);
   }
   
-  // das ist eine funktion!
+  // translate the team partner comments 
   translateUserComments(para: string) {
     this.jsonData.Comments.forEach((comments) => {
       comments.comment = '';
     });
-    this.translateUserCommentsDe(para);
-    this.translateUserCommentsEn(para);
+    this.translateUserCommentsIf(para);
   }
-
-  translateUserCommentsDe(para : string) {
+  // translate the team partner comments in german || english
+  translateUserCommentsIf(para : string) {
     if (para == 'de') {
       this.getDeJson().then((data) =>
         data.Comments.forEach((projectDeVersion: any, index: number) => {
@@ -197,9 +201,6 @@ export class DataService {
         })
       );
     }
-  }
-
-  translateUserCommentsEn(para : string) {
     if (para == 'en') {
       this.getEnJson().then((data) =>
         data.Comments.forEach((projectDeVersion: any, index: number) => {
@@ -209,7 +210,7 @@ export class DataService {
     }
   }
 
-  //Übersetzung der Beschreibung im Projekt
+  // translate the description of the projects to english
   translatePrjctDesc(para: string) {
     this.jsonData.Portfolio.Projects.forEach((project) => {
       project.description = '';
@@ -217,7 +218,7 @@ export class DataService {
     this.translatePrjctDescDe(para);    
     this.translatePrjctDescEn(para);
   }
-
+  // translate the description of the projects to german
   translatePrjctDescDe(para : string) {
     if (para == 'de') {
       this.getDeJson().then((data) =>
@@ -230,7 +231,7 @@ export class DataService {
       );
     }
   }
-
+  // translate the description of the projects to english
   translatePrjctDescEn(para : string) {
     if (para == 'en') {
       this.getEnJson().then((data) =>
@@ -244,7 +245,7 @@ export class DataService {
     }
   }
 
-  // Übersetzung About Me
+  // translation whole about me 
   translateAboutMe(para: string) {
     this.jsonData.AboutMe.subpoints.forEach((subpoint) => {
       subpoint.description = '';
@@ -252,7 +253,7 @@ export class DataService {
     this.translateAboutMeDe(para);
     this.translateAboutMeEn(para);
   }
-
+  // translation about me description in german 
   translateAboutMeDe(para : string) {
     if (para == 'de') {
       this.getDeJson().then((data) =>
@@ -267,7 +268,7 @@ export class DataService {
       );
     }
   }
-
+  // translation about me description in english 
   translateAboutMeEn(para : string) {
     if (para == 'en') {
       this.getEnJson().then((data) =>
@@ -283,12 +284,12 @@ export class DataService {
     }
   }
 
-  // übersetzung für comming soon
+  // translation for comming soon
   translateLastProj(data: { UpcommingProject: string }) {
     this.jsonData.UpcommingProject = data.UpcommingProject;
   }
 
-  // Legal Notice
+  // translation for legal notice
   translateLegalN(data: {
     Legalnotice: string;
     Portfolio: { information: string };
@@ -297,14 +298,10 @@ export class DataService {
     this.jsonData.Portfolio.information = data.Portfolio.information;
   }
 
-  // translate titles about & skills
+  // translation titles about & skills
   translateTitles(data: {
     AboutMe: { title: string };
-    Portfolio: { MySkills: {
-      title2: any;
-      lastSent: string;
-      firstSent: string; title: string 
-    } };
+    Portfolio: { MySkills: {title2: any; lastSent: string; firstSent: string; title: string} }; 
     }) {
     this.jsonData.AboutMe.title = data.AboutMe.title; // title about me
     this.jsonData.Portfolio.MySkills.title = data.Portfolio.MySkills.title; // title myskills
@@ -314,13 +311,13 @@ export class DataService {
     this.jsonData.Portfolio.MySkills.title2[1] = data.Portfolio.MySkills.title2[1];
   }
 
-  // translate navbar links
+  // translation navbar links
   translateNav(data: { NavBar: { aboutMe: string; skills: string } }) {
     this.jsonData.NavBar.aboutMe = data.NavBar.aboutMe;
     this.jsonData.NavBar.skills = data.NavBar.skills;
   }
 
-  // transalate job, scroll down, artikel i am
+  // translation job, scroll down, artikel "I am"
   translateLandingP(data: {
     LandingPage: { article: string; job: string; scroll: string };
    }) {
@@ -329,7 +326,7 @@ export class DataService {
     this.jsonData.LandingPage.scroll = data.LandingPage.scroll;
   }
 
-  // alles zu contact sektion
+  // translation contact section
   translateContactSec(data: { Contact: any }) {
     this.translateContact(data);
     this.translatePlaceholder(data);
@@ -337,8 +334,7 @@ export class DataService {
     this.translateCheckbox(data);
   }
   
-
-  // alle tag elemente in contact bspw h1
+  // translation all tag elements in contact exm. "h1"
   translateContact(data: { Contact: any }) {
     this.jsonData.Contact.title = data.Contact.title;
     this.jsonData.Contact.subtitle = data.Contact.subtitle;
@@ -347,7 +343,7 @@ export class DataService {
     this.jsonData.Contact.subAnecdote = data.Contact.subAnecdote;
   }
 
-  //placeholder
+  // translation placeholder
   translatePlaceholder(data: { Contact: any }) {
     this.jsonData.Contact.placeholder.name = data.Contact.placeholder.name;
     this.jsonData.Contact.placeholder.mail = data.Contact.placeholder.mail;
@@ -355,14 +351,14 @@ export class DataService {
       data.Contact.placeholder.message;
   }
 
-  // validation in contact
+  // translation validation in contact
   translateVali(data: { Contact: any }) {
     this.jsonData.Contact.validation.name = data.Contact.validation.name;
     this.jsonData.Contact.validation.mail = data.Contact.validation.mail;
     this.jsonData.Contact.validation.message = data.Contact.validation.message;
   }
 
-  // checkbox link und text
+  // translation checkbox link und text
   translateCheckbox(data: { Contact: any }) {
     this.jsonData.Contact.Checkbox.textBefore =
       data.Contact.Checkbox.textBefore;
@@ -370,12 +366,13 @@ export class DataService {
     this.jsonData.Contact.Checkbox.textAfter = data.Contact.Checkbox.textAfter;
   }
 
+  // translation page elements of nav, titles, legal notice 
   translatePageElements(para: string) {
     this.translateDe(para);
     this.translateEn(para);
   }
 
-  // übersetzung aller einzelheiten ins englische
+  // translation of all details into english
   translateEn(para : string) {
     if (para == 'en') {
      this.getEnJson().then((data) => {
@@ -389,7 +386,7 @@ export class DataService {
    }
   }
 
-  // übersetzung aller einzelheiten ins deutsch
+  // translation of all details into german
   translateDe(para : string) {
     if (para == 'de') {
       this.getDeJson().then((data) => {
