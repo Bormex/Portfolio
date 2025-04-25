@@ -12,11 +12,19 @@
 
         <div class="footer-links">
             @for (Link of daten.Links; track $index) {
-                <div>
-                    <a href="{{Link.path}}" target="_blank">
-                        <img src="./../../../assets/img/icons/{{Link.image}}.svg" alt="">
-                    </a>
-                </div>
+                @if(Link.path == '#contact') {
+                    <div>
+                        <a href="{{Link.path}}">
+                            <img src="./../../../assets/img/icons/{{Link.image}}.svg" alt="">
+                        </a>
+                    </div>
+                }   @else {
+                    <div>
+                        <a href="{{Link.path}}" target="_blank">
+                            <img src="./../../../assets/img/icons/{{Link.image}}.svg" alt="">
+                        </a>
+                    </div>
+                }
             }
         </div>
 

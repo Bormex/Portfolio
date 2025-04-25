@@ -17,15 +17,10 @@
         <img src="./../../../assets/img/shapes/Purple_shadow_portfolio.svg" class="project-shape" alt="">
         @for (Project of daten.Portfolio.Projects; track daten.Portfolio.Projects; let index = $index; let last = $last) {
             <div class="project" [ngStyle]="{'flex-direction' : index % 2 ? 'row-reverse' : ''}">
-                @if (last) {
-                    <div class="coming-soon">
-                        {{daten.UpcommingProject}}
-                    </div>
-                }
-                <div class="projectImage" [ngStyle]="{'filter': last ? 'blur(1px) brightness(0.5) opacity(0.5)' : ''}">
+                <div class="projectImage">
                     <img src="{{Project.image}}" alt="">
                 </div>
-                <div class="projectDetails" [ngStyle]="{ 'align-items': index % 2 ? 'end' : '', 'text-align': index % 2 ? 'end' : '' , 'filter': last ? 'blur(1px) brightness(0.5) opacity(0.5)' : ''}">
+                <div class="projectDetails" [ngStyle]="{ 'align-items': index % 2 ? 'end' : '', 'text-align': index % 2 ? 'end' : ''}">
                     <div>    
                         <span>
                             {{Project.name}}
@@ -51,20 +46,18 @@
                             {{Project.description}}
                         </p>
                     </div>
-                    @if (!last) {
-                        <div class="portfolioBtns">
-                            <a href="{{Project.livetest}}">
-                                <button>
-                                    Live test
-                                </button>
-                            </a>
-                            <a href="{{Project.github}}">
-                                <button>
-                                    Github
-                                </button>
-                            </a>
-                        </div>
-                    }
+                    <div class="portfolioBtns">
+                        <a href="{{Project.livetest}}" target="_blank">
+                            <button>
+                                Live test
+                            </button>
+                        </a>
+                        <a href="{{Project.github}}" target="_blank">
+                            <button>
+                                Github
+                            </button>
+                        </a>
+                    </div>
                 </div>
             </div>
         }

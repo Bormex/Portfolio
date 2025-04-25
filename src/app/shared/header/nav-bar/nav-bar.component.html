@@ -10,29 +10,47 @@
         @if (landingpage) {
             <div class="navLinks">
                 <span class="half-underline">
-                    <a href="#about">
+                    <a href="#about" (click)="burgerMenu()">
                         {{daten.NavBar.aboutMe}}
                     </a>
                 </span>
     
-                <span class="half-underline">
+                <span class="half-underline" (click)="burgerMenu()">
                     <a href="#skills">
                         {{daten.NavBar.skills}}
                     </a>
                 </span>
     
-                <span class="half-underline">
+                <span class="half-underline" (click)="burgerMenu()">
                     <a href="#portfolio">
                         Portfolio
                     </a>
                 </span>
 
-                <span class="half-underline contact">
+                <span class="half-underline contact" (click)="burgerMenu()">
                     <a href="#contact">
                         {{daten.Contact.title}}
                     </a>
                 </span>
 
+                <div class="languageBtnsBurger">
+                    <button (click)="changeLanguageBtn('de')" [ngClass]="{'active': isActive}">
+                        DE
+                    </button>
+                    <p class="BtnsSqare">/</p>
+                    <button (click)="changeLanguageBtn('en')" [ngClass]="{'active': !isActive}">
+                        EN
+                    </button>
+                </div>
+            </div>
+        }
+        @if (!landingpage) {
+            <div class="navLinks">
+                <span class="half-underline" (click)="burgerMenu()">
+                    <a href="/">
+                        Portfolio
+                    </a>
+                </span>
                 <div class="languageBtnsBurger">
                     <button (click)="changeLanguageBtn('de')" [ngClass]="{'active': isActive}">
                         DE

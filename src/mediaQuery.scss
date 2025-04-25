@@ -44,22 +44,25 @@
 @media (max-width: 1000px) {
     .navBar {
         background: $background;
+        backdrop-filter: unset !important;
+        -webkit-mask-image: unset !important;
         > div:last-of-type {
+            justify-content: center;
             position: absolute;
+            align-items: unset !important;
             top: 113px;
             z-index: 4;
             width: 100%;
             left: 0;
             height: 100vh;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             background-color: rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(2px);
         }
         .navLinks {
             flex-direction: column;
             align-items: start !important;
+            margin: 0 auto;
+            padding-top: 148px;
         }
         .BtnsSqare {
             display: flex !important;

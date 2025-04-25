@@ -95,22 +95,22 @@ export class DataService {
           livetest: 'https://niclas-holzhey.de/El-Pollo-Loco',
           github: 'https://github.com/Bormex/El-Pollo-Loco',
         },
-        {
-          name: 'DaBubble',
-          description:
-            'A project I created to improve teamwork and project management.',
-          languages: [
-            'HTML',
-            'SASS',
-            'JavaScript',
-            'Angular',
-            'Typescript',
-            'Firestore',
-          ],
-          image: './../../../assets/img/notebook_Dabubble.png',
-          livetest: 'https://YouTube.de',
-          github: 'www.github.com',
-        },
+        // {
+        //   name: 'DaBubble',
+        //   description:
+        //     'A project I created to improve teamwork and project management.',
+        //   languages: [
+        //     'HTML',
+        //     'SASS',
+        //     'JavaScript',
+        //     'Angular',
+        //     'Typescript',
+        //     'Firestore',
+        //   ],
+        //   image: './../../../assets/img/notebook_Dabubble.png',
+        //   livetest: 'https://YouTube.de',
+        //   github: 'www.github.com',
+        // },
       ],
     },
     LandingPage: {
@@ -178,7 +178,7 @@ export class DataService {
   };
 
   // whole language change function
-  getData(para: string) {
+  getData(para: string | null) {
     this.translateUserComments(para);
     this.translatePrjctDesc(para);
     this.translateAboutMe(para);
@@ -186,14 +186,14 @@ export class DataService {
   }
   
   // translate the team partner comments 
-  translateUserComments(para: string) {
+  translateUserComments(para: string | null) {
     this.jsonData.Comments.forEach((comments) => {
       comments.comment = '';
     });
     this.translateUserCommentsIf(para);
   }
   // translate the team partner comments in german || english
-  translateUserCommentsIf(para : string) {
+  translateUserCommentsIf(para : string | null) {
     if (para == 'de') {
       this.getDeJson().then((data) =>
         data.Comments.forEach((projectDeVersion: any, index: number) => {
@@ -211,7 +211,7 @@ export class DataService {
   }
 
   // translate the description of the projects to english
-  translatePrjctDesc(para: string) {
+  translatePrjctDesc(para: string | null) {
     this.jsonData.Portfolio.Projects.forEach((project) => {
       project.description = '';
     });
@@ -219,7 +219,7 @@ export class DataService {
     this.translatePrjctDescEn(para);
   }
   // translate the description of the projects to german
-  translatePrjctDescDe(para : string) {
+  translatePrjctDescDe(para : string | null) {
     if (para == 'de') {
       this.getDeJson().then((data) =>
         data.Portfolio.Projects.forEach(
@@ -232,7 +232,7 @@ export class DataService {
     }
   }
   // translate the description of the projects to english
-  translatePrjctDescEn(para : string) {
+  translatePrjctDescEn(para : string | null) {
     if (para == 'en') {
       this.getEnJson().then((data) =>
         data.Portfolio.Projects.forEach(
@@ -246,7 +246,7 @@ export class DataService {
   }
 
   // translation whole about me 
-  translateAboutMe(para: string) {
+  translateAboutMe(para: string | null) {
     this.jsonData.AboutMe.subpoints.forEach((subpoint) => {
       subpoint.description = '';
     });
@@ -254,7 +254,7 @@ export class DataService {
     this.translateAboutMeEn(para);
   }
   // translation about me description in german 
-  translateAboutMeDe(para : string) {
+  translateAboutMeDe(para : string | null) {
     if (para == 'de') {
       this.getDeJson().then((data) =>
         data.AboutMe.subpoints.forEach(
@@ -269,7 +269,7 @@ export class DataService {
     }
   }
   // translation about me description in english 
-  translateAboutMeEn(para : string) {
+  translateAboutMeEn(para : string | null) {
     if (para == 'en') {
       this.getEnJson().then((data) =>
         data.AboutMe.subpoints.forEach(
@@ -367,13 +367,13 @@ export class DataService {
   }
 
   // translation page elements of nav, titles, legal notice 
-  translatePageElements(para: string) {
+  translatePageElements(para: string | null) {
     this.translateDe(para);
     this.translateEn(para);
   }
 
   // translation of all details into english
-  translateEn(para : string) {
+  translateEn(para : string | null) {
     if (para == 'en') {
      this.getEnJson().then((data) => {
        this.translateLandingP(data);
@@ -387,7 +387,7 @@ export class DataService {
   }
 
   // translation of all details into german
-  translateDe(para : string) {
+  translateDe(para : string | null) {
     if (para == 'de') {
       this.getDeJson().then((data) => {
         this.translateLandingP(data);

@@ -43,9 +43,15 @@
             <hr>
 
             @for (Link of daten.Links; track $index) {
-                <a href="{{Link.path}}" target="_blank">
-                    <img src="./../../../assets/img/icons/{{Link.image}}.svg" alt="">
-                </a>
+                @if(Link.path == '#contact') {
+                    <a href="{{Link.path}}">
+                        <img src="./../../../assets/img/icons/{{Link.image}}.svg" alt="">
+                    </a>
+                } @else {
+                    <a href="{{Link.path}}" target="_blank">
+                        <img src="./../../../assets/img/icons/{{Link.image}}.svg" alt="">
+                    </a>
+                }
             }
 
             <a href="mailto:holzhey.niclas@gmail.com">holzhey.niclas&#64;gmail.com</a>

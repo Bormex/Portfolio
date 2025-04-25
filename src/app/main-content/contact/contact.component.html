@@ -18,17 +18,17 @@
         <form  (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
 
             <div class="inputDiv">
-                <input type="text" id="name" name="name" class="contact-input hover" (click)="checkNameInput(inputName = true)" (input)="checkNameInput(inputName = true)" [(ngModel)]="contactData.name" [ngClass]="{'inputWarning' : inputName, 'inputAcception' : inputNameOk}" type="text" placeholder="{{daten.Contact.placeholder.name}}" />
+                <input type="text" id="name" name="name" class="contact-input hover" (cuechange)="checkNameInput(inputName = true)" (input)="checkNameInput(inputName = true)" [(ngModel)]="contactData.name" [ngClass]="{'inputWarning' : inputName, 'inputAcception' : inputNameOk}" type="text" placeholder="{{daten.Contact.placeholder.name}}" />
                 <p style="display: none;" [ngClass]="{'validationWarning' : inputName}">{{daten.Contact.validation.name}}</p>
             </div>
 
             <div class="inputDiv">
-                <input type="email" id="email" name="email" class="contact-input hover" (click)="checkEmailInput(inputMail = true)" (input)="checkEmailInput(inputMail = true)" [(ngModel)]="contactData.email" [ngClass]="{'inputWarning' : inputMail, 'inputAcception' : inputEmailOk}" type="text" placeholder="{{daten.Contact.placeholder.mail}}" />
+                <input type="email" id="email" name="email" class="contact-input hover" (change)="checkEmailInput(inputMail = true)" (input)="checkEmailInput(inputMail = true)" [(ngModel)]="contactData.email" [ngClass]="{'inputWarning' : inputMail, 'inputAcception' : inputEmailOk}" type="text" placeholder="{{daten.Contact.placeholder.mail}}" />
                 <p style="display: none;" [ngClass]="{'validationWarning' : inputMail}">{{daten.Contact.validation.mail}}</p>
             </div>
 
             <div class="inputDiv">
-                <textarea type="message" id="message" name="text" class="hover contact-input" (click)="checkMsgInput(inputMessage = true)" (input)="checkMsgInput(inputMessage = true)" [(ngModel)]="contactData.message" [ngClass]="{'inputWarning' : inputMessage, 'inputAcception' : inputMessageOk}" style="background-position: top right !important;"  rows="14" cols="10" wrap="soft" placeholder="{{daten.Contact.placeholder.message}}" ></textarea>
+                <textarea type="message" id="message" name="text" class="hover contact-input" (change)="checkMsgInput(inputMessage = true)" (input)="checkMsgInput(inputMessage = true)" [(ngModel)]="contactData.message" [ngClass]="{'inputWarning' : inputMessage, 'inputAcception' : inputMessageOk}" style="background-position: top right !important;"  rows="14" cols="10" wrap="soft" placeholder="{{daten.Contact.placeholder.message}}" ></textarea>
                 <p style="display: none;" [ngClass]="{'validationWarning' : inputMessage}">{{daten.Contact.validation.message}}</p>
             </div>
 
@@ -46,7 +46,7 @@
             </div>
 
             <div class="sendBtn-Div">
-                <input type="submit" value="Send Message :)" class="sendBtn" (click)="checkInputfields(checkboxOk)" [ngClass]="activateBtn ? ['active'] : ''">
+                <input type="submit" value="Send Message :)" class="sendBtn" (click)="checkInputfields(checkboxOk)" [ngClass]="activateBtn ? ['active'] : ''" required>
             </div>
 
             <div class="scrollUpDiv">

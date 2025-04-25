@@ -20,19 +20,21 @@
                 </div>
             </div>
     
-            <div>
-                <div class="comment-swiper">
-                    <div class="comment-swiper-div" (click)="changeComment(i - 1)">
-                        <img src="./../../../../assets/img/icons/swipe-arrow.svg" style="rotate: 180deg;"  alt="">
-                    </div>
-                    @for (item of daten.Comments; let i = $index; track i) {
-                        <div class="comment-dot" [ngStyle]="{'backgroundColor': i == selectedComment ? '#70E61C' : ''}"></div>
-                    }
-                    <div class="comment-swiper-div" (click)="changeComment(i + 1)">
-                        <img src="./../../../../assets/img/icons/swipe-arrow.svg" alt="">
+            @if (daten.Comments.length > 1) {
+                <div>
+                    <div class="comment-swiper">
+                        <div class="comment-swiper-div" (click)="changeComment(i - 1)">
+                            <img src="./../../../../assets/img/icons/swipe-arrow.svg" style="rotate: 180deg;"  alt="">
+                        </div>
+                        @for (item of daten.Comments; let i = $index; track i) {
+                            <div class="comment-dot" [ngStyle]="{'backgroundColor': i == selectedComment ? '#70E61C' : ''}"></div>
+                        }
+                        <div class="comment-swiper-div" (click)="changeComment(i + 1)">
+                            <img src="./../../../../assets/img/icons/swipe-arrow.svg" alt="">
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
         
             <img src="./../../../../assets/img/shapes/commentSign.svg" alt="">
         

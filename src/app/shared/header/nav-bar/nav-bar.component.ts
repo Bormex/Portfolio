@@ -26,10 +26,12 @@ export class NavBarComponent {
 
   /**
   * Lifecycle hook that initializes component data from the data service.
+  * Pulling the current and saved language from localstorage.
   * Remove the Navbar Scroll-links on imprint and privacy police.
   */
   ngOnInit() {
     this.daten = this.dataService.getJsonData();
+    this.changeLanguageBtn(localStorage.getItem('Language'));
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
@@ -42,15 +44,18 @@ export class NavBarComponent {
 
   /**
   * Switches language and updates the active language state.
+  * Saves the language into the localstorage.
   * @param para - Language code (e.g., 'de', 'en').
   */
-  changeLanguageBtn(para: string) {
+  changeLanguageBtn(para: string | null) {
     if (para == 'de') {
       this.isActive = true;
       this.dataService.getData(para);
+      localStorage.setItem('Language', 'de')
      } else {
       this.isActive = false;
       this.dataService.getData(para);
+      localStorage.setItem('Language', 'en')
      }
   }
   
