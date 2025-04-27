@@ -22,6 +22,11 @@
     :root {
         --paddingLR: 48px;
     }
+    .landingPageLinks {
+        a:last-of-type {
+            display: none !important;
+        }
+    }
     .landingPageTitleHero {
         flex-direction: column;
         align-items: center;
@@ -114,11 +119,6 @@
 @media (max-width: 720px) {
     :root {
         --backgroundShapes: 30%; // das noch auf die anderen bilder übertragen!!!! also im css mit fit-content
-    }
-    .landingPageLinks {
-        a:last-of-type {
-            display: none !important;
-        }
     }
     .aboutMe {
         padding-right: var(--paddingLR) !important;

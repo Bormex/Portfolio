@@ -106,13 +106,34 @@ export class ContactComponent {
   };
 
   /**
-  * Handles form submission and sends data if valid.
-  * @param ngForm - The Angular form object.
+  * Submits the form after validating all inputs.
+  * Calls different submit handlers based on `mailTest`.
+  * 
+  * @param ngForm - The Angular `NgForm` instance.
   */
   onSubmit(ngForm: NgForm) {
     if (this.checkNameInput(this.inputName) && this.checkEmailInput(this.inputMail) && this.checkMsgInput(this.inputMessage) && this.checkValue(this.checked)) {
       if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-        this.http.post(this.post.endPoint, this.post.body(this.contactData))
+        this.onSubmitIf(ngForm);
+      } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+        this.onSubmitElseIf(ngForm);
+      }
+    } else {
+      this.checkNameInput(this.inputName);
+      this.checkEmailInput(this.inputMail);
+      this.checkMsgInput(this.inputMessage);
+      this.checkValue(this.checked);
+    }
+  }
+  
+  /**
+  * Handles form submission when `mailTest` is false.
+  * Sends data via POST and resets the form.
+  * 
+  * @param ngForm - The Angular `NgForm` instance.
+  */
+  onSubmitIf(ngForm: NgForm) {
+    this.http.post(this.post.endPoint, this.post.body(this.contactData))
           .subscribe({
             next: (response) => {
               ngForm.resetForm();
@@ -122,26 +143,29 @@ export class ContactComponent {
             },
             complete: () => console.info('send post complete'),
           });
-      } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-        ngForm.resetForm();
-        this.checkboxOk = false;
-        this.inputNameOk = false;
-        this.inputEmailOk = false;
-        this.inputMessageOk = false;
-        this.checked = false;
-        this.myCheckbox.checked = false; // uncheckt sie beim Start
-      }
-    } else {
-      this.checkNameInput(this.inputName);
-      this.checkEmailInput(this.inputMail);
-      this.checkMsgInput(this.inputMessage);
-      this.checkValue(this.checked);
-    }
   }
 
   /**
-  * Updates checkbox state and revalidates inputs.
+  * Handles form reset when `mailTest` is true.
+  * Resets inputs and checkbox states.
+  * 
+  * @param ngForm - The Angular `NgForm` instance.
+  */
+  onSubmitElseIf(ngForm: NgForm) {
+    ngForm.resetForm();
+    this.checkboxOk = false;
+    this.inputNameOk = false;
+    this.inputEmailOk = false;
+    this.inputMessageOk = false;
+    this.checked = false;
+    this.myCheckbox.checked = false; // uncheckt sie beim Start
+  }
+
+  /**
+  * Validates the checkbox and updates states.
+  * 
   * @param checkbox - The checkbox input element.
+  * @returns `true` if checked, else `false`.
   */
   checkValue(checkbox: any) {
     if (checkbox.checked == false || checkbox.checked == true) {
@@ -158,8 +182,10 @@ export class ContactComponent {
   }
 
   /**
-  * Validates the name input field.
-  * @param para - Checkbox validation state.
+  * Validates the name input.
+  * 
+  * @param para - Current validation state.
+  * @returns `true` if valid, else `false`.
   */
   checkNameInput(para: boolean): boolean {
     if (this.contactData.name.length > 3) {
@@ -175,8 +201,10 @@ export class ContactComponent {
   }
 
   /**
-  * Validates the email input field.
-  * @param para - Checkbox validation state.
+  * Validates the email input.
+  * 
+  * @param para - Current validation state.
+  * @returns `true` if valid, else `false`.
   */
   checkEmailInput(para: boolean): boolean {
     if (
@@ -199,8 +227,10 @@ export class ContactComponent {
   }
 
   /**
-  * Validates the message input field.
-  * @param para - Checkbox validation state.
+  * Validates the message input.
+  * 
+  * @param para - Current validation state.
+  * @returns `true` if valid, else `false`.
   */
   checkMsgInput(para: boolean): boolean {
     if (this.contactData.message.length > 3) {
