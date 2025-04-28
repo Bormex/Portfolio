@@ -5,7 +5,7 @@
     flex-direction: column;
     gap: var(--gapTitle);
     width: 100%;
-    max-width: 1440px;
+    max-width: var(--maxWidth);
     padding: var(--paddingTB) 0;
 }
 

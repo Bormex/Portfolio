@@ -6,7 +6,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 1440px;
+    width: 100%;
+    max-width: var(--maxWidth);
     padding: 0 var(--paddingLR);
     height: 291px;
     background: $background;
