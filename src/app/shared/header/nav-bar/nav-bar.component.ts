@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgStyle } from '@angular/common';
 import { MainContentComponent } from '../../../main-content/main-content.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -22,7 +22,10 @@ export class NavBarComponent {
   en!: string;
   landingpage:boolean = true;
   daten: any;
-  burgerOpen:boolean = false;
+  // burgerOpen:boolean = false;
+  public burgerOpen: boolean = false;
+
+  @Output() burgerOpenChange = new EventEmitter<boolean>();
 
   /**
   * Lifecycle hook that initializes component data from the data service.
@@ -65,9 +68,11 @@ export class NavBarComponent {
   burgerMenu() {
     if (!this.burgerOpen) {
       this.burgerOpen = true;
-    } else (
-      this.burgerOpen = false
-    )
+      this.burgerOpenChange.emit(this.burgerOpen);
+    } else {
+      this.burgerOpen = false;
+      this.burgerOpenChange.emit(this.burgerOpen);
+    }
   }
 
   /**

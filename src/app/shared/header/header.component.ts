@@ -1,13 +1,20 @@
 import { Component } from '@angular/core';
 import { NavBarComponent } from "./nav-bar/nav-bar.component";
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NavBarComponent],
+  imports: [NavBarComponent, NgClass],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  burgerOpen: boolean = false;
+
+  onBurgerOpenChange(isOpen: boolean) {
+    this.burgerOpen = isOpen;
+    console.log('Burger-Menü offen:', this.burgerOpen);
+  }
 
 }
