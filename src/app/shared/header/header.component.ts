@@ -11,10 +11,4 @@ import { NgClass } from '@angular/common';
 })
 export class HeaderComponent {
   burgerOpen: boolean = false;
-
-  onBurgerOpenChange(isOpen: boolean) {
-    this.burgerOpen = isOpen;
-    console.log('Burger-Menü offen:', this.burgerOpen);
-  }
-
 }
