@@ -1,11 +1,12 @@
 @import './../../../styles.scss';
 
 .mySkills-section {
+    z-index: 2;
     width: 100%;
-    max-width: 1440px;
+    max-width: var(--maxWidth);
     padding: var(--paddingTB) var(--paddingLR);
-    padding-bottom: unset;
-    padding-right: unset;
+    padding-bottom: unset !important;
+    padding-right: unset !important;
     position: relative;
 }
 
@@ -14,7 +15,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1440px;
+    max-width: var(--maxWidth);
+    width: 100%;
     z-index: 3;
     padding: var(--paddingTB) var(--paddingLR);
     padding-bottom: unset;

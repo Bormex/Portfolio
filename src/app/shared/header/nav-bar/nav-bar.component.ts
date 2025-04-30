@@ -22,7 +22,6 @@ export class NavBarComponent {
   en!: string;
   landingpage:boolean = true;
   daten: any;
-  // burgerOpen:boolean = false;
   public burgerOpen: boolean = false;
 
   @Output() burgerOpenChange = new EventEmitter<boolean>();
@@ -34,7 +33,7 @@ export class NavBarComponent {
   */
   ngOnInit() {
     this.daten = this.dataService.getJsonData();
-    this.changeLanguageBtn(localStorage.getItem('Language'));
+    this.changeLanguageBtn(this.getSavedLanguage());
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
@@ -43,6 +42,14 @@ export class NavBarComponent {
         this.landingpage = false;
       }
     });
+  }
+
+  getSavedLanguage() {
+    if (localStorage.getItem('Language') == undefined) {
+      return 'en';
+    } else {
+      return localStorage.getItem('Language');
+    }
   }
 
   /**
@@ -66,7 +73,7 @@ export class NavBarComponent {
   * Toggles the burger menu open/close state.
   */
   burgerMenu() {
-    if (!this.burgerOpen) {
+    if (!this.burgerOpen && window.innerWidth <= 1000) {
       this.burgerOpen = true;
       this.burgerOpenChange.emit(this.burgerOpen);
     } else {

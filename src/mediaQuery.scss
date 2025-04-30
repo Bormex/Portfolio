@@ -374,3 +374,161 @@
         width: 58% !important;
     }
 }
+
+@media (min-width: 1920px) {
+    .landingPage {
+        max-width: unset !important;
+    }
+    .landingPageTitleHero {
+        max-width: var(--maxWidth);
+        margin: 0 auto;
+    }
+
+    .linksAndScroll {
+        padding-right: unset;
+
+        .landingPageLinks {
+            position: absolute;
+            width: 100%;
+            hr {
+                width: calc(((100% - var(--maxWidth)) / 2) + var(--paddingLR)) !important;
+            }
+        }
+
+        .scrollDown {
+            max-width: var(--maxWidth);
+            width: 100%;
+            margin: 0 auto;
+            padding-right: var(--paddingLR);
+            align-items: flex-start !important;
+        }
+    }
+
+    .mySkills-section {
+        padding: var(--paddingTB) calc(var(--paddingLR)*2) !important;
+        max-width: unset !important;
+    }
+
+    .mySkills {
+        justify-content: flex-end !important;
+        .mySkills-left {
+            max-width: calc(var(--maxWidth) / 2);
+        }
+        .mySkills-right {
+            >div {
+                width: 100%;
+            }
+            .mySkills-right-title {
+                hr {
+                    max-width: unset !important;
+                    width: calc(((100% * 2) - var(--maxWidth)) / 2 + (var(--paddingLR) * 2)) !important;
+                }
+            }
+            .mySkills-right-under-title {
+                width: calc(1920px / 2 - 100px);
+            }
+        }
+    }
+
+    .skills-shape {
+        left: calc((100% - var(--maxWidth)) / 2) !important;
+    }
+
+    .about-shape {
+        right: calc((100% - var(--maxWidth)) / 2) !important;
+    }
+
+    .landingImage-Div img:last-of-type {
+        border-bottom-left-radius: 40%;
+        border-bottom-right-radius: 40%;
+    }
+
+    .aboutMe {
+        padding-left: unset !important;
+        max-width: unset !important;
+        .aboutMe-left {
+            width: 50%;
+            padding-left: calc((100% - var(--maxWidth)) / 2 + var(--paddingLR));
+            >div {
+                width: 90%;
+            }
+        }
+    }
+
+    .aboutMe-right {
+        hr {
+            width: 100% !important;
+        }
+    }
+
+
+    .portfolio {
+        z-index: 2;
+        max-width: unset !important;
+        .projectContainers {
+            max-width: var(--maxWidth);
+        }
+    }
+
+    .comment-box {
+        padding-left: unset !important;
+        >:nth-child(1) {
+            justify-content: flex-end !important;
+        }
+        .comment {
+            gap: unset !important;
+            justify-content: flex-end;
+            width: calc(var(--maxWidth) / 2 - var(--paddingLR)) !important;
+        }
+        :nth-child(2) {
+            left: calc((100% - var(--maxWidth)) / 2 + var(--paddingLR)) !important;
+        }
+    }
+
+    .comment {
+        width: 25% !important;
+    }
+
+    .commentImage-Box {
+        hr {
+            // width: calc((200% - var(--maxWidth)) / 2 + var(--paddingLR)) !important;
+            width: calc((200% - var(--maxWidth)) / 2 + ((var(--maxWidth) / 4) - 136px)) !important;
+        }
+    }
+
+    .comment-shape {
+        right: calc((100% - var(--maxWidth)) / 2) !important;
+    }
+
+
+    .contact {
+        max-width: unset !important;
+        .contactTitle {
+            width: 100% !important;
+            hr {
+                width: calc((100% - var(--maxWidth)) / 2 + (var(--maxWidth) / 2.5)) !important;
+            }
+        }
+    
+        .contact-fields {
+            max-width: var(--maxWidth);
+            margin: 0 auto;
+        }
+        
+        .contact-shape {
+            left: calc((100% - var(--maxWidth)) / 2) !important;
+        }
+    }
+   
+
+
+
+
+
+    .footer {
+        max-width: unset !important;
+        >div {
+            max-width: var(--maxWidth) !important;
+        }
+    }
+}
