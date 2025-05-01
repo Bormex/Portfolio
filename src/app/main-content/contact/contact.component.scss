@@ -1,6 +1,8 @@
 @import './../../../styles.scss';
 
 .contact {
+    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     gap: var(--gapTitle);
@@ -163,6 +165,7 @@
 
 .contact-shape {
     position: absolute;
+    transform: translate(-50%, 40%);
     z-index: -1;
     bottom: 0;
     width: var(--backgroundShapes);

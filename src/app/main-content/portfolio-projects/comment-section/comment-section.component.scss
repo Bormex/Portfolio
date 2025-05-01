@@ -120,6 +120,8 @@
 }
 
 .comment-shape {
+    rotate: 180deg;
+    transform: translate(-50%);
     position: absolute;
     right: 0;
     bottom: 0;

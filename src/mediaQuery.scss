@@ -115,7 +115,7 @@
 
 @media (max-width: 720px) {
     :root {
-        --backgroundShapes: 30%; // das noch auf die anderen bilder übertragen!!!! also im css mit fit-content
+        --backgroundShapes: 75%;
     }
     .aboutMe {
         padding-right: var(--paddingLR) !important;
@@ -168,7 +168,7 @@
             flex-direction: column-reverse !important;
         }
         >img {
-            top: 270px !important;
+            top: 256px !important;
         }
         .comment {
             padding: 24px 48px;
