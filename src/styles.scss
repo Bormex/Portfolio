@@ -11,7 +11,6 @@ $blockedBtn: #B6B6B6;
 $red: #E61C40;
 $background: #141D2F;
 
-
 :root {
   --maxWidth: 1920px;
   --paddingLR: 100px;
@@ -21,6 +20,7 @@ $background: #141D2F;
   --gap: 32px;
   --paddingNav: 37px;
   --backgroundShapes: fit-content;
+  --mdc-checkbox-state-layer-size: 100%;
 }
 
 // media Query
@@ -86,4 +86,7 @@ body {
   position: relative;
 }
 
-
+.mat-mdc-checkbox-touch-target {
+  width: unset !important;
+  height: unset !important;
+}
