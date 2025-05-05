@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CommentSectionComponent } from './comment-section.component';
 
 describe('CommentSectionComponent', () => {

@@ -7,11 +7,12 @@ import { HttpClient } from '@angular/common/http';
 import { AnimateOnScrollModule } from 'primeng/animateonscroll';
 import { Message } from 'primeng/api';
 import { MessagesModule } from 'primeng/messages';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [MatCheckboxModule, CommonModule, FormsModule, AnimateOnScrollModule, MessagesModule],
+  imports: [MatCheckboxModule, CommonModule, FormsModule, AnimateOnScrollModule, MessagesModule, RouterLink],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
@@ -23,16 +24,6 @@ export class ContactComponent {
   messages!: Message[];
   contactSended: boolean = false;
   popupDuration:number = 3500;
-
-  /**
-  * Lifecycle hook that initializes component data from the data service.
-  */
-  ngOnInit() {
-    this.daten = this.dataService.getJsonData();
-  }
-  
-  @ViewChild('myCheckbox') myCheckbox!: MatCheckbox;
-
   inputNameOk: boolean = false;
   inputEmailOk: boolean = false;
   inputMessageOk: boolean = false;
@@ -43,6 +34,15 @@ export class ContactComponent {
   inputMessage: boolean = false;
   activateBtn: boolean = false;
 
+  @ViewChild('myCheckbox') myCheckbox!: MatCheckbox;
+  
+  /**
+  * Lifecycle hook that initializes component data from the data service.
+  */
+  ngOnInit() {
+    this.daten = this.dataService.getJsonData();
+  }
+  
   validDomains: Array<string> = [
     '.com',
     '.net',
