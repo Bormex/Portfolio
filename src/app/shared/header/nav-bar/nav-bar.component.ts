@@ -7,11 +7,12 @@ import { filter } from 'rxjs/operators';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { DataService } from '../../../data.service';
 import { PortfolioProjectsComponent } from '../../../main-content/portfolio-projects/portfolio-projects.component';
+import { AnimateOnScrollModule } from 'primeng/animateonscroll';
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-  imports: [CommonModule, NgStyle, MainContentComponent, TranslateModule, PortfolioProjectsComponent],
+  imports: [CommonModule, NgStyle, MainContentComponent, TranslateModule, PortfolioProjectsComponent, AnimateOnScrollModule],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss'
 })

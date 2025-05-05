@@ -1,5 +1,16 @@
 @import './font.scss';
 
+/* Order */
+@layer reset, primeng;
+
+/* Reset CSS */
+@layer reset {
+    button {
+      box-shadow: none;
+    }
+}
+
+
 /** Colors - Template **/
 
 $purple: #9747FF;
@@ -25,8 +36,7 @@ $background: #141D2F;
 
 // media Query
 @import './mediaQuery.scss';
-@import './mediaQuery1920px.scss';
-
+@import './mediaQueryBigScreen.scss';
 
 
 // NOCH IN EINE MIXIN SCSS!!!
@@ -39,23 +49,20 @@ $background: #141D2F;
   }
 }
 
-
 @mixin underline($width: 50%, $color: $purple) {
   :active{ 
-  ::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: $width;
-      height: 3px;
-      background: $purple;
-      border-radius: 3px 10px 10px 3px;
+    ::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: $width;
+        height: 3px;
+        background: $purple;
+        border-radius: 3px 10px 10px 3px;
+    }
   }
 }
-}
-
-
 
 .hover {
   position: relative;

@@ -4,14 +4,14 @@
     </div>
 
     <div class="landingPageTitleHero">
-        <div class="landingImage">
+        <div class="landingImage animation-duration-1000" pAnimateOnScroll enterClass="flip" leaveClass="flip">
             <div class="landingImage-Div">
                 <img src="./../../../assets/img/shapes/photo_shadows.svg" alt="">
                 <img src="./../../../assets/img/hero character photo.png" alt="">
             </div>
         </div>
 
-        <div class="landingTitle">
+        <div class="landingTitle animation-duration-500" pAnimateOnScroll enterClass="fadeindown" leaveClass="fadeindown">
             <div class="titleDiv">
                 <div class="titleDiv-1">
                     <p>
@@ -39,7 +39,7 @@
 
 
     <div class="linksAndScroll">
-        <div class="landingPageLinks">
+        <div class="landingPageLinks animation-duration-500" pAnimateOnScroll enterClass="fadeinright" leaveClass="fadeinright">
             <hr>
 
             @for (Link of daten.Links; track $index) {
@@ -56,7 +56,7 @@
 
             <a href="mailto:holzhey.niclas@gmail.com">holzhey.niclas&#64;gmail.com</a>
         </div>
-        <div class="scrollDown">
+        <div class="scrollDown animation-duration-500" pAnimateOnScroll enterClass="fadeinleft" leaveClass="fadeinleft">
             <p>
                 Scroll {{daten.LandingPage.scroll}} 
             </p>

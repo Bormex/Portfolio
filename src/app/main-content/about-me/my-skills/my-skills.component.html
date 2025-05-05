@@ -2,7 +2,7 @@
     <div class="mySkills-left">
         @for (Skills of daten.Skills; track $index) {
             @if (Skills.name == 'Continually Learning') {
-                <div class="skillIcons continuallyLearning">
+                <div class="skillIcons continuallyLearning animation-duration-500" pAnimateOnScroll enterClass="fadeinright" leaveClass="fadeoutright">
                     <img src="./../../../../assets/img/icons/continually-learning-popup.svg" alt="">
                     <img src="./../../../../assets/img/icons/{{Skills.image}}.svg" alt="">
                     <img src="./../../../../assets/img/icons/{{Skills.image}}-hover.svg" alt="">
@@ -11,7 +11,7 @@
                     </span>
                 </div>
             } @else {
-                <div class="skillIcons skillHover">
+                <div class="skillIcons skillHover animation-duration-500"  pAnimateOnScroll enterClass="fadeinright" leaveClass="fadeoutright">
                     <img src="./../../../../assets/img/icons/{{Skills.image}}.svg" alt="">
                     <span>
                         {{Skills.name}}
@@ -23,21 +23,21 @@
     <div class="mySkills-right">
         <div>
         <div class="mySkills-right-title">
-            <h1>
+            <h1 class="animation-duration-500" pAnimateOnScroll enterClass="fadeinleft" leaveClass="fadeoutleft">
                 {{daten.Portfolio.MySkills.title}}
             </h1>
             <hr>
         </div>
         <div class="mySkills-right-under-title">
             <div>
-                <p>
+                <p class="animation-duration-500" pAnimateOnScroll enterClass="fadeinleft" leaveClass="fadeoutleft">
                     {{daten.Portfolio.MySkills.firstSent}}
                 </p>
 
                 <div class="mySkills-left-mobile">
                     @for (Skills of daten.Skills; track $index) {
                         @if (Skills.name == 'Continually Learning') {
-                            <div class="skillIcons continuallyLearning">
+                            <div class="skillIcons continuallyLearning animation-duration-500"  pAnimateOnScroll enterClass="fadeinright" leaveClass="fadeoutright">
                                 <img src="./../../../../assets/img/icons/continually-learning-popup.svg" alt="">
                                 <img src="./../../../../assets/img/icons/{{Skills.image}}.svg" alt="">
                                 <img src="./../../../../assets/img/icons/{{Skills.image}}-hover.svg" alt="">
@@ -46,7 +46,7 @@
                                 </span>
                             </div>
                         } @else {
-                            <div class="skillIcons skillHover">
+                            <div class="skillIcons skillHover animation-duration-500"  pAnimateOnScroll enterClass="fadeinright" leaveClass="fadeoutright">
                                 <img src="./../../../../assets/img/icons/{{Skills.image}}.svg" alt="">
                                 <span>
                                     {{Skills.name}}
@@ -56,14 +56,14 @@
                     }
                 </div>
 
-                <span>
+                <span class="animation-duration-500"  pAnimateOnScroll enterClass="fadeinleft" leaveClass="fadeoutleft">
                     {{daten.Portfolio.MySkills.title2[0]}} <span style="color: #9747FF;">{{daten.Portfolio.MySkills.title2[1]}}</span>?
                 </span>
-                <p>
+                <p class="animation-duration-500"  pAnimateOnScroll enterClass="fadeinleft" leaveClass="fadeoutleft">
                     {{daten.Portfolio.MySkills.lastSent}}
                 </p>
             </div>
-            <div class="mySkillsBtn">
+            <div class="mySkillsBtn animation-duration-500" pAnimateOnScroll enterClass="fadeinleft" leaveClass="fadeoutleft">
                 <a href="#contact">
                     <button>
                         Get in touch

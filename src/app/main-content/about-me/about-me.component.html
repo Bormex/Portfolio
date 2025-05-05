@@ -1,17 +1,17 @@
 <div class="aboutMe">
     <div class="aboutMe-left">
-        <h1>
+        <h1 class="animation-duration-500" pAnimateOnScroll enterClass="fadeinleft" leaveClass="fadeinleft">
             {{daten.AboutMe.title}}
         </h1>
         <div>
-            <p>
+            <p class="animation-duration-500" pAnimateOnScroll enterClass="fadeinleft" leaveClass="fadeinleft">
                 {{daten.AboutMe.description}}
             </p>
             <div>
                 @for (item of daten.AboutMe.subpoints; track $index) {
                     <div class="aboutMe-sections">
-                        <img src="{{item.image}}" [ngClass]="$index == 1 ? '' : 'about-hover'" alt="">
-                        <p>
+                        <img src="{{item.image}}" [ngClass]="$index == 1 ? '' : 'about-hover'" alt="" calss="animation-duration-500" pAnimateOnScroll enterClass="fadeinleft" leaveClass="fadeinleft">
+                        <p class="animation-duration-500" pAnimateOnScroll enterClass="fadeinright" leaveClass="fadeinright">
                             {{item.description}}
                         </p>
                     </div>
@@ -20,10 +20,10 @@
         </div>
     </div>
     <div class="aboutMe-right">
-        <div>
+        <div class="animation-duration-500" pAnimateOnScroll enterClass="fadeinleft" leaveClass="fadeinleft">
             <img src="./../../../assets/img/aboutMe.png" alt="">
         </div>
-        <hr>
+        <hr class="animation-duration-500" pAnimateOnScroll enterClass="fadeinright" leaveClass="fadeinright">
         <img src="./../../../assets/img/shapes/Purple-shadow-2.svg" class="about-shape" alt="">
     </div>
 </div>

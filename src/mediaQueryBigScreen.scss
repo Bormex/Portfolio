@@ -114,7 +114,6 @@
 
     .commentImage-Box {
         hr {
-            // width: calc((200% - var(--maxWidth)) / 2 + var(--paddingLR)) !important;
             width: calc((200% - var(--maxWidth)) / 2 + ((var(--maxWidth) / 4) - 136px)) !important;
         }
     }

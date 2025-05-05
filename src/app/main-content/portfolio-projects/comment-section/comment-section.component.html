@@ -2,7 +2,7 @@
     @if (i == selectedComment) {
         <div class="comment-box">
             <div>
-                <div class="comment">
+                <div class="comment animation-duration-500" pAnimateOnScroll enterClass="flipright" leaveClass="flipright">
                     <div>
                         {{item.comment}}
                     </div>
@@ -12,8 +12,7 @@
                     </div>
                 </div>
                 <div class="commentImage-Box">
-                    <div class="commentImage">
-                        <!-- Hier komment noch das Bild mit rein mit {{item.image}} -->
+                    <div class="commentImage animation-duration-500" pAnimateOnScroll enterClass="animate-width" leaveClass="animate-width">
                         <img src="{{item.image}}" alt="">
                     </div>
                     <hr>
@@ -36,7 +35,7 @@
                 </div>
             }
         
-            <img src="./../../../../assets/img/shapes/commentSign.svg" alt="">
+            <img src="./../../../../assets/img/shapes/commentSign.svg" alt="" class="animation-duration-500" pAnimateOnScroll enterClass="flipright" leaveClass="flipright">
         
         </div>
     }

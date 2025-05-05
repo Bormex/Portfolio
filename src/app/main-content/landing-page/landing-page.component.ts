@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { DataService } from '../../data.service';
+import { AnimateOnScrollModule } from 'primeng/animateonscroll';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [],
+  imports: [AnimateOnScrollModule],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'
 })

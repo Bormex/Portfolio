@@ -1,15 +1,15 @@
 <div class="portfolio">
     <div class="portfolio-head">
-        <div>
+        <div class="animation-duration-500" pAnimateOnScroll enterClass="fadeinleft" leaveClass="fadeinleft">
             <hr>
         </div>
-        <h1>Portfolio</h1>
+        <h1 class="animation-duration-500" pAnimateOnScroll enterClass="fadeinleft" leaveClass="fadeinleft">Portfolio</h1>
         <div>
             <hr>
         </div>
     </div>
 
-    <p>
+    <p class="animation-duration-500" pAnimateOnScroll enterClass="fadeindown" leaveClass="fadeindown">
         {{daten.Portfolio.information}}
     </p>
 
@@ -17,10 +17,10 @@
         <img src="./../../../assets/img/shapes/Purple_shadow_portfolio.svg" class="project-shape" alt="">
         @for (Project of daten.Portfolio.Projects; track daten.Portfolio.Projects; let index = $index; let last = $last) {
             <div class="project" [ngStyle]="{'flex-direction' : index % 2 ? 'row-reverse' : ''}">
-                <div class="projectImage">
+                <div class="projectImage animation-duration-500" pAnimateOnScroll enterClass="fadeinleft" leaveClass="fadeinleft">
                     <img src="{{Project.image}}" alt="">
                 </div>
-                <div class="projectDetails" [ngStyle]="{ 'align-items': index % 2 ? 'end' : '', 'text-align': index % 2 ? 'end' : ''}">
+                <div class="projectDetails animation-duration-500" pAnimateOnScroll enterClass="fadeinright" leaveClass="fadeinright"[ngStyle]="{ 'align-items': index % 2 ? 'end' : '', 'text-align': index % 2 ? 'end' : ''}">
                     <div>    
                         <span>
                             {{Project.name}}

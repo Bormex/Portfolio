@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { DataService } from '../../data.service';
 import { HttpClient } from '@angular/common/http';
+import { AnimateOnScrollModule } from 'primeng/animateonscroll';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [MatCheckboxModule, CommonModule, FormsModule],
+  imports: [MatCheckboxModule, CommonModule, FormsModule, AnimateOnScrollModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })

@@ -22,6 +22,9 @@
     :root {
         --paddingLR: 48px;
     }
+    .landingImage-Div img:last-of-type {
+        padding-top: 96px;
+    }
     .landingPageLinks {
         a:last-of-type {
             display: none !important;
@@ -292,6 +295,9 @@
 @media (max-width: 500px) {
     :root {
         --paddingLR: 16px
+    }
+    .landingImage-Div img:last-of-type {
+        padding-top: unset !important;
     }
     .mySkills-left-mobile {
         span {

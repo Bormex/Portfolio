@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { MySkillsComponent } from './my-skills/my-skills.component';
 import { DataService } from '../../data.service';
 import { CommonModule } from '@angular/common';
+import { AnimateOnScrollModule } from 'primeng/animateonscroll';
 
 @Component({
   selector: 'app-about-me',
   standalone: true,
-  imports: [MySkillsComponent, CommonModule],
+  imports: [MySkillsComponent, CommonModule, AnimateOnScrollModule],
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.scss'
 })

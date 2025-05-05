@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { DataService } from '../../../data.service';
 import { CommonModule } from '@angular/common';
-import { log } from 'console';
+import { AnimateOnScrollModule } from 'primeng/animateonscroll';
 
 @Component({
   selector: 'app-comment-section',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AnimateOnScrollModule],
   templateUrl: './comment-section.component.html',
   styleUrl: './comment-section.component.scss'
 })

@@ -1,38 +1,38 @@
 <div class="contact">
     <div class="contactTitle">
-        <hr />
-        <h1>{{daten.Contact.title}}</h1>
+        <hr>
+        <h1 class="animation-duration-500" pAnimateOnScroll enterClass="fadeinright" leaveClass="fadeinright">{{daten.Contact.title}}</h1>
     </div>
 
     <div class="contact-fields">
         <div class="contact-field-left">
-            <h2>{{daten.Contact.subtitle}}</h2>
+            <h2 class="animation-duration-500" pAnimateOnScroll enterClass="fadeinleft" leaveClass="fadeinleft">{{daten.Contact.subtitle}}</h2>
             <div>
-                <p>
+                <p class="animation-duration-500" pAnimateOnScroll enterClass="fadeinleft" leaveClass="fadeinleft">
                     {{daten.Contact.subdescription}}
                 </p>
-                <p>{{daten.Contact.subAnecdote}} <strong>{{daten.Contact.subAnecdoteContact}}</strong></p>
+                <p class="animation-duration-500" pAnimateOnScroll enterClass="fadeinleft" leaveClass="fadeinleft">{{daten.Contact.subAnecdote}} <strong>{{daten.Contact.subAnecdoteContact}}</strong></p>
             </div>
         </div>
 
         <form  (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
 
-            <div class="inputDiv">
+            <div class="inputDiv animation-duration-500" pAnimateOnScroll enterClass="fadeindown" leaveClass="fadeindown">
                 <input type="text" id="name" name="name" class="contact-input hover" (click)="checkNameInput(inputName = true)" (input)="checkNameInput(inputName = true)" [(ngModel)]="contactData.name" [ngClass]="{'inputWarning' : inputName, 'inputAcception' : inputNameOk}" type="text" placeholder="{{daten.Contact.placeholder.name}}" />
                 <p style="opacity: 0; height: 17px;" [ngClass]="{'validationWarning' : inputName}">{{daten.Contact.validation.name}}</p>
             </div>
 
-            <div class="inputDiv">
+            <div class="inputDiv animation-duration-500" pAnimateOnScroll enterClass="fadeindown" leaveClass="fadeindown">
                 <input type="email" id="email" name="email" class="contact-input hover" (click)="checkEmailInput(inputMail = true)" (input)="checkEmailInput(inputMail = true)" [(ngModel)]="contactData.email" [ngClass]="{'inputWarning' : inputMail, 'inputAcception' : inputEmailOk}" type="text" placeholder="{{daten.Contact.placeholder.mail}}" />
                 <p style="opacity: 0; height: 17px;" [ngClass]="{'validationWarning' : inputMail}">{{daten.Contact.validation.mail}}</p>
             </div>
 
-            <div class="inputDiv">
+            <div class="inputDiv animation-duration-500" pAnimateOnScroll enterClass="fadeindown" leaveClass="fadeindown">
                 <textarea type="message" id="message" name="text" class="hover contact-input" (click)="checkMsgInput(inputMessage = true)" (input)="checkMsgInput(inputMessage = true)" [(ngModel)]="contactData.message" [ngClass]="{'inputWarning' : inputMessage, 'inputAcception' : inputMessageOk}" style="background-position: top right !important;"  rows="14" cols="10" wrap="soft" placeholder="{{daten.Contact.placeholder.message}}" ></textarea>
                 <p style="opacity: 0; height: 17px;" [ngClass]="{'validationWarning' : inputMessage}">{{daten.Contact.validation.message}}</p>
             </div>
 
-            <div class="contact-message">
+            <div class="contact-message animation-duration-500" pAnimateOnScroll enterClass="fadeindown" leaveClass="fadeindown">
 
                 <label class="container">
                     <mat-checkbox class="matBox" #myCheckbox (input)="checkValue(myCheckbox)"></mat-checkbox>
@@ -45,11 +45,11 @@
                 <p style="opacity: 0;" [ngClass]="{'validationWarning' : checkboxOk}">Please accept the privacy policy.</p>
             </div>
 
-            <div class="sendBtn-Div">
+            <div class="sendBtn-Div animation-duration-500" pAnimateOnScroll enterClass="fadeindown" leaveClass="fadeindown">
                 <input type="submit" value="Send Message :)" class="sendBtn" (click)="checkInputfields(checkboxOk)" [ngClass]="activateBtn ? ['active'] : ''" required>
             </div>
 
-            <div class="scrollUpDiv">
+            <div class="scrollUpDiv animation-duration-500" pAnimateOnScroll enterClass="fadeindown" leaveClass="fadeindown">
                 <a href="#landingPage">
                     <img src="./../../../assets/img/icons/scroll-to-landingpage.svg" alt="">
                     <img src="./../../../assets/img/icons/scroll-to-landingpage-hover.svg" alt="">
