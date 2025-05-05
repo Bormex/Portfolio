@@ -1,16 +1,5 @@
 @import './font.scss';
 
-/* Order */
-@layer reset, primeng;
-
-/* Reset CSS */
-@layer reset {
-  .p-message-wrapper {
-    gap: 8px;
-  }
-}
-
-
 /** Colors - Template **/
 
 $purple: #9747FF;
@@ -21,6 +10,21 @@ $hoverCheckbox: #183771;
 $blockedBtn: #B6B6B6;
 $red: #E61C40;
 $background: #141D2F;
+
+/* PrimeNG */
+/* Order */
+@layer reset, primeng;
+
+/* Reset CSS */
+@layer reset {
+  .p-message-success {
+    background: rgba(151, 71, 255, 0.35) !important;
+    border-color: #9747FF !important;
+  }
+  .p-message-wrapper {
+    gap: 8px;
+  }
+}
 
 :root {
   --maxWidth: 1920px;
