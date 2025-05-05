@@ -5,9 +5,9 @@
 
 /* Reset CSS */
 @layer reset {
-    button {
-      box-shadow: none;
-    }
+  .p-message-wrapper {
+    gap: 8px;
+  }
 }
 
 

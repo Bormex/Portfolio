@@ -5,11 +5,13 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { DataService } from '../../data.service';
 import { HttpClient } from '@angular/common/http';
 import { AnimateOnScrollModule } from 'primeng/animateonscroll';
+import { Message } from 'primeng/api';
+import { MessagesModule } from 'primeng/messages';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [MatCheckboxModule, CommonModule, FormsModule, AnimateOnScrollModule],
+  imports: [MatCheckboxModule, CommonModule, FormsModule, AnimateOnScrollModule, MessagesModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
@@ -18,7 +20,10 @@ export class ContactComponent {
   daten: any;
   mailTest = true;
   http = inject(HttpClient);
-    
+  messages!: Message[];
+  contactSended: boolean = false;
+  popupDuration:number = 3500;
+
   /**
   * Lifecycle hook that initializes component data from the data service.
   */
@@ -32,12 +37,10 @@ export class ContactComponent {
   inputEmailOk: boolean = false;
   inputMessageOk: boolean = false;
   checkboxOk: boolean = false;
-
   checked: boolean = false;
   inputName: boolean = false;
   inputMail: boolean = false;
   inputMessage: boolean = false;
-
   activateBtn: boolean = false;
 
   validDomains: Array<string> = [
@@ -114,11 +117,9 @@ export class ContactComponent {
   */
   onSubmit(ngForm: NgForm) {
     if (this.checkNameInput(this.inputName) && this.checkEmailInput(this.inputMail) && this.checkMsgInput(this.inputMessage) && this.checkValue(this.checked)) {
-      if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-        this.onSubmitIf(ngForm);
-      } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-        this.onSubmitElseIf(ngForm);
-      }
+      this.contactSended = true;
+      this.messages = [{ severity: 'success', detail: 'Contact sended' }];
+      this.sendMail(ngForm);
     } else {
       this.checkNameInput(this.inputName);
       this.checkEmailInput(this.inputMail);
@@ -133,11 +134,11 @@ export class ContactComponent {
   * 
   * @param ngForm - The Angular `NgForm` instance.
   */
-  onSubmitIf(ngForm: NgForm) {
+  sendMail(ngForm: NgForm) {
     this.http.post(this.post.endPoint, this.post.body(this.contactData))
           .subscribe({
             next: (response) => {
-              ngForm.resetForm();
+              this.resetContactInputs(ngForm);
             },
             error: (error) => {
               console.error(error);
@@ -152,14 +153,21 @@ export class ContactComponent {
   * 
   * @param ngForm - The Angular `NgForm` instance.
   */
-  onSubmitElseIf(ngForm: NgForm) {
-    ngForm.resetForm();
+  resetContactInputs(ngForm: NgForm) {
+    // ngForm.resetForm();
+    setTimeout(() => {
+      this.contactSended = false;
+    }, this.popupDuration);
+    this.contactData.name = "";
+    this.contactData.email = "";
+    this.contactData.message = "";
     this.checkboxOk = false;
     this.inputNameOk = false;
     this.inputEmailOk = false;
     this.inputMessageOk = false;
     this.checked = false;
     this.myCheckbox.checked = false; // uncheckt sie beim Start
+    this.activateBtn = false;
   }
 
   /**
@@ -189,7 +197,7 @@ export class ContactComponent {
   * @returns `true` if valid, else `false`.
   */
   checkNameInput(para: boolean): boolean {
-    if (this.contactData.name.length > 3) {
+    if (this.contactData.name.length >= 3) {
       this.inputName = false;
       this.inputNameOk = true;
       this.checkInputfields(this.inputNameOk);

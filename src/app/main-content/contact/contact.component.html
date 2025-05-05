@@ -59,7 +59,9 @@
         </form>
 
     </div>
-
+    <div class="card hidden z-1 absolute top-50 left-50 fadein animation-duration-200" style="translate: -50% 0" [ngClass]="{'flex' : contactSended}">
+        <p-messages [(value)]="messages" [closable]="false"/>
+    </div>
     <img src="./../../../assets/img/shapes/Purple_shadow_contact.svg" class="contact-shape" alt="">
 
 </div>
