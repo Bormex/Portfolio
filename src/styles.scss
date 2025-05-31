@@ -1,7 +1,6 @@
 @import './font.scss';
 
 /** Colors - Template **/
-
 $purple: #9747FF;
 $white: #FFFFFF;
 $green: #70E61C;
@@ -46,7 +45,7 @@ $background: #141D2F;
 // NOCH IN EINE MIXIN SCSS!!!
 @mixin hover-padding($padding-hover, $bg-hover) {
   transition: padding 0.125s ease-in-out, background-color 0.3s ease;
-  
+
   &:hover {
     padding: $padding-hover;
     background-color: $bg-hover;
@@ -54,7 +53,7 @@ $background: #141D2F;
 }
 
 @mixin underline($width: 50%, $color: $purple) {
-  :active{ 
+  :active{
     ::after {
         content: "";
         position: absolute;
@@ -89,7 +88,7 @@ $background: #141D2F;
   button {
     cursor: pointer;
   }
-  
+
 }
 
 body {

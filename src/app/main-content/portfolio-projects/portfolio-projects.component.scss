@@ -34,7 +34,7 @@
             border-top-left-radius: 10px;
             border-bottom-left-radius: 10px;
         }
-        
+
     }
 
     div:last-of-type {
@@ -45,7 +45,7 @@
             height: 4px;
             background-color: $purple;
         }
-        
+
     }
 }
 
@@ -58,7 +58,7 @@
         color: $green;
     }
     >hr {
-        border: solid $green;
+        border: solid 1px $green;
     }
 }
 
